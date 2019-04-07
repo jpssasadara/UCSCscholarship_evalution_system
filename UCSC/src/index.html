@@ -2,6 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <title>UCSC</title>
   <base href="/">
 
@@ -9,6 +17,25 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <app-root></app-root>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">UCSC Examination Branch</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li ><a class="nav-link"  href="/homepage" routerLinkActive="active">Home</a></li>
+            <li><a class="nav-link" href="/homepagef" routerLinkActive="active">Home</a></li>
+            <li ><a class="nav-link" href="/homepagefsd" routerLinkActive="active">Home</a></li>
+            <li ><a class="nav-link" href="/homepagedfs" routerLinkActive="active">Home</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a class="nav-link" href="/register" routerLinkActive="active"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a class="nav-link" href="/login" routerLinkActive="active"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          </ul>
+        </div>
+      </nav>
+  <app-root>
+    
+  </app-root>
 </body>
 </html>
