@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule , routingComponents } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { WelfareComponent } from './welfare/welfare.component';
+import { ShoreaComponent } from './shorea/shorea.component';
+import { IfsComponent } from './ifs/ifs.component';
 
 
 
@@ -14,7 +17,10 @@ import { RegisterComponent } from './register/register.component';
     AppComponent,
     routingComponents,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    WelfareComponent,
+    ShoreaComponent,
+    IfsComponent
     
     
   ],
