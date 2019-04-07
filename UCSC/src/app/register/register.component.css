@@ -19,11 +19,11 @@ body {
 
 .login-block{
     background: rgb(71, 45, 45);  /* fallback for old browsers */
-background: -webkit-linear-gradient(to bottom, rgb(138, 56, 5), rgb(63, 58, 58));  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to bottom, rgb(139, 53, 0),  rgb(63, 58, 58)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-float:left;
-width:100%;
-padding : 50px 0;
+    background: -webkit-linear-gradient(to bottom, rgb(255, 255, 255),  rgb(22, 2, 22));  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, rgb(255, 255, 255),  rgb(22, 2, 22)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    float:left;
+    width:100%;
+    padding : 50px 0;
 }
 .banner-sec{background:url(https://static.pexels.com/photos/33972/pexels-photo.jpg)  no-repeat left bottom; background-size:cover; min-height:600px; border-radius: 0 10px 10px 0; padding:0;}
 .container{background:#fff; border-radius: 10px; box-shadow:15px 20px 0px rgba(0,0,0,0.1);}
