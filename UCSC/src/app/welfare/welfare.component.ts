@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./welfare.component.css']
 })
 export class WelfareComponent implements OnInit {
-
+  
+  public fileAddView:boolean = false;
   constructor() { }
 
   ngOnInit() {
   }
-
+  fileaddYes(){
+    console.log("addfile");
+    this.fileAddView=true;
+  }
+  fileaddNo(){
+    this.fileAddView=false;
+  }
 }
