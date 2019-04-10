@@ -86,7 +86,7 @@
       </p>
       <div class="collapse" id="collapseExample2">
         <div class="form-group col-md-12">
-          <label for="formGroupExampleInput2">Reason for applying for a Scholarship: </label>
+          <label for="formGroupExampleInput2"><span class="glyphicon glyphicon-record" aria-hidden="true"></span>Reason for applying for a Scholarship: </label>
           <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
         </div>
       </div>
@@ -104,7 +104,7 @@
       </p>
       <div class="collapse" id="collapseExample3">
         <div class="form-group col-md-12">
-          <label for="formGroupExampleInput2">If you are now receiving a scholarship or any other funds from the
+          <label for="formGroupExampleInput2"><span class="glyphicon glyphicon-record" aria-hidden="true"></span>If you are now receiving a scholarship or any other funds from the
             government or local
             Government authorities or other institution or association, state the amount received and other details:
           </label>
@@ -127,19 +127,20 @@
         <div class="form-group col-md-12">
           <div class="row">
             <div class="col-md-5">
-              <label for="formGroupExampleInput2">Is your family receiving “Samurdhi” allowance :
+              <label for="formGroupExampleInput2"><span class="glyphicon glyphicon-record" aria-hidden="true"></span>Is your family receiving “Samurdhi” allowance :
               </label>
             </div>
             <div class="col-md-7">
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"
+                <input class="form-check-input custom-control-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"
                   (click)=" fileaddYes()">
                 <label class="form-check-label" for="exampleRadios1">
                   <i>Yes</i>
                 </label>
+               
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2"
+                <input class="form-check-input custom-control-input" type="radio"  name="exampleRadios" id="exampleRadios2" value="option2"
                   (click)=" fileaddNo()">
                 <label class="form-check-label" for="exampleRadios2">
                   <i>No</i>
@@ -168,13 +169,107 @@
       </p>
       <div class="collapse" id="collapseExample">
         <div class="form-group col-md-12">
-          <label for="formGroupExampleInput2">Family details:
-          </label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+          <label for="formGroupExampleInput2"><span class="glyphicon glyphicon-record" aria-hidden="true"></span>State details of your brothers and sisters:</label>
+          <br>
+          (Please attach Letter of certification from Principal of the School or Registrar of the University / Institute)
+          <br>
+          <!--st1-->
+          <label> Student 1:</label>
+          <div class="row">
+              <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Name"></div>
+              <div class="col-md-1"><input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Age"></div>
+              <div class="col-md-2">
+                <select id="inputState" class="form-control">
+                  <option selected>Civil Status</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                </select>
+              </div>
+              <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2" placeholder="School/ University/ Employment"></div>
+              <div class="col-md-3"><input class="custom-file-input" type="file" name="fileToUpload" id="fileToUpload"></div>
+          </div>
+           <!--st2-->
+           <label> Student 2:</label>
+           <div class="row">
+               <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Name"></div>
+               <div class="col-md-1"><input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Age"></div>
+               <div class="col-md-2">
+                 <select id="inputState" class="form-control">
+                   <option selected>Civil Status</option>
+                   <option>Male</option>
+                   <option>Female</option>
+                 </select>
+               </div>
+               <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2" placeholder="School/ University/ Employment"></div>
+               <div class="col-md-3"><input class="custom-file-input" type="file" name="fileToUpload" id="fileToUpload"></div>
+           </div>
+            <!--st3-->
+          <label> Student 3:</label>
+          <div class="row">
+              <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Name"></div>
+              <div class="col-md-1"><input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Age"></div>
+              <div class="col-md-2">
+                <select id="inputState" class="form-control">
+                  <option selected>Civil Status</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                </select>
+              </div>
+              <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2" placeholder="School/ University/ Employment"></div>
+              <div class="col-md-3"><input class="custom-file-input" type="file" name="fileToUpload" id="fileToUpload"></div>
+          </div>
+           <!--st4-->
+           <label> Student 4:</label>
+           <div class="row">
+               <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Name"></div>
+               <div class="col-md-1"><input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Age"></div>
+               <div class="col-md-2">
+                 <select id="inputState" class="form-control">
+                   <option selected>Civil Status</option>
+                   <option>Male</option>
+                   <option>Female</option>
+                 </select>
+               </div>
+               <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2" placeholder="School/ University/ Employment"></div>
+               <div class="col-md-3"><input class="custom-file-input" type="file" name="fileToUpload" id="fileToUpload"></div>
+           </div>
+            <!--st5-->
+          <label> Student 5:</label>
+          <div class="row">
+              <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Name"></div>
+              <div class="col-md-1"><input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Age"></div>
+              <div class="col-md-2">
+                <select id="inputState" class="form-control">
+                  <option selected>Civil Status</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                </select>
+              </div>
+              <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2" placeholder="School/ University/ Employment"></div>
+              <div class="col-md-3"><input class="custom-file-input" type="file" name="fileToUpload" id="fileToUpload"></div>
+          </div>
         </div>
       </div>
     </div>
-
+    <!--6 th part-->
+    <div class="container well ">
+        <p>
+          <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample6"
+            aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+          </button>
+          <span >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Section 6</span>
+        </p>
+        <div class="collapse" id="collapseExample6">
+          <div class="form-group col-md-12">
+            <label for="formGroupExampleInput2">Family details:
+            </label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+          </div>
+        </div>
+      </div>
   </form>
 
 </div>
