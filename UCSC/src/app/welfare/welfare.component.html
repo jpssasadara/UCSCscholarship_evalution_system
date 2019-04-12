@@ -623,9 +623,11 @@
             of parents/Guardians: (Applicants presenting guardians should fill cage 12 in addition to this.)
           </label>
           <br>
-          (a) Details of Father:
+          <div class="col-md-12 well">
+            (a) Details of Father:
+          </div>
           <br>
-          <div class="form-group col-md-12">
+          <div class="form-group col-md-8">
             <label>Full Name : </label>
             <input type="text" class="form-control" placeholder="Full Name">
           </div>
@@ -667,19 +669,177 @@
 
           <div class="form-group col-md-6">
             <label for="formGroupExampleInput2"> Father’s Employment: </label>
-            <input type="text" class="form-control" id="formGroupExampleInput2"
-              placeholder="Father’s Employment">
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Father’s Employment">
           </div>
           <div class="form-group col-md-6">
             <label for="formGroupExampleInput2"> Address of present / previous employment: </label>
             <input type="text" class="form-control" id="formGroupExampleInput2"
               placeholder="Address of present / previous employment">
           </div>
+          <div class="form-group col-md-8">
+            <label for="formGroupExampleInput2">State the full income derived from employment / Pension Rs: </label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="full income">
+            (Full annual income as at 31st December 2018, should be declared.)
+            (If employed, a letter stating the annual salary inclusive of all allowances certified by the Head of the
+            workplace, should be annexed. If retired, a letter stating the annual pension inclusive of all allowances,
+            or the full annual widows’ and orphans’ pension certified by Director of Pensions or the Government Agent
+            should be annexed)
+          </div>
+          <div class="form-group col-md-8">
+            <label for="formGroupExampleInput2"> Annual income derived from houses & properties: </label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Rs -:">
+          </div>
+          <div class="form-group col-md-8">
+            <label for="formGroupExampleInput2"> Annual income derived from all other sources: </label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Rs -:">
+          </div>
+          <div class="form-group col-md-8">
+            <label for="formGroupExampleInput2"> Father’s total annual income: </label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Rs -:">
+          </div>
+
+          <br>
+          <div class="col-md-12 well">
+            (b) Details of Mother:
+          </div>
+
+          <br>
+          <div class="form-group col-md-8">
+            <label>Full Name : </label>
+            <input type="text" class="form-control" placeholder="Full Name">
+          </div>
+          <div class="form-group col-md-12">
+            <div class="row">
+              <div class="col-md-5">
+                <label for="formGroupExampleInput2"> Whether living or deceased :
+                </label>
+              </div>
+              <div class="col-md-7">
+                <div class="form-check">
+                  <input class="form-check-input custom-control-input" type="radio" name="exampleRadios"
+                    id="exampleRadios1" value="option1" (click)=" fileaddYes()">
+                  <label class="form-check-label" for="exampleRadios1">
+                    <i>Yes</i>
+                  </label>
+
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input custom-control-input" type="radio" name="exampleRadios"
+                    id="exampleRadios2" value="option2" (click)=" fileaddNo()">
+                  <label class="form-check-label" for="exampleRadios2">
+                    <i>No</i>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="fileAddView">
+              <label>living, Age </label> <br>
+              <div class="form-group col-md-3">
+                <input type="text" class="form-control" placeholder="Years">
+              </div>
+              <div class="form-group col-md-3">
+                <input type="text" class="form-control" placeholder="Months">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="formGroupExampleInput2"> Mother’s Employment: </label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Father’s Employment">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="formGroupExampleInput2"> Address of present / previous employment: </label>
+            <input type="text" class="form-control" id="formGroupExampleInput2"
+              placeholder="Address of present / previous employment">
+          </div>
+          <div class="form-group col-md-8">
+            <label for="formGroupExampleInput2">State the full income derived from employment / Pension Rs: </label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="full income">
+            (Full annual income as at 31st December 2018, should be declared.)
+            (If employed, a letter stating the annual salary inclusive of all allowances certified by the Head of the
+            workplace, should be annexed. If retired, a letter stating the annual pension inclusive of all allowances,
+            or the full annual widows’ and orphans’ pension certified by Director of Pensions or the Government Agent
+            should be annexed)
+          </div>
+          <div class="form-group col-md-8">
+            <label for="formGroupExampleInput2"> Annual income derived from houses & properties: </label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Rs -:">
+          </div>
+          <div class="form-group col-md-8">
+            <label for="formGroupExampleInput2"> Annual income derived from all other sources: </label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Rs -:">
+          </div>
+          <div class="form-group col-md-8">
+            <label for="formGroupExampleInput2"> Mothers’s total annual income: </label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Rs -:">
+          </div>
+
+          <div class="col-md-12 well">
+            <div class="form-group col-md-8">
+              <label for="formGroupExampleInput2"><span class="glyphicon glyphicon-record" aria-hidden="true"></span>
+                Father’s and mother’s total annual income: </label>
+              (write total full annual income of father and mother in words)
+              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="in words">
+            </div>
+          </div>
 
         </div>
       </div>
     </div>
 
+    <!-- 12 rd part -->
+    <div class="container well ">
+      <p>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample12"
+          aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-fullscreen"
+            aria-hidden="true"></span>
+        </button>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Section 12</span>
+      </p>
+      <div class="collapse" id="collapseExample12">
+        <div class="form-group col-md-12">
+          <br>
+          <div class="col-md-12 well">
+            ( c ) Details of Guardian : <br>
+            ( This section should be filled by applicants who do not have parents or applicants who are not in the
+            charge of their parents or by other applicants who present guardians. )
+            <br>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="formGroupExampleInput2">Name of Guardian: </label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Name of Guardian">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="formGroupExampleInput2">Age: </label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Age">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="formGroupExampleInput2"> Permanent address: </label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Permanent address">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="formGroupExampleInput2">If employed, post held: </label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="If employed, post held">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="formGroupExampleInput2">Annual salary: (annex details of salary.): </label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Rs -:">
+          </div>
+          <div class="form-group col-md-8">
+            <label for="formGroupExampleInput2"> Annual income derived from houses & properties/ property of temple:
+            </label>
+            (A certificate issued by the Gramaseva Niladhari/Assistant Government Agent should be annexed in this
+            connection.)
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Rs -:">
+          </div>
+
+        </div>
+      </div>
+    </div>
 
   </form>
 
