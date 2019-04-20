@@ -6,6 +6,7 @@ import{ LoginComponent} from './login/login.component';
 import{ WelfareComponent} from './welfare/welfare.component';
 import{ IfsComponent} from './ifs/ifs.component';
 import{ ShoreaComponent} from './shorea/shorea.component';
+import {  FormsModule} from '@angular/forms';
 
 const routes: Routes = [
  { path: '', redirectTo: '/homepage', pathMatch: 'full'},
@@ -18,7 +19,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes),
+    FormsModule
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
