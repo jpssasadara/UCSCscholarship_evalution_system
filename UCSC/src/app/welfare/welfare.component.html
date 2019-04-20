@@ -1,6 +1,7 @@
 <div class="home-block">
 
-  <form>
+  <form  (ngSubmit) = "onSubmit()">
+    {{userModel | json}}
     <div class="container  ">
       <div class="form-group col-md-12">
         <label for="formGroupExampleInput2">
@@ -25,7 +26,7 @@
       <div class="collapse" id="collapseExample1">
         <div class="form-group col-md-6">
           <label for="formGroupExampleInput">Course for which applicant has been selected: </label>
-          <select id="inputState" class="form-control">
+          <select id="degree" class="form-control" name="degree" [(ngModel)]="userModel.degree">
             <option selected>Degree...</option>
             <option>BSc(Hons)in Software Engineering</option>
             <option>BSc(Hons)in Computer Science</option>
@@ -36,39 +37,39 @@
         </div>
         <div class="form-group col-md-6">
           <label for="formGroupExampleInput2">Full Name: </label>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Mr./Miss./Mrs./Rev">
+          <input type="text" id="fullName" class="form-control"  name="fullName" id="formGroupExampleInput2" placeholder="Mr./Miss./Mrs./Rev" [(ngModel)]="userModel.fullName">
         </div>
         <div class="form-group col-md-12">
           <label for="formGroupExampleInput2">Permanent Address: </label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <textarea  class="form-control" id="address" name="address" rows="3" [(ngModel)]="userModel.address"></textarea>
         </div>
         <div class="form-group col-md-6">
           <label for="formGroupExampleInput2">Registration Number: </label>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Registration Number">
+          <input type="text" class="form-control" name="regNumber" id="regNumber" placeholder="Registration Number" [(ngModel)]="userModel.regNumber">
         </div>
         <div class="form-group col-md-6">
           <label for="formGroupExampleInput2">Contact Numbers: </label>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Contact Numbers">
+          <input type="text" class="form-control" name ="contactNumber" id="contactNumber" placeholder="Contact Numbers" [(ngModel)]="userModel.contactNumber">
         </div>
         <div class="form-group col-md-6">
           <label for="formGroupExampleInput2"> Email Address: </label>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Email Address">
+          <input type="text" class="form-control" name="email" id="email" placeholder="Email Address" [(ngModel)]="userModel.email">
         </div>
         <div class="form-group col-md-6">
           <label for="formGroupExampleInput2"> Division of the Gramaseva Niladhari: </label>
-          <input type="text" class="form-control" id="formGroupExampleInput2"
-            placeholder="Division of the Gramaseva Niladhari:">
+          <input type="text" class="form-control" name ="divisionGramasevaNiladhari" id="divisionGramasevaNiladhari"
+            placeholder="Division of the Gramaseva Niladhari:" [(ngModel)]="userModel.divisionGramasevaNiladhari">
         </div>
         <div class="form-group col-md-6">
           <label for="formGroupExampleInput2"> Write down the distance (to the closest kilometer) from your
             Permanent residence (i.e. your home) to the University of Colombo.
             (1 mile = 1.6 k.m.)
           </label>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Ex-: 5km">
+          <input type="text" class="form-control" name= "distance" id="distance" placeholder="Ex-: 5km" [(ngModel)]="userModel.distance">
         </div>
         <div class="form-group col-md-6">
           <label for="formGroupExampleInput2"> District: </label>
-          <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="District">
+          <input type="text" class="form-control" name ="district" id="district" placeholder="District" [(ngModel)]="userModel.district">
         </div>
 
       </div>
@@ -840,7 +841,7 @@
         </div>
       </div>
     </div>
-
+<button type="submit">submit</button>
   </form>
 
 </div>

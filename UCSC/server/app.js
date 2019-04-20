@@ -3,7 +3,7 @@ const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-
+const scholarshipRoutes = require('./routes/scholarship');
 
 
 
@@ -31,7 +31,7 @@ app.use((req,res,next)=>{
 });
 
 
-
+app.use('/scholarship',scholarshipRoutes);
 // for handling invalied URLs------------>>FROM
 
 app.use((req,res,next)=>{
@@ -48,5 +48,7 @@ app.use((error,req,res,next)=>{
     });
 });
 //------------------------------------------ TO
+console.log("Hi Server is running ");
+
 
 module.exports = app; 

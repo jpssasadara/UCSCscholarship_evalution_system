@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { RegScho } from 'src/app/RegScho';
+import { EnrollmentService } from '../enrollment.service';
+
 
 @Component({
   selector: 'app-welfare',
@@ -8,7 +11,9 @@ import { Component, OnInit } from '@angular/core';
 export class WelfareComponent implements OnInit {
   
   public fileAddView:boolean = false;
-  constructor() { }
+  errorMsg='';
+  userModel = new RegScho('Degree...','',"",'','','','','','');
+  constructor(private _enrollmentService: EnrollmentService) { }
 
   ngOnInit() {
   }
@@ -18,5 +23,12 @@ export class WelfareComponent implements OnInit {
   }
   fileaddNo(){
     this.fileAddView=false;
+  }
+  onSubmit(){
+    this._enrollmentService.enroll(this.userModel)
+      .subscribe(
+        response => console.log("Success !", response),
+        error => this.errorMsg = error.statusText
+      )
   }
 }
