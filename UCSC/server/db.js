@@ -7,4 +7,4 @@ mongoose.connect('mongodb://localhost:27017/Scholarships',(err)=>{
     console.log('Error in DB connection : '+JSON.stringify(err,undefined,2));
 });
 
-module.exports = mongoose;
+module.exports = mongoose
