@@ -2,6 +2,7 @@
 
   <form  (ngSubmit) = "onSubmit()">
     {{userModel | json}}
+    
     <div class="container  ">
       <div class="form-group col-md-12">
         <label for="formGroupExampleInput2">
@@ -24,6 +25,18 @@
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Section 1</span>
       </p>
       <div class="collapse" id="collapseExample1">
+          <div class="form-group col-md-7">
+              <label for="formGroupExampleInput">Course for which applicant has been selected: </label>
+              <select id="batch" class="form-control" name="batch" [(ngModel)]="userModel.batch">
+                <option selected>Batch Number</option>
+                <option>2013/2014</option>
+                <option>2014/2015</option>
+                <option>2015/2016</option>
+                <option>2016/2017</option>
+                <option>2017/2018</option>
+              </select>
+            </div>
+            
         <div class="form-group col-md-6">
           <label for="formGroupExampleInput">Course for which applicant has been selected: </label>
           <select id="degree" class="form-control" name="degree" [(ngModel)]="userModel.degree">
@@ -91,7 +104,7 @@
         <div class="form-group col-md-12">
           <label for="formGroupExampleInput2"><span class="glyphicon glyphicon-record" aria-hidden="true"></span>Reason
             for applying for a Scholarship: </label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+          <textarea class="form-control" name = "ReasonForApplyingScholarship" id="ReasonForApplyingScholarship" rows="6" [(ngModel)]="userModel.ReasonForApplyingScholarship"></textarea>
         </div>
       </div>
     </div>
@@ -114,7 +127,7 @@
             government or local
             Government authorities or other institution or association, state the amount received and other details:
           </label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"></textarea>
+          <textarea class="form-control" id="OtherScholarship" name="OtherScholarship" rows="6" [(ngModel)]="userModel.OtherScholarship"></textarea>
         </div>
       </div>
     </div>
@@ -140,16 +153,16 @@
             </div>
             <div class="col-md-7">
               <div class="form-check">
-                <input class="form-check-input custom-control-input" type="radio" name="exampleRadios"
-                  id="exampleRadios1" value="option1" (click)=" fileaddYes()">
+                <input class="form-check-input custom-control-input" type="radio" name="Samurdhi"
+                  id="exampleRadios1" value="Yes" (click)=" fileaddYes()" [(ngModel)]="userModel.Samurdhi">
                 <label class="form-check-label" for="exampleRadios1">
                   <i>Yes</i>
                 </label>
 
               </div>
               <div class="form-check">
-                <input class="form-check-input custom-control-input" type="radio" name="exampleRadios"
-                  id="exampleRadios2" value="option2" (click)=" fileaddNo()">
+                <input class="form-check-input custom-control-input" type="radio" name="Samurdhi"
+                  id="exampleRadios2" value="No" (click)=" fileaddNo()" [(ngModel)]="userModel.Samurdhi">
                 <label class="form-check-label" for="exampleRadios2">
                   <i>No</i>
                 </label>
@@ -193,99 +206,109 @@
             <div class="col-md-3"><label>Upload File</label></div>
           </div>
           <label> ( 1 )</label>
-          <div class="row">
+          <div class="row" >
             <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2"
-                placeholder="Name"></div>
-            <div class="col-md-1"><input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Age">
+                placeholder="Name" name="namest1" [(ngModel)]="userModel.brother1Name"></div>
+                
+            <div class="col-md-1">
+              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Age" name="brother1Age" [(ngModel)]="userModel.brother1Age">
             </div>
             <div class="col-md-2">
-              <select id="inputState" class="form-control">
+              <select id="inputState" class="form-control" name="brother1CivilStatus" [(ngModel)]="userModel.brother1CivilStatus">
                 <option selected>Civil Status</option>
                 <option>Male</option>
                 <option>Female</option>
               </select>
             </div>
             <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2"
-                placeholder="School/ University/ Employment"></div>
-            <div class="col-md-3"><input class="custom-file-input" type="file" name="fileToUpload" id="fileToUpload">
+                placeholder="School/ University/ Employment" name="brother1University" [(ngModel)]="userModel.brother1University"></div>
+            <div class="col-md-3"><input class="custom-file-input" type="file" name="fileToUpload" id="fileToUpload" >
             </div>
           </div>
           <!--st2-->
           <label> ( 2 )</label>
-          <div class="row">
-            <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2"
-                placeholder="Name"></div>
-            <div class="col-md-1"><input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Age">
+          <div class="row" >
+              <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2"
+                  placeholder="Name" name="namest2" [(ngModel)]="userModel.brother2Name"></div>
+                  
+              <div class="col-md-1">
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Age" name="brother2Age" [(ngModel)]="userModel.brother2Age">
+              </div>
+              <div class="col-md-2">
+                <select id="inputState" class="form-control" name="brother2CivilStatus" [(ngModel)]="userModel.brother2CivilStatus">
+                  <option selected>Civil Status</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                </select>
+              </div>
+              <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2"
+                  placeholder="School/ University/ Employment" name="brother2University" [(ngModel)]="userModel.brother2University"></div>
+              <div class="col-md-3"><input class="custom-file-input" type="file" name="fileToUpload" id="fileToUpload" >
+              </div>
             </div>
-            <div class="col-md-2">
-              <select id="inputState" class="form-control">
-                <option selected>Civil Status</option>
-                <option>Male</option>
-                <option>Female</option>
-              </select>
-            </div>
-            <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2"
-                placeholder="School/ University/ Employment"></div>
-            <div class="col-md-3"><input class="custom-file-input" type="file" name="fileToUpload" id="fileToUpload">
-            </div>
-          </div>
           <!--st3-->
           <label>( 3 )</label>
-          <div class="row">
-            <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2"
-                placeholder="Name"></div>
-            <div class="col-md-1"><input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Age">
+          <div class="row" >
+              <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2"
+                  placeholder="Name" name="namest3" [(ngModel)]="userModel.brother3Name"></div>
+                  
+              <div class="col-md-1">
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Age" name="brother3Age" [(ngModel)]="userModel.brother3Age">
+              </div>
+              <div class="col-md-2">
+                <select id="inputState" class="form-control" name="brother3CivilStatus" [(ngModel)]="userModel.brother3CivilStatus">
+                  <option selected>Civil Status</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                </select>
+              </div>
+              <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2"
+                  placeholder="School/ University/ Employment" name="brother3University" [(ngModel)]="userModel.brother3University"></div>
+              <div class="col-md-3"><input class="custom-file-input" type="file" name="fileToUpload" id="fileToUpload" >
+              </div>
             </div>
-            <div class="col-md-2">
-              <select id="inputState" class="form-control">
-                <option selected>Civil Status</option>
-                <option>Male</option>
-                <option>Female</option>
-              </select>
-            </div>
-            <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2"
-                placeholder="School/ University/ Employment"></div>
-            <div class="col-md-3"><input class="custom-file-input" type="file" name="fileToUpload" id="fileToUpload">
-            </div>
-          </div>
           <!--st4-->
           <label> ( 4 )</label>
-          <div class="row">
-            <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2"
-                placeholder="Name"></div>
-            <div class="col-md-1"><input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Age">
+          <div class="row" >
+              <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2"
+                  placeholder="Name" name="namest4" [(ngModel)]="userModel.brother4Name"></div>
+                  
+              <div class="col-md-1">
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Age" name="brother4Age" [(ngModel)]="userModel.brother4Age">
+              </div>
+              <div class="col-md-2">
+                <select id="inputState" class="form-control" name="brother4CivilStatus" [(ngModel)]="userModel.brother4CivilStatus">
+                  <option selected>Civil Status</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                </select>
+              </div>
+              <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2"
+                  placeholder="School/ University/ Employment" name="brother4University" [(ngModel)]="userModel.brother4University"></div>
+              <div class="col-md-3"><input class="custom-file-input" type="file" name="fileToUpload" id="fileToUpload" >
+              </div>
             </div>
-            <div class="col-md-2">
-              <select id="inputState" class="form-control">
-                <option selected>Civil Status</option>
-                <option>Male</option>
-                <option>Female</option>
-              </select>
-            </div>
-            <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2"
-                placeholder="School/ University/ Employment"></div>
-            <div class="col-md-3"><input class="custom-file-input" type="file" name="fileToUpload" id="fileToUpload">
-            </div>
-          </div>
           <!--st5-->
           <label> ( 5 )</label>
-          <div class="row">
-            <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2"
-                placeholder="Name"></div>
-            <div class="col-md-1"><input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Age">
+          <div class="row" >
+              <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2"
+                  placeholder="Name" name="namest5" [(ngModel)]="userModel.brother5Name"></div>
+                  
+              <div class="col-md-1">
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Age" name="brother5Age" [(ngModel)]="userModel.brother5Age">
+              </div>
+              <div class="col-md-2">
+                <select id="inputState" class="form-control" name="brother5CivilStatus" [(ngModel)]="userModel.brother5CivilStatus">
+                  <option selected>Civil Status</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                </select>
+              </div>
+              <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2"
+                  placeholder="School/ University/ Employment" name="brother5University" [(ngModel)]="userModel.brother5University"></div>
+              <div class="col-md-3"><input class="custom-file-input" type="file" name="fileToUpload" id="fileToUpload" >
+              </div>
             </div>
-            <div class="col-md-2">
-              <select id="inputState" class="form-control">
-                <option selected>Civil Status</option>
-                <option>Male</option>
-                <option>Female</option>
-              </select>
-            </div>
-            <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2"
-                placeholder="School/ University/ Employment"></div>
-            <div class="col-md-3"><input class="custom-file-input" type="file" name="fileToUpload" id="fileToUpload">
-            </div>
-          </div>
         </div>
       </div>
     </div>
