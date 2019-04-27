@@ -12,7 +12,8 @@ export class WelfareComponent implements OnInit {
   
   public fileAddView:boolean = false;
   errorMsg='';
-  userModel = new RegScho('batch','Degree...','',"",'','','','','','','','','','','','','','','','','','','','','','','','','','','','','');
+  userModel = new RegScho('batch','Degree...','',"",'','','','','','','','','','','','','','','','','','','','','','','','','','','','',''
+  ,'','','','','','','','','','','','','','','','','','','','','','','','');
   constructor(private _enrollmentService: EnrollmentService) { }
 
   ngOnInit() {
