@@ -32,7 +32,31 @@ export class RegScho {
         public brother5Name:string,
         public brother5Age:string,
         public brother5CivilStatus:string,
-        public brother5University:string
+        public brother5University:string,
+        public Owner1Name:string,
+        public Owner1Relationship:string,
+        public Owner1Location:string,
+        public Owner1Cultivation:string,
+        public Owner1Extent:string,
+        public Owner1Income:string,
+        public Owner2Name:string,
+        public Owner2Relationship:string,
+        public Owner2Location:string,
+        public Owner2Cultivation:string,
+        public Owner2Extent:string,
+        public Owner2Income:string,
+        public Owner3Name:string,
+        public Owner3Relationship:string,
+        public Owner3Location:string,
+        public Owner3Cultivation:string,
+        public Owner3Extent:string,
+        public Owner3Income:string,
+        public Owner4Name:string,
+        public Owner4Relationship:string,
+        public Owner4Location:string,
+        public Owner4Cultivation:string,
+        public Owner4Extent:string,
+        public Owner4Income:string
     ) { }
 }
 
