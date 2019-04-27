@@ -20,6 +20,16 @@ export class IfsService {
     return this.http.post(this.baseURL,form);
   }
 
+/*
+ _url = 'http://localhost:3000/scholarship';
+  constructor(private _http: HttpClient) { }
+  enroll(user: RegScho){
+    return this._http.post<any>(this._url, user)
+    .pipe(catchError(this.errorHandler))
+    
+  }
+*/
+
   getForm(){
     return this.http.get(this.baseURL);
   }

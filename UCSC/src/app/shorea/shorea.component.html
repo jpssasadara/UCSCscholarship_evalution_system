@@ -1,3 +1,47 @@
-<p>
-  shorea works!
-</p>
+<h3>Linear Horizontal Stepper Demo using a single form</h3>
+<form [formGroup]="formGroup" #ifsForm="ngForm" (ngSubmit)="onSubmit(ifsForm)" >
+  <mat-horizontal-stepper #linearHorizontalStepper="matHorizontalStepper" formArrayName="formArray" [linear]="false">
+    <mat-step formGroupName="0" [stepControl]="formArray?.get([0])">
+      <ng-template matStepLabel>Fill out your name</ng-template>
+      <mat-form-field>
+        <mat-label>First name</mat-label>
+        <input matInput formControlName="firstNameFormCtrl" [(ngModel)]="ifsService.selectedForm.name" required>
+        <mat-error>This field is required</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Last name</mat-label>
+        <input matInput formControlName="lastNameFormCtrl" [(ngModel)]="ifsService.selectedForm.address" required>
+        <mat-error>This field is required</mat-error>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+
+    <mat-step formGroupName="1" [stepControl]="formArray?.get([1])">
+      <ng-template matStepLabel>
+        <div>Fill out your email address</div>
+      </ng-template>
+      <mat-form-field>
+        <mat-label>Email address</mat-label>
+        <input matInput formControlName="emailFormCtrl">
+        <mat-error>The input is invalid.</mat-error>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+
+    <mat-step>
+      <ng-template matStepLabel>Confirm your information</ng-template>
+      Everything seems correct.
+      <div>
+        <button mat-button>Done</button>
+        <button type="button" mat-button (click)="linearHorizontalStepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+</form>
+

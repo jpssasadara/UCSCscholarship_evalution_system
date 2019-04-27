@@ -1,8 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { IfsService } from '../shared/ifs.service';
 import { from } from 'rxjs';
 import { NgForm } from '@angular/forms';
 import { Ifs } from '../shared/ifs.model';
+
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+
+import { FormDataService }            from '../data/form-data.service';
+
 @Component({
   selector: 'app-ifs',
   templateUrl: './ifs.component.html',
@@ -11,10 +16,16 @@ import { Ifs } from '../shared/ifs.model';
 })
 export class IfsComponent implements OnInit {
 
-  constructor(private ifsService:IfsService) { }
+  title = 'Multi-Step Wizard';
+  @Input() formData;
+ 
+
+  constructor(private ifsService:IfsService,private formDataService: FormDataService) { }
 
   ngOnInit() {
     this.resetForm();
+    this.formData = this.formDataService.getFormData();
+        console.log(this.title + ' loaded!');
   }
 
   resetForm(form?:NgForm){
@@ -23,7 +34,14 @@ export class IfsComponent implements OnInit {
     this.ifsService.selectedForm = {
       _id:"",
       name:"",
-      address:""
+      address:"",
+      registration:"",
+      course:"",
+      distance:0,
+      telephone:"",
+      email:"",
+      scholar:false,
+      samurdhi:false
     }
   }
 

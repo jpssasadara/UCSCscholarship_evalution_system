@@ -1,0 +1,86 @@
+<section style="background:#efefe9;">
+  <div class="container">
+      <div class="board">
+<div class="board-inner" id="status-buttons">
+  <ul class="nav nav-tabs" id="myTab">
+      <div class="liner"></div>
+                  
+      <!-- circular user icon -->
+      <li>
+          <a routerLink="ifs/personal" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" data-toggle="tab" title="personal">
+              <span class="round-tabs one">
+                  <i class="glyphicon glyphicon-user"></i>
+              </span>
+          </a>
+      </li>
+
+      <!-- circular tasks icon -->
+       <li>
+          <a routerLink="ifs/work" routerLinkActive="active" data-toggle="tab" title="work">
+              <span class="round-tabs two">
+                  <i class="glyphicon glyphicon-tasks"></i>
+              </span> 
+          </a>
+      </li>
+
+      <!-- circular home icon -->
+      <li>
+          <a routerLink="ifs/address" routerLinkActive="active" data-toggle="tab" title="address">
+              <span class="round-tabs three">
+                  <i class="glyphicon glyphicon-home"></i>
+              </span>
+          </a>
+      </li>
+
+      <!-- circular ok icon -->
+      <li>
+          <a routerLink="ifs/result" routerLinkActive="active" data-toggle="tab" title="completed">
+              <span class="round-tabs four">
+                  <i class="glyphicon glyphicon-ok"></i>
+              </span>
+          </a>
+      </li>
+              
+  </ul>
+  <div class="clearfix"></div>
+</div>
+
+<form #workForm="ngForm" class="editForm" novalidate>
+  <div class="form-horizontal">
+      <div class="tab-pane fade in active">
+          <h4 class="head text-center">{{title}}</h4>
+          <br/>
+          <div class='row'>
+              <div class='col-xs-offset-4 col-xs-10 col-sm-offset-5 col-sm-4'>
+                  <div class="form-group">
+                      <div class="radio">
+                          <label>
+                              <input type="radio" #work="ngModel" required name="work" [(ngModel)]="workType" value="Design">
+                              Design
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" #work="ngModel" required name="work" [(ngModel)]="workType" value="Code">
+                              Code
+                          </label>
+                      </div>
+                      <div class="radio">
+                          <label>
+                              <input type="radio" #work="ngModel" required name="work" [(ngModel)]="workType" value="Deploy">
+                              Deploy
+                          </label>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="form-group text-center space-20">
+              <button class="btn btn-outline-rounded btn-default" (click)="goToPrevious(workForm)"> <span style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></span> Previous</button>
+              <button class="btn btn-outline-rounded btn-info" [disabled]="!workForm.valid" (click)="goToNext(workForm)"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></button>
+          </div>
+      </div>
+  </div>
+</form>
+      </div>
+  </div>
+</section>

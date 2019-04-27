@@ -26,7 +26,14 @@ router.put('/:id',(req,res)=>{
 
     var schol = {
         name : req.body.name,
-        address : req.body.address
+        registration : req.body.registration,
+        course : req.body.course,
+        address : req.body.address,
+        distance : req.body.distance,
+        telephone : req.body.telephone,
+        email : req.body.email,
+        sholar : req.body.sholar,
+        samurdhi : req.body.samurdhi
     };
 
     Ifs.findByIdAndUpdate(req.params.id,{$set:emp},{new:true},(err,doc)=>{
@@ -48,7 +55,14 @@ router.delete('/:id',(req,res)=>{
 router.post('/',(req,res)=>{
     var shol = new Ifs({
         name : req.body.name,
+        registration : req.body.registration,
+        course : req.body.course,
         address : req.body.address,
+        distance : req.body.distance,
+        telephone : req.body.telephone,
+        email : req.body.email,
+        sholar : req.body.sholar,
+        samurdhi : req.body.samurdhi
     });
     shol.save((err,doc)=>{
         if(!err) { res.send(doc);}

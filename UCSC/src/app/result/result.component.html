@@ -1,0 +1,109 @@
+<section style="background:#efefe9;">
+  <div class="container">
+      <div class="board">
+<div class="board-inner" id="status-buttons">
+  <ul class="nav nav-tabs" id="myTab">
+      <div class="liner"></div>
+                  
+      <!-- circular user icon -->
+      <li>
+          <a routerLink="ifs/personal" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" data-toggle="tab" title="personal">
+              <span class="round-tabs one">
+                  <i class="glyphicon glyphicon-user"></i>
+              </span>
+          </a>
+      </li>
+
+      <!-- circular tasks icon -->
+       <li>
+          <a routerLink="ifs/work" routerLinkActive="active" data-toggle="tab" title="work">
+              <span class="round-tabs two">
+                  <i class="glyphicon glyphicon-tasks"></i>
+              </span> 
+          </a>
+      </li>
+
+      <!-- circular home icon -->
+      <li>
+          <a routerLink="ifs/address" routerLinkActive="active" data-toggle="tab" title="address">
+              <span class="round-tabs three">
+                  <i class="glyphicon glyphicon-home"></i>
+              </span>
+          </a>
+      </li>
+
+      <!-- circular ok icon -->
+      <li>
+          <a routerLink="ifs/result" routerLinkActive="active" data-toggle="tab" title="completed">
+              <span class="round-tabs four">
+                  <i class="glyphicon glyphicon-ok"></i>
+              </span>
+          </a>
+      </li>
+              
+  </ul>
+  <div class="clearfix"></div>
+</div>
+
+<div class="tab-pane fade in active">
+  <h3 class="head text-center">{{title}}</h3>
+  <h4 class="text-center">
+      Made with <i class="fa fa-heart heart" style="color:#f48260;"></i> by <a href="https://www.cc28tech.com" target="_blank">Cathy Wun</a>. Check out the tutorials <a href="https://www.cc28tech.com/angular-multi-step-part-1" target="_blank">here.</a>
+  </h4>
+  <p class="narrow text-center">
+      Here is a copy of the information you have entered:
+  </p>
+  <div class='row'>
+      <div class='col-xs-offset-1 col-xs-10 col-sm-offset-3 col-sm-8 col-md-offset-4 col-md-8'>
+          <div class="row">
+              <div class='col-xs-3 col-sm-2'>
+                  <div class="form-group">
+                      <label class="control-label" for="name">Name: </label> 
+                  </div>
+              </div>
+              <div class='col-xs-9 col-sm-10'>
+                  {{formData.firstName + ' ' + formData.lastName}}
+              </div>
+          </div>
+          <div class="row">
+              <div class='col-xs-3 col-sm-2'>
+                  <div class="form-group">
+                      <label class="control-label" for="email">Email: </label> 
+                  </div>
+              </div>
+              <div class='col-xs-9 col-sm-10'>
+                  {{formData.email}}
+              </div>
+         </div>     
+          <div class="row">
+              <div class='col-xs-3 col-sm-2'>
+                  <div class="form-group">
+                      <label class="control-label" for="work">Work: </label> 
+                  </div>
+              </div>
+              <div class='col-xs-9 col-sm-10'>
+                  {{formData.work}}
+              </div>
+         </div>     
+         <div class="row">
+              <div class='col-xs-3 col-sm-2'>
+                  <div class="form-group">
+                      <label class="control-label" for="address">Address: </label>
+                  </div>
+              </div>
+              <div class='col-xs-9 col-sm-10'>
+                  {{formData.street}}
+                  <br/>
+                  {{formData.city + ' ' + formData.state + ' ' + formData.zip}}
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="text-center">
+      <button class="btn btn-success btn-outline-rounded" [disabled]="!isFormValid" (click)="submit()"> Submit <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></button>
+  </div>
+</div>
+</div>
+  </div>
+  
+</section>

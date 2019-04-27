@@ -11,7 +11,14 @@ import { ShoreaComponent } from './shorea/shorea.component';
 import { IfsComponent } from './ifs/ifs.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EnrollmentService } from './enrollment.service';
+import { FamilyComponent } from './family/family.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { PersonalComponent } from './personal/personal.component';
+import { ResultComponent } from './result/result.component';
+import { IncomeComponent } from './income/income.component';
 
+import { FormDataService } from './data/form-data.service';
+import { WorkflowService } from './workflow/workflow.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +27,12 @@ import { EnrollmentService } from './enrollment.service';
     RegisterComponent,
     WelfareComponent,
     ShoreaComponent,
-    IfsComponent
+    IfsComponent,
+    FamilyComponent,
+    NavbarComponent,
+    PersonalComponent,
+    ResultComponent,
+    IncomeComponent
     
     
   ],
@@ -30,7 +42,7 @@ import { EnrollmentService } from './enrollment.service';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [EnrollmentService],
+  providers: [EnrollmentService,{provide:FormDataService,useClass: FormDataService}, WorkflowService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -8,19 +8,37 @@ import{ IfsComponent} from './ifs/ifs.component';
 import{ ShoreaComponent} from './shorea/shorea.component';
 import {  FormsModule} from '@angular/forms';
 
-const routes: Routes = [
+import { PersonalComponent } from './personal/personal.component';
+import { IncomeComponent } from './income/income.component';
+import { FamilyComponent } from './family/family.component';
+import { ResultComponent } from './result/result.component';
+
+export const routes: Routes = [
  { path: '', redirectTo: '/homepage', pathMatch: 'full'},
  { path: 'homepage' , component: HomepageComponent},
  { path: 'register' , component:RegisterComponent},
  { path: 'login' , component: LoginComponent},
  { path: 'welfare' , component:WelfareComponent},
  { path: 'ifs' , component:IfsComponent},
- { path: 'shorea' ,component:ShoreaComponent}
+ { path: 'shorea' ,component:ShoreaComponent},
+ {path:'ifs/personal',component:PersonalComponent},
+ 
+ {path:'ifs/work',component:IncomeComponent},
+
+ { path: 'ifs/address',  component: FamilyComponent },
+
+ { path: 'ifs/result',  component: ResultComponent },
+
+ { path: 'ifs/',   redirectTo: 'ifs/personal', pathMatch: 'full' },
+
+ { path: '**', component: PersonalComponent }
 ];
+
+
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes ),
     FormsModule
   ],
   exports: [RouterModule]
