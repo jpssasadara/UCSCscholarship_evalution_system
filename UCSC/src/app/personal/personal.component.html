@@ -55,25 +55,51 @@
               <div class="row">
                   <div class='col-xs-12 col-sm-6'>
                       <div class="form-group">
-                          <label class="control-label" for="firstname">First Name</label>  
-                          <input class="form-control input-md" #firstname="ngModel" required id="firstname" name="firstname" type="text" placeholder="First Name" [(ngModel)]="personal.firstName">   
-                          <div class="alert alert-danger" [hidden]="firstname.valid">First Name is required</div>
+                          <label class="control-label" for="fullName">Full Name</label>  
+                          <input class="form-control input-md" #fullName="ngModel" required id="fullName" name="fullName" type="text" placeholder="Full Name" [(ngModel)]="personal.fullName">   
+                          <div class="alert alert-danger" [hidden]="fullName.valid">Full Name is required</div>
                       </div>
                   </div>
                   <div class='col-xs-12 col-sm-6'>
                       <div class="form-group">
-                          <label class="control-label" for="lastname">Last Name</label>  
-                          <input class="form-control input-md" #lastname="ngModel" required id="lastname" name="lastname" type="text" placeholder="Last Name" [(ngModel)]="personal.lastName">
-                          <div class="alert alert-danger" [hidden]="lastname.valid">Last Name is required</div>
+                          <label class="control-label" for="registration">course Number</label>  
+                          <input class="form-control input-md" #registration="ngModel" required id="registration" name="registration" type="text" placeholder="Registration Number" [(ngModel)]="personal.registration">
+                          <div class="alert alert-danger" [hidden]="registration.valid">course Number is required</div>
                       </div>
                   </div>
               </div>
+              <div class="form-group">
+                  <label class="control-label" for="course">Course </label>  
+                  <input class="form-control input-md" #course="ngModel" required id="course" name="course" type="text" placeholder="course Number" [(ngModel)]="personal.course">
+                  <div class="alert alert-danger" [hidden]="course.valid">Course is required</div>
+             </div>
               <div class="form-group">
                   <label class="control-label" for="email">Email</label>
                   <input class="form-control input-md" #email="ngModel" required pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$" id="email" name="email" type="text" placeholder="Email" [(ngModel)]="personal.email">
                   <div class="alert alert-danger" [hidden]="email.valid">Email is required and must be valid</div>
               </div>
-                  
+              
+             <div class="form-group">
+                <label class="control-label" for="address">Permanant Address</label>  
+                <input class="form-control input-md" #course="ngModel" required id="address" name="address" type="text" placeholder="Address" [(ngModel)]="personal.address">
+                <div class="alert alert-danger" [hidden]="address.valid">Address is required</div>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="distance">Distance</label>  
+                <input class="form-control input-md" #distance="ngModel" required id="distance" name="distance" type="text" placeholder="Distance" [(ngModel)]="personal.distance">
+                <div class="alert alert-danger" [hidden]="distance.valid">Distance is required</div>
+            </div>
+            <div class="form-group">
+                <label for="reason" class="control-label">Reason</label>
+                <textarea name="reason" id="" cols="57" rows="03" #reason = "ngModel" name="reason" [(ngModel)]="personal.reason"></textarea>
+                <div class="alert alert-danger" [hidden]="reason.valid">Reason is required</div>
+                </div>
+            <div class="form-group">
+                <label class="control-label" for="telephone">Telephone Number</label>  
+                <input class="form-control input-md" #telephone="ngModel" required id="telephone" name="telephone" type="text" placeholder="Telephone" [(ngModel)]="personal.telephone">
+                <div class="alert alert-danger" [hidden]="telephone.valid">Telephone no is required</div>
+            </div>
+         
               <div class="form-group text-center">
                   <button class="btn btn-success btn-outline-rounded btn-info" [disabled]="!personalForm.valid" (click)="goToNext(personalForm)"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></button>
               </div>

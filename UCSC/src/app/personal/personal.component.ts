@@ -13,6 +13,8 @@ export class PersonalComponent implements OnInit {
     title = 'Please tell us about yourself.';
     personal: Personal;
     form: any;
+    scholar : boolean = false;
+    samurdhi : boolean = false;
     
     constructor(private router: Router, private formDataService: FormDataService) {
     }
@@ -22,6 +24,19 @@ export class PersonalComponent implements OnInit {
         console.log('Personal feature loaded!');
     }
 
+    scholarYes(){
+      this.scholar = true;
+    }
+    scholarNo(){
+      this.scholar = false;
+    }
+
+    samurdhiY(){
+      this.samurdhi = true;
+    }
+    samurdhiN(){
+      this.samurdhi = false;
+    }
     save(form: any): boolean {
         if (!form.valid) {
             return false;

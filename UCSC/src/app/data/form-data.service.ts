@@ -18,9 +18,16 @@ export class FormDataService {
     getPersonal(): Personal {
         // Return the Personal data
         var personal: Personal = {
-            firstName: this.formData.firstName,
-            lastName: this.formData.lastName,
-            email: this.formData.email
+            fullName: this.formData.fullName,
+            registration: this.formData.registration,
+            email: this.formData.email,
+            course : this.formData.course,
+            address : this.formData.address,
+            distance : this.formData.distance,
+            telephone : this.formData.telephone,
+            scholar : this.formData.scholar,
+            samurdhi : this.formData.samurdhi,
+            reason : this.formData.reason
         };
         return personal;
     }
@@ -28,9 +35,16 @@ export class FormDataService {
     setPersonal(data: Personal) {
         // Update the Personal data only when the Personal Form had been validated successfully
         this.isPersonalFormValid = true;
-        this.formData.firstName = data.firstName;
-        this.formData.lastName = data.lastName;
+        this.formData.fullName = data.fullName;
+        this.formData.registration = data.registration;
         this.formData.email = data.email;
+        this.formData.course = data.course;
+        this.formData.address = data.address;
+        this.formData.distance = data.distance;
+        this.formData.telephone = data.telephone;
+        this.formData.scholar = data.scholar;
+        this.formData.samurdhi = data.samurdhi;
+        this.formData.reason = data.reason;
         // Validate Personal Step in Workflow
         this.workflowService.validateStep(STEPS.personal);
     }
@@ -45,7 +59,7 @@ export class FormDataService {
         this.isWorkFormValid = true;
         this.formData.work = data;
         // Validate Work Step in Workflow
-        this.workflowService.validateStep(STEPS.work);
+        this.workflowService.validateStep(STEPS.income);
     }
 
     getAddress() : Address {
@@ -67,7 +81,7 @@ export class FormDataService {
         this.formData.state = data.state;
         this.formData.zip = data.zip;
         // Validate Address Step in Workflow
-        this.workflowService.validateStep(STEPS.address);
+        this.workflowService.validateStep(STEPS.family);
     }
 
     getFormData(): FormData {

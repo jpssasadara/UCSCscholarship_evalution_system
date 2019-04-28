@@ -1,34 +1,52 @@
 export class FormData {
-    firstName: string = '';
-    lastName : string = '';
+    fullName: string = '';
+    registration : string = '';
     email: string = '';
-    work: string = '';
-    street: string = '';
-    city: string = '';
-    state: string = '';
-    zip: string = '';
+    course: string = '';
+    address: string = '';
+    distance: number = 0;
+    telephone: string = '';
+    scholar:string = "NO";
+    samurdhi : string = "NO";
+    reason : string ='';
+    work : string = '';
+    attach1 ?: File ;
+
+    street : string = '';
+    city : string = '';
+    state : string = '';
+    zip : string = '';
 
     clear() {
-        this.firstName = '';
-        this.lastName = '';
+        this.fullName = '';
+        this.registration = '';
         this.email = '';
-        this.work = '';
-        this.street = '';
-        this.city = '';
-        this.state = '';
-        this.zip = '';
+        this.course = '';
+        this.address = '';
+        this.distance = 0;
+        this.telephone = '';
+        this.scholar = "NO";
+        this.samurdhi = "NO";
+        this.reason = "";
     }
 }
 
 export class Personal {
-    firstName: string = '';
-    lastName : string = '';
+    fullName: string = '';
+    registration : string = '';
     email: string = '';
+    course: string = '';
+    address: string = '';
+    distance: number = 0;
+    telephone: string = '';
+    scholar:string = "NO";
+    samurdhi : string = "NO";
+    reason:string = "";
 }
 
 export class Address {
-    street: string = '';
-    city: string = '';
-    state: string = '';
-    zip: string = '';
+    street:string = '';
+    city:string = '';
+    state:string = '';
+    zip:string = '';
 }

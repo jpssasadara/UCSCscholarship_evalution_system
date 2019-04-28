@@ -62,7 +62,27 @@
                   </div>
               </div>
               <div class='col-xs-9 col-sm-10'>
-                  {{formData.firstName + ' ' + formData.lastName}}
+                  {{formData.fullName + ' ' + formData.registration + ' ' + formData.course}}
+              </div>
+          </div>
+          <div class="row">
+              <div class='col-xs-3 col-sm-2'>
+                  <div class="form-group">
+                      <label class="control-label" for="name">Testing: </label> 
+                  </div>
+              </div>
+              <div class='col-xs-9 col-sm-10'>
+                  {{formData.address + ' ' + formData.distance + ' ' + formData.telephone}}
+              </div>
+          </div>
+          <div class="row">
+              <div class='col-xs-3 col-sm-2'>
+                  <div class="form-group">
+                      <label class="control-label" for="name">Reason: </label> 
+                  </div>
+              </div>
+              <div class='col-xs-9 col-sm-10'>
+                  {{formData.reason}}
               </div>
           </div>
           <div class="row">
