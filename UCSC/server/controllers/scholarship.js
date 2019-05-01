@@ -152,3 +152,27 @@ exports.create_enrollment = (req, res, next) => {
         });
 
 }
+
+exports.view_enrollment = (req, res,next)=>{
+    Scholarship.find()
+        .select('fullName regNumber distance')
+        .exec()
+        .then(docs => {
+            console.log(docs);
+            const response = {
+                students: docs.map(doc =>{
+                    return{
+                        fullName: doc.fullName,
+                        regNumber:doc.regNumber,
+                        distance: doc.distance
+                    };
+                })
+            }
+            res.status(200).json(response.students);
+        })
+        .catch(err=>{
+            res.status(500).json({
+                error:err
+            });
+        });
+}

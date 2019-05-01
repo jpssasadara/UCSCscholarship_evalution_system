@@ -1,3 +1,19 @@
-<p>
+<div>
   admin-for-welfare-schol works!
-</p>
+  <hr/>
+  <ul>
+    <li>Student_id  -   - Student_name -  - Distance </li>
+  </ul>
+  <hr/>
+  <ul *ngFor = "let student of students">
+    <li>{{student.regNumber}}  -  -  {{student.fullName}} - - {{student.distance}}</li>
+  </ul>
+  <hr/>
+  <button (click)="sasa()">sasa</button>
+  <input type="text" name="sdf" [(ngModel)]="FatherMonth">
+  
+  <ul *ngFor = "let studentob of listOfStudents">
+    <li>{{studentob.StudentId}}  -  -  {{studentob.StudentName}} - - {{studentob.Distance}}</li>
+  </ul>
+</div>
+<!--{{studentob.StudentId}}  -  -  {{studentob.StudentName}} - - {{studentob.Distance}}-->

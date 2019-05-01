@@ -12,6 +12,8 @@ import { IfsComponent } from './ifs/ifs.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EnrollmentService } from './enrollment.service';
 import { AdminForWelfareScholComponent } from './admin-for-welfare-schol/admin-for-welfare-schol.component';
+import { StudentWellfareService } from './student-wellfare.service';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +34,7 @@ import { AdminForWelfareScholComponent } from './admin-for-welfare-schol/admin-f
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [EnrollmentService],
+  providers: [EnrollmentService,StudentWellfareService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
