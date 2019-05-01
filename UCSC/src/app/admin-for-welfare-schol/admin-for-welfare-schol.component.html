@@ -1,19 +1,61 @@
+<hr/>
+<div class="row">
+  <div class="col-md-3">
+    <label>.....................Distance.....................</label>
+    <div class="well">
+      <li><label>200km or above</label><input class="form-control" type="text" placeholder="Marks"></li>
+      <li><label>199km – 150km</label><input class="form-control" type="text" placeholder="Marks"></li>
+      <li><label>149km – 100km</label><input class="form-control" type="text" placeholder="Marks"></li>
+      <li><label>99km – 70km</label><input class="form-control" type="text" placeholder="Marks"></li>
+      <li><label>69km – 40km</label><input class="form-control" type="text" placeholder="Marks"></li>
+      <li><label>39km – 30km</label><input class="form-control" type="text" placeholder="Marks"></li>
+    </div>
+
+  </div>
+
+  <div class="col-md-4 ">
+      <label>............ Income Level (per Annum) (Rs.)............</label>
+     
+    <div class="well">
+        <li><label>below 30000 (Samurdhi Recipient)</label><input class="form-control" type="text" placeholder="Marks"></li>
+        <li><label>30001 – 50000</label><input class="form-control" type="text" placeholder="Marks"></li>
+        <li><label>50001 – 100000</label><input class="form-control" type="text" placeholder="Marks"></li>
+        <li><label>100001 - 200000</label><input class="form-control" type="text" placeholder="Marks"></li>
+        <li><label>200001 - 300000</label><input class="form-control" type="text" placeholder="Marks"></li>
+        <li><label>300001 - 400000</label><input class="form-control" type="text" placeholder="Marks"></li>
+    </div>
+
+  </div>
+
+  <div class="col-md-5 ">
+      <label>................................... For special reasons..................................</label>
+      <div class="well">
+          <li>Both father and mother are dead <input class="form-control" type="text" placeholder="Marks"></li>
+          <li>Either father or mother dead<input class="form-control" type="text" placeholder="Marks"></li>
+          <li>Father or mother unemployed, Disable<input class="form-control" type="text" placeholder="Marks"></li>
+          <li>Sister/brother following a course in a University(for one)<input class="form-control" type="text" placeholder="Marks"></li>
+          <li>(for more than two)<input class="form-control" type="text" placeholder="Marks"></li>
+          <li>School going sister/brother who is 18 years or under(for one)<input class="form-control" type="text" placeholder="Marks"></li>
+          <li>(for more than two)<input class="form-control" type="text" placeholder="Marks"></li>
+      </div>
+  </div>
+</div>
 <div>
   admin-for-welfare-schol works!
-  <hr/>
+  <hr />
   <ul>
-    <li>Student_id  -   - Student_name -  - Distance </li>
+    <li>Student_id - - Student_name - - Distance </li>
   </ul>
-  <hr/>
-  <ul *ngFor = "let student of students">
-    <li>{{student.regNumber}}  -  -  {{student.fullName}} - - {{student.distance}}</li>
+  <hr />
+  <ul *ngFor="let student of students">
+    <li>{{student.regNumber}} - - {{student.fullName}} - - {{student.distance}}</li>
   </ul>
-  <hr/>
+  <hr />
   <button (click)="sasa()">sasa</button>
   <input type="text" name="sdf" [(ngModel)]="FatherMonth">
-  
-  <ul *ngFor = "let studentob of listOfStudents">
-    <li>{{studentob.StudentId}}  -  -  {{studentob.StudentName}} - - {{studentob.Distance}}</li>
+
+  <ul *ngFor="let studentob of listOfStudents">
+    <li>{{studentob.StudentId}} - - {{studentob.StudentName}} - - {{studentob.Distance}}</li>
   </ul>
 </div>
 <!--{{studentob.StudentId}}  -  -  {{studentob.StudentName}} - - {{studentob.Distance}}-->
