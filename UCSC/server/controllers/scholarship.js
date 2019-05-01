@@ -67,7 +67,73 @@ exports.create_enrollment = (req, res, next) => {
         Owner4Location:req.body.Owner4Location,
         Owner4Cultivation:req.body.Owner4Cultivation,
         Owner4Extent:req.body.Owner4Extent,
-        Owner4Income:req.body.Owner4Income
+        Owner4Income:req.body.Owner4Income,
+
+        House1Owner:req.body.House1Owner,
+        House1Relationship:req.body.House1Relationship,
+        House1AssessmentNo:req.body.House1AssessmentNo,
+        House1OwnerNo:req.body.House1OwnerNo,
+        House1Address:req.body.House1Address,
+        House1AnualIncome:req.body.House1AnualIncome,
+        House1RentDetail:req.body.House1RentDetail,
+
+        House2Owner:req.body.House1Owner,
+        House2Relationship:req.body.House1Relationship,
+        House2AssessmentNo:req.body.House1AssessmentNo,
+        House2OwnerNo:req.body.House1OwnerNo,
+        House2Address:req.body.House1Address,
+        House2AnualIncome:req.body.House1AnualIncome,
+        House2RentDetail:req.body.House1RentDetail,
+
+        House3Owner:req.body.House1Owner,
+        House3Relationship:req.body.House1Relationship,
+        House3AssessmentNo:req.body.House1AssessmentNo,
+        House3OwnerNo:req.body.House1OwnerNo,
+        House3Address:req.body.House1Address,
+        House3AnualIncome:req.body.House1AnualIncome,
+        House3RentDetail:req.body.House1RentDetail,
+
+        WorkingPlace:req.body.WorkingPlace,
+        WorkingPost:req.body.WorkingPost,
+        WorkingSalaryScale:req.body.WorkingSalaryScale,
+        WorkingSalary:req.body.WorkingSalary,
+        WorkingAppointment:req.body.WorkingAppointment,
+        MarriageData:req.body.MarriageData,
+        Spouse:req.body.Spouse,
+        SpouseInstitution:req.body.SpouseInstitution,
+        SpousePost:req.body.SpousePost,
+        PresentSalary:req.body.PresentSalary,
+        SriLankanCitizen:req.body.SriLankanCitizen,
+
+        FatherName:req.body.FatherName,
+        FatherLiving:req.body.FatherLiving,
+        FatherYear:req.body.FatherYear,
+        FatherMonth:req.body.FatherMonth,
+        FatherEmployee:req.body.FatherEmployee,
+        FatherEmployeeAddress:req.body.FatherEmployeeAddress,
+        FatherPension:req.body.FatherPension,
+        FatherHousesProperties:req.body.FatherHousesProperties,
+        FatherOtherSources:req.body.FatherOtherSources,
+        FatherAnualIncome:req.body.FatherAnualIncome,
+        MotherName:req.body.MotherName,
+        MotherLiving:req.body.MotherLiving,
+        MotherYear:req.body.MotherYear,
+        MotherMonth:req.body.MotherMonth,
+        MotherEmployee:req.body.MotherEmployee,
+        MotherEmployeeAddress:req.body.MotherEmployeeAddress,
+        MotherPension:req.body.MotherPension,
+        MotherHousesProperties:req.body.MotherHousesProperties,
+        MotherOtherSources:req.body.MotherOtherSources,
+        MotherAnualIncome:req.body.MotherAnualIncome,
+        FatherMotherTotalIncome:req.body.FatherMotherTotalIncome,
+        GuardianName:req.body.GuardianName,
+        GuardianAge:req.body.GuardianAge,
+        GuardianAddress:req.body.GuardianAddress,
+        GuardianEmployedPost:req.body.GuardianEmployedPost,
+        GuardianAnualSalary:req.body.GuardianAnualSalary,
+        GuardianAnualIncome:req.body.GuardianAnualIncome
+
+
     });
     scholarship
         .save()
@@ -85,4 +151,28 @@ exports.create_enrollment = (req, res, next) => {
             })
         });
 
+}
+
+exports.view_enrollment = (req, res,next)=>{
+    Scholarship.find()
+        .select('fullName regNumber distance')
+        .exec()
+        .then(docs => {
+            console.log(docs);
+            const response = {
+                students: docs.map(doc =>{
+                    return{
+                        fullName: doc.fullName,
+                        regNumber:doc.regNumber,
+                        distance: doc.distance
+                    };
+                })
+            }
+            res.status(200).json(response.students);
+        })
+        .catch(err=>{
+            res.status(500).json({
+                error:err
+            });
+        });
 }
