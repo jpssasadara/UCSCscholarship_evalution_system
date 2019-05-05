@@ -4,18 +4,43 @@ export class FormData {
     email: string = '';
     course: string = '';
     address: string = '';
-    distance: number = 0;
+    distance: number;
     telephone: string = '';
-    scholar:string = "NO";
-    samurdhi : string = "NO";
-    reason : string ='';
-    work : string = '';
-    attach1 ?: File ;
+    scholar:string  = '';
+    samurdhi : string = '';
+    reason ?: string ='';
+    work ?: string = '';
+    
 
-    street : string = '';
-    city : string = '';
-    state : string = '';
-    zip : string = '';
+    street ?: string = '';
+    city ?: string = '';
+    state ?: string = '';
+    zip ?: string = '';
+
+    nfather : string = '';
+    fliving : string = 'Yes';
+    fage ?: string;
+    foccupation : string = '';
+    faddress : string = '';
+    fannual : number;
+    fproperty : number;
+    fother : number;
+    ftotal : number;
+    ftax : string;
+
+    nmother : string = '';
+    mliving : string = 'Yes';;
+    mage ?: string = '';
+    moccupation : string = '';
+    maddress : string = '';
+    mannual : number;
+    mproperty : number;
+    mother : number;
+    mtotal : number;
+    mtax : string;
+
+    net : number;
+
 
     clear() {
         this.fullName = '';
@@ -25,9 +50,17 @@ export class FormData {
         this.address = '';
         this.distance = 0;
         this.telephone = '';
-        this.scholar = "NO";
-        this.samurdhi = "NO";
+        this.scholar = '';
+        this.samurdhi = '';
         this.reason = "";
+        this.nfather = "";
+        this.faddress = "";
+        this.fage = "";
+        this.foccupation = "";
+        this.nmother = "";
+        this.maddress = "";
+        this.mage = "";
+        this.moccupation = "";
     }
 }
 
@@ -37,10 +70,9 @@ export class Personal {
     email: string = '';
     course: string = '';
     address: string = '';
-    distance: number = 0;
+    distance: number;
     telephone: string = '';
-    scholar:string = "NO";
-    samurdhi : string = "NO";
+   
     reason:string = "";
 }
 
@@ -49,4 +81,31 @@ export class Address {
     city:string = '';
     state:string = '';
     zip:string = '';
+}
+
+export class Work {
+    scholar:string = '';
+    samurdhi : string = '';
+    nfather : string = '';
+   fliving : string;
+    fage  ?: string = '';
+    foccupation : string = '';
+    faddress : string = '';
+    fannual : number;
+    fproperty : number;
+    fother : number;
+    ftotal : number =0 ;
+    ftax : string;
+
+    nmother : string = '';
+    mliving : string;
+    mage : string = '';
+    moccupation : string = '';
+    maddress : string = '';
+    mannual : number ;
+    mproperty : number ;
+    mother : number ;
+    mtotal : number =0 ;
+    mtax : string;
+    net : number;
 }

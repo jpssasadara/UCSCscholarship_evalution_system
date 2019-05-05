@@ -32,7 +32,7 @@ router.put('/:id',(req,res)=>{
         distance : req.body.distance,
         telephone : req.body.telephone,
         email : req.body.email,
-        sholar : req.body.sholar,
+        scholar : req.body.scholar,
         samurdhi : req.body.samurdhi
     };
 
@@ -54,19 +54,49 @@ router.delete('/:id',(req,res)=>{
 
 router.post('/',(req,res)=>{
     var shol = new Ifs({
-        name : req.body.name,
+        fullName : req.body.fullName,
         registration : req.body.registration,
         course : req.body.course,
         address : req.body.address,
         distance : req.body.distance,
         telephone : req.body.telephone,
         email : req.body.email,
-        sholar : req.body.sholar,
-        samurdhi : req.body.samurdhi
+        scholar : req.body.scholar,
+        samurdhi : req.body.samurdhi,
+        distance : req.body.distance,
+        reason : req.body.reason,
+      /*
+        work : req.body.work,
+        zip : req.body.zip,
+        state : req.body.state,
+        street : req.body.street
+      */
+        nfather : req.body.nfather,
+        fliving : req.body.fliving,
+        fage : req.body.fage,
+        foccupation : req.body.foccupation,
+        faddress : req.body.faddress,
+        fannual : req.body.fannual,
+        fproperty : req.body.fproperty,
+        fother : req.body.fother,
+        ftotal : req.body.ftotal,
+        ftax : req.body.ftax,
+
+        nmother : req.body.nmother,
+        mliving : req.body.mliving,
+        mage : req.body.mage,
+        moccupation : req.body.moccupation,
+        maddress : req.body.maddress,
+        mannaul : req.body.mannaul,
+        mproperty : req.body.mproperty,
+        mother : req.body.mother,
+        mtotal : req.body.mtotal,
+        mtax : req.body.mtax,
+        net : req.body.net
     });
     shol.save((err,doc)=>{
         if(!err) { res.send(doc);}
-        else{ console.log("Error in saving data");}
+        else{ console.log("Error in saving data" + JSON.stringify(err,undefined,2));}
     });
 });
 

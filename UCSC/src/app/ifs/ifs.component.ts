@@ -31,18 +31,7 @@ export class IfsComponent implements OnInit {
   resetForm(form?:NgForm){
     if(form)
       form.reset();
-    this.ifsService.selectedForm = {
-      _id:"",
-      name:"",
-      address:"",
-      registration:"",
-      course:"",
-      distance:0,
-      telephone:"",
-      email:"",
-      scholar:false,
-      samurdhi:false
-    }
+   
   }
 
   onSubmit(form?: NgForm){

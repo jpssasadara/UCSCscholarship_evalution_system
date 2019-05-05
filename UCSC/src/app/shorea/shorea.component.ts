@@ -62,6 +62,7 @@ export class ShoreaComponent {
   resetForm(form?:NgForm){
     if(form)
       form.reset();
+    /*
     this.ifsService.selectedForm = {
       _id:"",
       name:"",
@@ -71,9 +72,10 @@ export class ShoreaComponent {
       distance:0,
       telephone:"",
       email:"",
-      scholar:false,
-      samurdhi:false
+      scholar:"",
+      samurdhi:""
     }
+    */
   }
 
   onSubmit(form?: NgForm){

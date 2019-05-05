@@ -6,6 +6,7 @@ import 'rxjs/add/operator/toPromise';
 import { from } from 'rxjs';
 
 import { Ifs } from './ifs.model';
+import { FormData } from '../data/form-data.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -16,10 +17,11 @@ export class IfsService {
 
   constructor(private http:HttpClient) { }
 
-  postForm(form:Ifs){
+  postForm(form:FormData){
     return this.http.post(this.baseURL,form);
   }
 
+ 
 /*
  _url = 'http://localhost:3000/scholarship';
   constructor(private _http: HttpClient) { }

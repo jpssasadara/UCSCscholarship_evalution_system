@@ -1,86 +1,319 @@
 <section style="background:#efefe9;">
-  <div class="container">
-      <div class="board">
-<div class="board-inner" id="status-buttons">
-  <ul class="nav nav-tabs" id="myTab">
-      <div class="liner"></div>
-                  
-      <!-- circular user icon -->
-      <li>
-          <a routerLink="ifs/personal" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" data-toggle="tab" title="personal">
-              <span class="round-tabs one">
-                  <i class="glyphicon glyphicon-user"></i>
-              </span>
-          </a>
-      </li>
-
-      <!-- circular tasks icon -->
-       <li>
-          <a routerLink="ifs/work" routerLinkActive="active" data-toggle="tab" title="work">
-              <span class="round-tabs two">
-                  <i class="glyphicon glyphicon-tasks"></i>
-              </span> 
-          </a>
-      </li>
-
-      <!-- circular home icon -->
-      <li>
-          <a routerLink="ifs/address" routerLinkActive="active" data-toggle="tab" title="address">
-              <span class="round-tabs three">
-                  <i class="glyphicon glyphicon-home"></i>
-              </span>
-          </a>
-      </li>
-
-      <!-- circular ok icon -->
-      <li>
-          <a routerLink="ifs/result" routerLinkActive="active" data-toggle="tab" title="completed">
-              <span class="round-tabs four">
-                  <i class="glyphicon glyphicon-ok"></i>
-              </span>
-          </a>
-      </li>
+    <div class="container">
+        <div class="board">
+  <div class="board-inner" id="status-buttons">
+    <ul class="nav nav-tabs" id="myTab">
+        <div class="liner"></div>
+                    
+        <!-- circular user icon -->
+        <li>
+            <a routerLink="ifs/personal" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" data-toggle="tab" title="personal">
+                <span class="round-tabs one">
+                    <i class="glyphicon glyphicon-user"></i>
+                </span>
+            </a>
+        </li>
+  
+        <!-- circular tasks icon -->
+         <li>
+            <a routerLink="ifs/work" routerLinkActive="active" data-toggle="tab" title="work">
+                <span class="round-tabs two">
+                    <i class="glyphicon glyphicon-tasks"></i>
+                </span> 
+            </a>
+        </li>
+  
+        <!-- circular home icon -->
+        <li>
+            <a routerLink="ifs/address" routerLinkActive="active" data-toggle="tab" title="address">
+                <span class="round-tabs three">
+                    <i class="glyphicon glyphicon-home"></i>
+                </span>
+            </a>
+        </li>
+  
+        <!-- circular ok icon -->
+        <li>
+            <a routerLink="ifs/result" routerLinkActive="active" data-toggle="tab" title="completed">
+                <span class="round-tabs four">
+                    <i class="glyphicon glyphicon-ok"></i>
+                </span>
+            </a>
+        </li>
+                
+    </ul>
+    <div class="clearfix"></div>
+  </div>
+  
+  <form #workForm="ngForm" class="editForm" novalidate>
+    <div class="form-horizontal">
+        <div class="tab-pane fade in active">
+            <h4 class="head text-center">{{title}}</h4>
+            <br/>
+            <div class='row'>
+                <div class='col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8'>  
+                    <div class="form-group">
+                        <label class="control-label">State whether you are a recipient of Mahapola/ Bursary or any other  Undergraduate  </label>  
+                        <label class="control-label">Scholarship.</label>
+                        <div class="justify-content-right">
+                          <br/>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <input type="radio" required name="scholar" #scholar="ngModel" [(ngModel)]="workType.scholar" value="Yes" (click)="scholarY()">
+                          <label class="form-check-label"> &nbsp; Yes</label>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <input type="radio" required name="scholar" value="No" (click)="scholarN()" #scholar="ngModel" [(ngModel)]="workType.scholar">
+                          <label class="form-check-label"> &nbsp; No</label>
+                        </div>
+                    </div>
+                    <div *ngIf="scholActive">
+                        <label>If so, state the name of the scholarship and total amount received    </label>
+                        <input class="form-control input-md" >
+                        <div class="alert alert-danger" [hidden]="address.valid">Address is required</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Is your family receiving “Samurdhi” allowance (Yes or No)  </label>  
+                        
+                        <div class="justify-content-right">
+                          <br/>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <input type="radio" required name="samurdhi" #samurdhi="ngModel" [(ngModel)]="workType.samurdhi" value="Yes" (click)="samurdhiY()">
+                          <label class="form-check-label"> &nbsp; Yes</label>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <input type="radio" required #samurdhi="ngModel" [(ngModel)]="workType.samurdhi" name="samurdhi" value="No" (click)="samurdhiN()">
+                          <label class="form-check-label"> &nbsp; No</label>
+                        </div>
+                    </div>
+                    <div *ngIf="samurdhiActive">
+                        <label>If receiving, please attach certified copies of proof documents    </label>
+                        <input class="custom-file-input" type="file" name="fileToUpload" id="fileToUpload">
+                       
+                    </div>
+                    <div class="row">
+                        <hr>
+                    </div>
+                   
+                    <div class='row'> 
+                        <label for="formGroupExampleInput2">Details
+                          of parents/Guardians: (Applicants presenting guardians should fill cage 12 in addition to this.)
+                        </label>
+                        <br>
+                        <br>
+                        <div>
+                          (a) Details of Father:
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label class="control-label" for="nfather">Full Name</label>  
+                            <input class="form-control input-md" #nfather="ngModel" required id="nfather" name="nfather" type="text" placeholder="Name" [(ngModel)]="workType.nfather">
+                            <div class="alert alert-danger" [hidden]="nfather.valid">Father's name is required</div>
+                        </div>
+                        <div class="form-group">
+                        <label class="control-label">Whether living or deceased:</label>  
+                        
+                        <div class="justify-content-right">
+                          <br/>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <input type="radio" required name="fliving" #fliving="ngModel" [(ngModel)]="workType.fliving" value="Yes" (click)="fileaddYes()">
+                          <label class="form-check-label"> &nbsp; Yes</label>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <input type="radio" required name="fliving" value="No" (click)="fileaddNo()" #fliving="ngModel" [(ngModel)]="workType.fliving">
+                          <label class="form-check-label"> &nbsp; No</label>
+                        </div>
+                        </div>
+                          
+                          <div *ngIf="fileAddView" >
+                              <div class="row">
+                                  <div class='col-xs-12 col-sm-6'>
+                                      <div class="form-group">
+                                          <label class="control-label" for="firstname">First Name</label>  
+                                          <input class="form-control input-md" #fage="ngModel" required id="fage" name="fage" type="text" placeholder="First Name" [(ngModel)]="workType.fage">   
+                                          <div class="alert alert-danger" [hidden]="fage.valid">First Name is required</div>
+                                      </div>
+                                  </div>
+                                  <div class='col-xs-12 col-sm-6'>
+                                      <div class="form-group">
+                                          <label class="control-label" for="lastname">Last Name</label>  
+                                          <input class="form-control input-md" >
+                                          
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
               
-  </ul>
-  <div class="clearfix"></div>
-</div>
+                        
+                        <div class="form-group">
+                            <label class="control-label" for="foccupation">Occupation</label>  
+                            <input class="form-control input-md" #foccupation="ngModel" required id="foccupation" name="foccupation" type="text" placeholder="Name" [(ngModel)]="workType.foccupation">
+                            <div class="alert alert-danger" [hidden]="foccupation.valid">Occupation name is required</div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="foccupation">Address of present/ previous employment
+                            </label>  
+                            <input class="form-control input-md" #faddress="ngModel" required id="faddress" name="faddress" type="text" placeholder="Address" [(ngModel)]="workType.faddress">
+                            <div class="alert alert-danger" [hidden]="faddress.valid">Address is required</div>
+                        </div>
+                        <div class="form-group">
+                          <label for="control-label">State the full income derived from employment / Pension Rs: </label> <br>
+                          (Full annual income as at 31st December 2018, should be declared.)
+                          (If employed, a letter stating the annual salary inclusive of all allowances certified by the Head of the
+                          workplace, should be annexed. If retired, a letter stating the annual pension inclusive of all allowances,
+                          or the full annual widows’ and orphans’ pension certified by Director of Pensions or the Government Agent
+                          should be annexed)
+                          <input class="form-control input-md" #fannual="ngModel" required id="fannual" name="fannual" type="text" placeholder="Rs -: " [(ngModel)]="workType.fannual">
+                          <div class="alert alert-danger" [hidden]="fannual.valid">Father's annual income is required</div>
+                          
+                        </div>
+                        <div class="form-group">
+                        <div class="form-group col-md-5">
+                          <label for="control-label"> Annual income derived from houses & properties: </label>
+                          <input class="form-control input-md" #fproperty="ngModel" required id="fproperty" name="fproperty" type="text" placeholder="Rs -: " [(ngModel)]="workType.fproperty">
+                          <div class="alert alert-danger" [hidden]="fproperty.valid">This field is required</div>
+                        </div>
+                        <div class="form-group col-md-3 pr-7"></div>
+                        <div class="form-group col-md-5">
+                          <label for="control-label"> Annual income derived from all other sources: </label>
+                          <input class="form-control input-md" #fother="ngModel" required id="fother" name="fother" type="text" placeholder="Rs -: " [(ngModel)]="workType.fother">
+                          <div class="alert alert-danger" [hidden]="fother.valid">This field is required</div>
+                        </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="control-label"> Father’s total annual income: </label>
+                          <input class="form-control input-md" #ftotal="ngModel"  id="ftotal" name="ftotal" type="text" placeholder="Rs -: " [(ngModel)]="workType.ftotal" value={{(workType.fannual*1)+(workType.fproperty*1)+(workType.fother*1)}}>
+                         
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Whether Income tax is paid or not:</label>  
+                            
+                            <div class="justify-content-right">
+                              <br/>
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              <input type="radio" required name="ftax" #ftax="ngModel" [(ngModel)]="workType.ftax" value="Yes" >
+                              <label class="form-check-label"> &nbsp; Yes</label>
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              <input type="radio" required name="ftax" value="No"  #ftax="ngModel" [(ngModel)]="workType.ftax">
+                              <label class="form-check-label"> &nbsp; No</label>
+                            </div>
+                            </div>
+                              
+                        
+                        <br>
+                        <div>
+                            (a) Details of Mother:
+                          </div>
+                          <br>
+                          <div class="form-group">
+                              <label class="control-label" for="nmother">Full Name</label>  
+                              <input class="form-control input-md" #nmother="ngModel" required id="nmother" name="nmother" type="text" placeholder="Name" [(ngModel)]="workType.nmother">
+                              <div class="alert alert-danger" [hidden]="nmother.valid">Mother's name is required</div>
+                          </div>
+                          <div class="form-group">
+                          <label class="control-label">Whether living or deceased:</label>  
+                          
+                          <div class="justify-content-right">
+                            <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" required name="mliving" #mliving="ngModel" [(ngModel)]="workType.mliving" value="Yes" (click)="fileaddYes()">
+                            <label class="form-check-label"> &nbsp; Yes</label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" required name="mliving" value="No" (click)="fileaddNo()" #mliving="ngModel" [(ngModel)]="workType.mliving">
+                            <label class="form-check-label"> &nbsp; No</label>
+                          </div>
+                          </div>
+                            
+                            <div *ngIf="fileAddView" >
+                                <div class="row">
+                                    <div class='col-xs-12 col-sm-6'>
+                                        <div class="form-group">
+                                            <label class="control-label" for="firstname">First Name</label>  
+                                            <input class="form-control input-md" #mage="ngModel" required id="mage" name="mage" type="text" placeholder="First Name" [(ngModel)]="workType.mage">   
+                                            <div class="alert alert-danger" [hidden]="mage.valid">First Name is required</div>
+                                        </div>
+                                    </div>
+                                    <div class='col-xs-12 col-sm-6'>
+                                        <div class="form-group">
+                                            <label class="control-label" for="lastname">Last Name</label>  
+                                            <input class="form-control input-md" >
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                          
+                          <div class="form-group">
+                              <label class="control-label" for="moccupation">Occupation</label>  
+                              <input class="form-control input-md" #moccupation="ngModel" required id="moccupation" name="moccupation" type="text" placeholder="Name" [(ngModel)]="workType.moccupation">
+                              <div class="alert alert-danger" [hidden]="moccupation.valid">Occupation name is required</div>
+                          </div>
+                          <div class="form-group">
+                              <label class="control-label" for="maddress">Address of present/ previous employment
+                              </label>  
+                              <input class="form-control input-md" #maddress="ngModel" required id="maddress" name="maddress" type="text" placeholder="Address" [(ngModel)]="workType.maddress">
+                              <div class="alert alert-danger" [hidden]="maddress.valid">Address is required</div>
+                          </div>
+                          <div class="form-group">
+                            <label for="control-label">State the full income derived from employment / Pension Rs: </label> <br>
+                            (Full annual income as at 31st December 2018, should be declared.)
+                            (If employed, a letter stating the annual salary inclusive of all allowances certified by the Head of the
+                            workplace, should be annexed. If retired, a letter stating the annual pension inclusive of all allowances,
+                            or the full annual widows’ and orphans’ pension certified by Director of Pensions or the Government Agent
+                            should be annexed)
+                            <input class="form-control input-md" #mannual="ngModel" required id="mannual" name="mannual" type="text" placeholder="Rs -: " [(ngModel)]="workType.mannual">
+                            <div class="alert alert-danger" [hidden]="fannual.valid">Mother's annual income is required</div>
+                            
+                          </div>
+                          <div class="form-group">
+                          <div class="form-group col-md-5">
+                            <label for="control-label"> Annual income derived from houses & properties: </label>
+                            <input class="form-control input-md" #mproperty="ngModel" required id="mproperty" name="mproperty" type="text" placeholder="Rs -: " [(ngModel)]="workType.mproperty">
+                            <div class="alert alert-danger" [hidden]="fproperty.valid">This field is required</div>
+                          </div>
+                          <div class="form-group col-md-3 pr-7"></div>
+                          <div class="form-group col-md-5">
+                            <label for="control-label"> Annual income derived from all other sources: </label>
+                            <input class="form-control input-md" #mother="ngModel" required id="mother" name="mother" type="text" placeholder="Rs -: " [(ngModel)]="workType.mother">
+                            <div class="alert alert-danger" [hidden]="fother.valid">This field is required</div>
+                          </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="control-label"> Mother’s total annual income: </label>
+                            <input class="form-control input-md" #mtotal="ngModel"  id="mtotal" name="mtotal" type="text" placeholder="Rs -: " [(ngModel)]="workType.mtotal" value={{(workType.mannual*1)+(workType.mproperty*1)+(workType.mother*1)}}>
+                            
+                          </div>
+                          <div class="form-group">
+                              <label class="control-label">Whether Income tax is paid or not:</label>  
+                              
+                              <div class="justify-content-right">
+                                <br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="radio" required name="mtax" #mtax="ngModel" [(ngModel)]="workType.mtax" value="Yes" >
+                                <label class="form-check-label"> &nbsp; Yes</label>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <input type="radio" required name="mtax" value="No"  #mtax="ngModel" [(ngModel)]="workType.mtax">
+                                <label class="form-check-label"> &nbsp; No</label>
+                              </div>
+                              </div>
 
-<form #workForm="ngForm" class="editForm" novalidate>
-  <div class="form-horizontal">
-      <div class="tab-pane fade in active">
-          <h4 class="head text-center">{{title}}</h4>
-          <br/>
-          <div class='row'>
-              <div class='col-xs-offset-4 col-xs-10 col-sm-offset-5 col-sm-4'>
-                  <div class="form-group">
-                      <div class="radio">
-                          <label>
-                              <input type="radio" #work="ngModel" required name="work" [(ngModel)]="workType" value="Design">
-                              Design
-                          </label>
-                      </div>
-                      <div class="radio">
-                          <label>
-                              <input type="radio" #work="ngModel" required name="work" [(ngModel)]="workType" value="Code">
-                              Code
-                          </label>
-                      </div>
-                      <div class="radio">
-                          <label>
-                              <input type="radio" #work="ngModel" required name="work" [(ngModel)]="workType" value="Deploy">
-                              Deploy
-                          </label>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="form-group text-center space-20">
-              <button class="btn btn-outline-rounded btn-default" (click)="goToPrevious(workForm)"> <span style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></span> Previous</button>
-              <button class="btn btn-outline-rounded btn-info" [disabled]="!workForm.valid" (click)="goToNext(workForm)"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></button>
-          </div>
-      </div>
-  </div>
-</form>
-      </div>
-  </div>
-</section>
+                              <div class="form-group">
+                                  <label for="control-label"> . Total annual income of Father/ Guardian and Mother: 
+                                      (write total full annual income of father and mother in words in the cage given below)
+                                 </label>
+                                  <input class="form-control input-md" #net="ngModel"  id="net" name="net" type="text" placeholder="Rs -: " [(ngModel)]="workType.net" value={{(workType.fannual*1)+(workType.fproperty*1)+(workType.fother*1)+(workType.mannual*1)+(workType.mproperty*1)+(workType.mother*1)}}>
+                                  
+                                </div>
+                          
+            <div class="form-group text-center space-20">
+                <button class="btn btn-outline-rounded btn-default" (click)="goToPrevious(workForm)"> <span style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></span> Previous</button>
+                <button class="btn btn-outline-rounded btn-info" [disabled]="!workForm.valid" (click)="goToNext(workForm)"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></button>
+            </div>
+            </div>
+          
+        </div>
+    </div>
+    </div>
+    </div>
+  </form>
+        </div>
+    </div>
+    
+  </section>

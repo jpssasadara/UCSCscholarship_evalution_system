@@ -1,6 +1,6 @@
 import { Injectable }                        from '@angular/core';
 
-import { FormData, Personal, Address }       from './form-data.model';
+import { FormData, Personal, Address, Work }       from './form-data.model';
 import { WorkflowService }                   from '../workflow/workflow.service';
 import { STEPS }                             from '../workflow/workflow.model';
 
@@ -25,8 +25,7 @@ export class FormDataService {
             address : this.formData.address,
             distance : this.formData.distance,
             telephone : this.formData.telephone,
-            scholar : this.formData.scholar,
-            samurdhi : this.formData.samurdhi,
+          
             reason : this.formData.reason
         };
         return personal;
@@ -42,24 +41,80 @@ export class FormDataService {
         this.formData.address = data.address;
         this.formData.distance = data.distance;
         this.formData.telephone = data.telephone;
-        this.formData.scholar = data.scholar;
-        this.formData.samurdhi = data.samurdhi;
+       // this.formData.scholar = data.scholar;
+     // this.formData.samurdhi = data.samurdhi;
         this.formData.reason = data.reason;
         // Validate Personal Step in Workflow
         this.workflowService.validateStep(STEPS.personal);
     }
 
-    getWork() : string {
+    getWork() : Work {
         // Return the work type
-        return this.formData.work;
+        var work : Work = {
+            samurdhi : this.formData.samurdhi,
+            scholar : this.formData.scholar,
+            nfather:this.formData.nfather,
+            fliving : this.formData.fliving,
+            fage : this.formData.fage,
+            foccupation : this.formData.foccupation,
+            faddress : this.formData.faddress,
+            fannual : this.formData.fannual,
+            fproperty : this.formData.fproperty,
+            fother : this.formData.fother,
+            ftotal : this.formData.ftotal,
+            ftax : this.formData.ftax,
+            nmother : this.formData.nmother,
+            mliving : this.formData.mliving,
+            mage : this.formData.mage,
+            moccupation : this.formData.moccupation,
+            maddress : this.formData.maddress,
+            mannual : this.formData.mannual,
+            mproperty : this.formData.mproperty,
+            mother : this.formData.mother,
+            mtotal : this.formData.mtotal,
+            mtax : this.formData.mtax,
+            net : this.formData.net
+
+        };
+        return work;
+    }
+
+    setWork(data:Work){
+        this.isWorkFormValid = true;
+        this.formData.samurdhi = data.samurdhi;
+        this.formData.scholar = data.scholar;
+        this.formData.nfather = data.nfather;
+        this.formData.fliving = data.fliving;
+        this.formData.fage = data.fage;
+        this.formData.foccupation = data.foccupation;
+        this.formData.faddress = data.faddress;
+        this.formData.fannual = data.fannual;
+        this.formData.fproperty = data.fproperty;
+        this.formData.fother = data.fother;
+        this.formData.ftotal = data.ftotal;
+        this.formData.ftax = data.ftax;
+        this.formData.nmother = data.nmother;
+        this.formData.mliving = data.mliving;
+        this.formData.mage = data.mage;
+        this.formData.moccupation = data.moccupation;
+        this.formData.maddress = data.maddress;
+        this.formData.mannual = data.mannual;
+        this.formData.mproperty = data.mproperty;
+        this.formData.mother = data.mother;
+        this.formData.mtotal = data.mtotal;
+        this.formData.mtax = data.mtax;
+        this.formData.net = data.net;
+
+        this.workflowService.validateStep(STEPS.income);
     }
     
-    setWork(data: string) {
+    setField(data1 : string,data2 : string) {
         // Update the work type only when the Work Form had been validated successfully
-        this.isWorkFormValid = true;
-        this.formData.work = data;
+  
+        this.formData.samurdhi = data1
+        this.formData.scholar = data2;
         // Validate Work Step in Workflow
-        this.workflowService.validateStep(STEPS.income);
+        
     }
 
     getAddress() : Address {

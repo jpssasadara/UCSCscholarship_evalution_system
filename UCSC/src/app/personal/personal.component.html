@@ -81,7 +81,7 @@
               
              <div class="form-group">
                 <label class="control-label" for="address">Permanant Address</label>  
-                <input class="form-control input-md" #course="ngModel" required id="address" name="address" type="text" placeholder="Address" [(ngModel)]="personal.address">
+                <input class="form-control input-md" #address="ngModel" required id="address" name="address" type="text" placeholder="Address" [(ngModel)]="personal.address">
                 <div class="alert alert-danger" [hidden]="address.valid">Address is required</div>
             </div>
             <div class="form-group">
