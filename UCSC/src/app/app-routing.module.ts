@@ -6,6 +6,7 @@ import{ LoginComponent} from './login/login.component';
 import{ WelfareComponent} from './welfare/welfare.component';
 import{ IfsComponent} from './ifs/ifs.component';
 import{ ShoreaComponent} from './shorea/shorea.component';
+import{ AdminForWelfareScholComponent} from './admin-for-welfare-schol/admin-for-welfare-schol.component';
 import {  FormsModule} from '@angular/forms';
 
 import { PersonalComponent } from './personal/personal.component';
@@ -31,7 +32,8 @@ export const routes: Routes = [
 
  { path: 'ifs/',   redirectTo: 'ifs/personal', pathMatch: 'full' },
 
- { path: '**', component: PersonalComponent }
+ { path: '**', component: PersonalComponent },
+ { path: 'scholarship/getWelfareStu', component:AdminForWelfareScholComponent}
 ];
 
 
@@ -44,4 +46,4 @@ export const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [HomepageComponent,RegisterComponent,LoginComponent,WelfareComponent,IfsComponent,ShoreaComponent]
+export const routingComponents = [HomepageComponent,RegisterComponent,LoginComponent,WelfareComponent,IfsComponent,ShoreaComponent,AdminForWelfareScholComponent]

@@ -16,6 +16,9 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { PersonalComponent } from './personal/personal.component';
 import { ResultComponent } from './result/result.component';
 import { IncomeComponent } from './income/income.component';
+import { AdminForWelfareScholComponent } from './admin-for-welfare-schol/admin-for-welfare-schol.component';
+import { StudentWellfareService } from './student-wellfare.service';
+
 
 import { FormDataService } from './data/form-data.service';
 import { WorkflowService } from './workflow/workflow.service';
@@ -32,7 +35,8 @@ import { WorkflowService } from './workflow/workflow.service';
     NavbarComponent,
     PersonalComponent,
     ResultComponent,
-    IncomeComponent
+    IncomeComponent,
+    AdminForWelfareScholComponent
     
     
   ],
@@ -42,7 +46,7 @@ import { WorkflowService } from './workflow/workflow.service';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [EnrollmentService,{provide:FormDataService,useClass: FormDataService}, WorkflowService ],
+  providers: [EnrollmentService,{provide:FormDataService,useClass: FormDataService}, WorkflowService,StudentWellfareService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

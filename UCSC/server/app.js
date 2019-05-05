@@ -32,7 +32,8 @@ app.use((req,res,next)=>{
 
 
 app.use('/scholarship',scholarshipRoutes);
-// for handling invalied URLs------------>>FROM
+
+// for handling invalied URLs------------>>FROM scholarship/getWelfareStu'
 
 app.use((req,res,next)=>{
     const error = new Error('Not found OOOH');
