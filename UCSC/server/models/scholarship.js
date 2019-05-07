@@ -13,6 +13,10 @@ const scholarshipSchema = mongoose.Schema({
     distance: {type: String, required: true},
     district: {type: String, required: true},
 
+    ReasonForApplyingScholarship: {type:String},
+    OtherScholarship: {type:String},
+    Samurdhi: {type:String}, 
+
     brother1Name: {type: String},
     brother1Age: {type: String},
     brother1CivilStatus: {type: String},
