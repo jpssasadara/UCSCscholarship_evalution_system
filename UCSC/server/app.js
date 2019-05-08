@@ -33,11 +33,17 @@ app.use((req, res, next) => {
 });
 
 
+<<<<<<< HEAD
 app.use('/scholarship', scholarshipRoutes);
 app.use('/api/user', userRoute);
 app.use('/api/applicants', applicantRoute);
 
 // for handling invalied URLs------------>>FROM
+=======
+app.use('/scholarship',scholarshipRoutes);
+
+// for handling invalied URLs------------>>FROM scholarship/getWelfareStu'
+>>>>>>> 99b4c329951a843ab31951ea968699c307d0eff8
 
 app.use((req, res, next) => {
     const error = new Error('Not found OOOH');
