@@ -1,0 +1,49 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <h1>Scholarship Applicants</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <form [formGroup]="form" class="form-inline" (submit)="getStudents()">
+                <div class="form-group mb-2">
+                    <label for="staticEmail2">Batch(Please enter in the given format)</label>
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                    <input type="text" class="form-control" id="inputPassword2" formControlName="batch" placeholder="2013/2014">
+                </div>
+                <button type="submit" class="btn btn-primary mb-2">View</button>
+            </form>
+        </div>
+        <div class="col-md-7">
+            <div style="height:350px;overflow-y: scroll">
+                <table class="table">
+                    {{this.headerTitle}}
+                    <thead>
+                        <tr>
+                            <th scope="col">Registration Number</th>
+
+                            <th scope="col">Name</th>
+                            <th scope="col">Batch</th>
+                            <th scope="col">Degree</th>
+                            <th scope="col"></th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let applicant of this.applicants">
+                            <th scope="row">{{applicant.regNumber}}</th>
+                            <td>{{applicant.fullName}}</td>
+                            <td>{{applicant.batch}}</td>
+                            <td>{{applicant.degree}}</td>
+                            <td><a class="btn btn-primary" routerLink="/applicationDetails/{{applicant._id}}">View</a></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

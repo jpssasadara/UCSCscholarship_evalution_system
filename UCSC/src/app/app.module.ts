@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 
 import { AppRoutingModule , routingComponents } from './app-routing.module';
@@ -11,6 +11,9 @@ import { ShoreaComponent } from './shorea/shorea.component';
 import { IfsComponent } from './ifs/ifs.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EnrollmentService } from './enrollment.service';
+import { NavigationComponent } from './navigation/navigation.component';
+import { AdminStudentApplicationComponent } from './admin-student-application/admin-student-application.component';
+import { ApllicantDetailsComponent } from './apllicant-details/apllicant-details.component';
 
 @NgModule({
   declarations: [
@@ -20,15 +23,20 @@ import { EnrollmentService } from './enrollment.service';
     RegisterComponent,
     WelfareComponent,
     ShoreaComponent,
-    IfsComponent
-    
-    
+    IfsComponent,
+    NavigationComponent,
+    AdminStudentApplicationComponent,
+    ApllicantDetailsComponent
+
+
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [EnrollmentService],
   bootstrap: [AppComponent]
