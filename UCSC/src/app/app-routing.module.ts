@@ -32,7 +32,7 @@ export const routes: Routes = [
 
  { path: 'ifs/',   redirectTo: 'ifs/personal', pathMatch: 'full' },
 
- { path: '**', component: PersonalComponent },
+ //{ path: '**', component: PersonalComponent },
  { path: 'scholarship/getWelfareStu', component:AdminForWelfareScholComponent}
 ];
 
