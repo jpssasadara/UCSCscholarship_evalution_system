@@ -17,6 +17,17 @@ retrieveAllApplicants(batch:string)
 
 retrieveApplicant(applicantId:string)
 {
-  return this.http.post<{message:Number,result:Object}>(this.url+"/api/applicants/getAll",{id:applicantId});
+  return this.http.post<{message:Number,result:Object}>(this.url+"/api/applicants/getApplicant",{id:applicantId});
+}
+
+saveSelectedApplicants(idArr)
+{
+  return this.http.post<{message:Number}>(this.url+"/api/applicants/saveSelectedApplicants",{applicantsArr:JSON.stringify(idArr)});
+
+}
+
+retrieveSelectedApplicants(batch:string)
+{
+  return this.http.post<{message:Number,result:Array<Object>}>(this.url+"/api/applicants/getSelectedApplicants",{batch:batch});
 }
 }

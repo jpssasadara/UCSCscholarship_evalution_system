@@ -11,19 +11,21 @@ import { Scholarship } from '../models/scholarship';
 export class ApllicantDetailsComponent implements OnInit {
 
   headerTitle = "";
-  regSchol: Object<Scholarship>;
+  regSchol: Object;
   constructor(private route: ActivatedRoute,private scholarshipService:ScholarshipService) { }
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     this.scholarshipService.retrieveApplicant(id)
     .subscribe(responseData => {
-        if(responseData.message==0)
+      console.log(responseData);
+      if(responseData.message ==0)
         {
           // tslint:disable-next-line:quotemark
           this.headerTitle = "Something wrong , applicant details can't be loaded";
         } else {
-            this.regSchol = responseData.result;
+          console.log(responseData);
+          this.regSchol = responseData.result;
         }
   }
 );

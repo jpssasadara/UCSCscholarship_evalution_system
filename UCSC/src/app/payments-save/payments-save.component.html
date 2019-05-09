@@ -2,12 +2,12 @@
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">
-            <h1>Scholarship Applicants</h1>
+            <h1>Scholars' payments</h1>
         </div>
     </div>
     <div class="row">
         <div class="col-md-4">
-            <form [formGroup]="form" class="form-inline mb-5" (submit)="getStudents()">
+            <form [formGroup]="form" class="form-inline ml-3" (submit)="getStudents()">
                 <div class="form-group mb-2">
                     <label for="staticEmail2">Batch(Please enter in the given format)</label>
                 </div>
@@ -16,14 +16,38 @@
                 </div>
                 <button type="submit" class="btn btn-primary mb-2">View</button>
             </form>
-            <!--<label for="staticEmail2">Notification message</label>
-            <br>
-            <textarea [(ngModel)]="notification" #ctrl="ngModel" required></textarea>
-            <p>Valid: {{ ctrl.valid }}</p>
 
-            <br>
-            <button class="btn btn-success" (click)="sendNotification()">Send Notification</button>
-            -->
+            <form [formGroup]="paymentForm" class="form-inline ml-3" (submit)="paymentSave()">
+                <table style="border-collapse: separate;border-spacing: 0 1em;">
+
+                    <tr class="mb-2 mt-3">
+                        <td class="mb-2 mt-3"><label for="staticEmail2">Amount(Rs.)</label></td>
+                        <td class="mb-2 mt-3"><input type="text" class="form-control" id="inputPassword2" formControlName="amount" placeholder="5000"></td>
+
+                    </tr>
+
+                    <tr class="mb-2 mt-3">
+
+                        <td class="mb-2 mt-3">
+                            <label for="staticEmail2">Term</label>
+                        </td>
+                        <td class="mb-2 mt-3">
+                            <input type="number" class="form-control" id="inputPassword2" formControlName="term" min="0">
+
+                        </td>
+                    </tr>
+                    <tr class="mb-2 mt-3">
+
+                        <td class="mb-2 mt-3">
+                            <button type="submit" class="btn btn-primary mb-2">Save</button>
+                        </td>
+                        <td class="mb-2 mt-3">
+                            <button type="reset" class="btn btn-primary mb-2">Cancel</button>
+
+                        </td>
+                    </tr>
+                </table>
+            </form>
             <app-notification></app-notification>
         </div>
         <div class="col-md-7">
@@ -33,11 +57,13 @@
                     <thead>
                         <tr>
                             <th scope="col"></th>
+
                             <th scope="col">Registration Number</th>
 
                             <th scope="col">Name</th>
                             <th scope="col">Batch</th>
                             <th scope="col">Degree</th>
+                            <th scope="col"></th>
                             <th scope="col"></th>
 
                         </tr>
@@ -46,19 +72,17 @@
                         <tr *ngFor="let applicant of this.applicants; let i = index">
                             <td><input type="checkbox" value="{{ applicant._id }}" (change)="getUserSelect($event,i)"></td>
 
-                            <th scope="row">{{applicant.regNumber}}</th>
+                            <td scope="row">{{applicant.regNumber}}</td>
                             <td>{{applicant.fullName}}</td>
                             <td>{{applicant.batch}}</td>
                             <td>{{applicant.degree}}</td>
-                            <td><a class="btn btn-primary" routerLink="/applicationDetails/{{applicant._id}}">View</a></td>
+                            <td><a class="btn btn-primary" routerLink="/paymentdetialsapplicant/{{applicant._id}}">View</a></td>
+
                         </tr>
 
                     </tbody>
                 </table>
-
             </div>
-            <button *ngIf="isLoading" class="btn btn-primary mb-2" (click)="saveSelectedApplicants()">Selected Applicants save</button>
-
         </div>
     </div>
 </div>

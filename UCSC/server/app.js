@@ -6,7 +6,8 @@ const mongoose = require('mongoose');
 const scholarshipRoutes = require('./routes/scholarship');
 const userRoute = require('./routes/user');
 const applicantRoute = require('./routes/applicants');
-
+const paymentRoute = require('./routes/payments');
+const notificationRoute = require('./routes/notification');
 
 
 const mongoConnection = "mongodb+srv://ucsc:ucsc@123@ucscmean-svqsr.mongodb.net/test?retryWrites=true";
@@ -33,17 +34,13 @@ app.use((req, res, next) => {
 });
 
 
-<<<<<<< HEAD
 app.use('/scholarship', scholarshipRoutes);
 app.use('/api/user', userRoute);
 app.use('/api/applicants', applicantRoute);
+app.use('/api/payments', paymentRoute);
+app.use('/api/notification', notificationRoute);
 
 // for handling invalied URLs------------>>FROM
-=======
-app.use('/scholarship',scholarshipRoutes);
-
-// for handling invalied URLs------------>>FROM scholarship/getWelfareStu'
->>>>>>> 99b4c329951a843ab31951ea968699c307d0eff8
 
 app.use((req, res, next) => {
     const error = new Error('Not found OOOH');
