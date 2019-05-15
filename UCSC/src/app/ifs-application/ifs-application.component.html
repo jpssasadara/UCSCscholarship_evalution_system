@@ -10,65 +10,83 @@
         </div>
   
       </div>
-<div class="container">
-  <div class="container col-md-7">
-      <div class='row'>
-          <div class='col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8'>
-              <div class="row">
-                  <div class='col-xs-12 col-sm-6'>
-                      <div class="form-group">
-                          <label class="control-label" for="fullName">Full Name</label>  
-                          <input class="form-control input-md" value="{{arr.fullName}}" >
-                        
-                      </div>
-                  </div>
-                  <div class='col-xs-12 col-sm-6'>
-                      <div class="form-group">
-                          <label class="control-label" for="registration">course Number</label>  
-                          <input class="form-control input-md" value="{{arr.registration}}" >
-                        
-                      </div>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <label class="control-label" for="course">Course </label>  
-                  <input class="form-control input-md" value="{{arr.course}}" >
-                  
-             </div>
-              <div class="form-group">
-                  <label class="control-label" for="email">Email</label>
-                  <input class="form-control input-md" value="{{arr.email}}" >
-                 
-              </div>
-              
-             <div class="form-group">
-                <label class="control-label" for="address">Permanant Address</label>  
-                <input class="form-control input-md" value="{{arr.address}}" >
+      
+      <div class="container">
+            <form #arrForm="ngForm" class="editForm" novalidate>
+        <div class="container col-md-7">
                
-            </div>
+                        <div class="tab-pane fade in active">
+                            <h4 class="head text-center">{{title}}</h4>
+                            <br/>
+                            <div class='row'>
+                                <div class='col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8'>
+                                    <div class="row">
+                                        <div class='col-xs-12 col-sm-6'>
+                                            <div class="form-group">
+                                                <label class="control-label" for="fullName">Full Name</label>  
+                                                <input class="form-control input-md" #fullName="ngModel" required id="fullName" name="fullName" type="text" placeholder="Full Name" [(ngModel)]="arr.fullName">   
+                                                <div class="alert alert-danger" [hidden]="fullName.valid">Full Name is required</div>
+                                            </div>
+                                        </div>
+                                        <div class='col-xs-12 col-sm-6'>
+                                            <div class="form-group">
+                                                <label class="control-label" for="registration">course Number</label>  
+                                                <input class="form-control input-md" #registration="ngModel" required id="registration" name="registration" type="text" placeholder="Registration Number" [(ngModel)]="arr.registration">
+                                                <div class="alert alert-danger" [hidden]="registration.valid">course Number is required</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label" for="course">Course </label>  
+                                        <input class="form-control input-md" #course="ngModel" required id="course" name="course" type="text" placeholder="course Number" [(ngModel)]="arr.course">
+                                        <div class="alert alert-danger" [hidden]="course.valid">Course is required</div>
+                                   </div>
+                                    <div class="form-group">
+                                        <label class="control-label" for="email">Email</label>
+                                        <input class="form-control input-md" #email="ngModel" required pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$" id="email" name="email" type="text" placeholder="Email" [(ngModel)]="arr.email">
+                                        <div class="alert alert-danger" [hidden]="email.valid">Email is required and must be valid</div>
+                                    </div>
+                                    
+                                   <div class="form-group">
+                                      <label class="control-label" for="address">Permanant Address</label>  
+                                      <input class="form-control input-md" #address="ngModel" required id="address" name="address" type="text" placeholder="Address" [(ngModel)]="arr.address">
+                                      <div class="alert alert-danger" [hidden]="address.valid">Address is required</div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label class="control-label" for="distance">Distance</label>  
+                                      <input class="form-control input-md" #distance="ngModel" required id="distance" name="distance" type="text" placeholder="Distance" [(ngModel)]="arr.distance">
+                                      <div class="alert alert-danger" [hidden]="distance.valid">Distance is required</div>
+                                  </div>
+                                  <div class="form-group">
+                                      <label for="reason" class="control-label">Reason</label>
+                                      <textarea name="reason" id="" cols="54" rows="03" #reason = "ngModel" name="reason" [(ngModel)]="arr.reason"></textarea>
+                                      <div class="alert alert-danger" [hidden]="reason.valid">Reason is required</div>
+                                      </div>
+                                  <div class="form-group">
+                                      <label class="control-label" for="telephone">Telephone Number</label>  
+                                      <input class="form-control input-md" #telephone="ngModel" required id="telephone" name="telephone" type="text" placeholder="Telephone" [(ngModel)]="arr.telephone">
+                                      <div class="alert alert-danger" [hidden]="telephone.valid">Telephone no is required</div>
+                                  </div>
+                               
+                                  
+                                </div>
+                            </div>
+                        </div>
+                      
+                      
+        </div>
+        <div class="container well col-md-5">
+            Second Form
             <div class="form-group">
-                <label class="control-label" for="distance">Distance</label>  
-                <input class="form-control input-md" value="{{arr.distance}}" >
-               
+                    <label class="control-label" for="gpa">Telephone Number</label>  
+                    <input class="form-control input-md" #gpa="ngModel" required id="gpa" name="gpa" type="text" placeholder="gpa" [(ngModel)]="arr.gpa">
+                    <div class="alert alert-danger" [hidden]="gpa.valid">Telephone no is required</div>
             </div>
-            <div class="form-group">
-                <label for="reason" class="control-label">Reason</label>
-                <textarea name="reason" id="" cols="54" rows="03" value="{{arr.reason}}"></textarea>
-              
-                </div>
-            <div class="form-group">
-                <label class="control-label" for="telephone">Telephone Number</label>  
-                <input class="form-control input-md" value="{{arr.telephone}}" >
-               
+            <div class="form-group text-center">
+                    <button class="btn btn-success btn-outline-rounded btn-info" [disabled]="!arrForm.valid" (click)="submit()"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></button>
             </div>
-         
-              <div class="form-group text-center">
-                  <button class="btn btn-success btn-outline-rounded btn-info" [disabled]="!personalForm.valid" (click)="goToNext(personalForm)"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></button>
-              </div>
-          </div>
+        </div>
+    </form>
       </div>
-  </div>
-  <div class="container well col-md-5">
-    Second Part
-  </div>
+
 </div>

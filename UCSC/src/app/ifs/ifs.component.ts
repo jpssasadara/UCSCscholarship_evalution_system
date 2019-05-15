@@ -5,7 +5,7 @@ import { NgForm } from '@angular/forms';
 import { Ifs } from '../shared/ifs.model';
 
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-
+import { FormData } from '../data/form-data.model';
 import { FormDataService }            from '../data/form-data.service';
 
 @Component({
@@ -51,7 +51,7 @@ export class IfsComponent implements OnInit {
     }
   }
 
-  onEdit(ifs:Ifs){
+  onEdit(ifs:FormData){
     this.ifsService.selectedForm = ifs;
   }
 

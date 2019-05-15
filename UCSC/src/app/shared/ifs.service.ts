@@ -12,7 +12,7 @@ import { FormData } from '../data/form-data.model';
 })
 export class IfsService {
   shol:Ifs[];
-  selectedForm : Ifs;
+  selectedForm : FormData;
   readonly baseURL = 'http://localhost:4000/ifs';
 
   constructor(private http:HttpClient) { }
@@ -40,8 +40,8 @@ export class IfsService {
     return this.http.get(this.baseURL+`/${id}`);
   }
 
-  putForm(ifs:Ifs){
-    return this.http.put(this.baseURL+`/${ifs._id}`,ifs);
+  putForm(form:FormData){
+    return this.http.put(this.baseURL+`/${form._id}`,form);
   }
 
   deleteForm(id:string){

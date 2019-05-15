@@ -26,7 +26,7 @@ router.put('/:id',(req,res)=>{
     return res.status(400).send(`No record found with this ID : ${req.params.id} `);
 
     var schol = {
-        name : req.body.name,
+        fullName : req.body.fullName,
         registration : req.body.registration,
         course : req.body.course,
         address : req.body.address,
@@ -34,10 +34,44 @@ router.put('/:id',(req,res)=>{
         telephone : req.body.telephone,
         email : req.body.email,
         scholar : req.body.scholar,
-        samurdhi : req.body.samurdhi
+        samurdhi : req.body.samurdhi,
+        distance : req.body.distance,
+        reason : req.body.reason,
+
+        nfather : req.body.nfather,
+        fliving : req.body.fliving,
+        fage : req.body.fage,
+        foccupation : req.body.foccupation,
+        faddress : req.body.faddress,
+        fannual : req.body.fannual,
+        fproperty : req.body.fproperty,
+        fother : req.body.fother,
+        ftotal : req.body.ftotal,
+        ftax : req.body.ftax,
+
+        nmother : req.body.nmother,
+        mliving : req.body.mliving,
+        mage : req.body.mage,
+        moccupation : req.body.moccupation,
+        maddress : req.body.maddress,
+        mannaul : req.body.mannaul,
+        mproperty : req.body.mproperty,
+        mother : req.body.mother,
+        mtotal : req.body.mtotal,
+        mtax : req.body.mtax,
+        net : req.body.net,
+        
+        married : req.body.married,
+
+        members : req.body.members,
+
+        status : req.body.status,
+        gpa : req.body.gpa
+     
+     
     };
 
-    Ifs.findByIdAndUpdate(req.params.id,{$set:emp},{new:true},(err,doc)=>{
+    Ifs.findByIdAndUpdate(req.params.id,{$set:schol},{new:true},(err,doc)=>{
         if(!err) { res.send(doc);}
         else{ console.log('Error in updating Employees : '+JSON.stringify(err,undefined,2));}
     });

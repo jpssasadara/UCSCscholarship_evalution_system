@@ -94,9 +94,7 @@ export class ShoreaComponent {
     }
   }
 
-  onEdit(ifs:Ifs){
-    this.ifsService.selectedForm = ifs;
-  }
+ 
 
   onDelete(id:string,form:NgForm){
     if((confirm("Are you sure you want to delete?")==true)){

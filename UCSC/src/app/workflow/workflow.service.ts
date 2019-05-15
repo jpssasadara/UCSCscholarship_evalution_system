@@ -8,7 +8,8 @@ export class WorkflowService {
         { step: STEPS.personal, valid: false },
         { step: STEPS.income, valid: false },
         { step: STEPS.family, valid: false },
-        { step: STEPS.result, valid: false }
+        { step: STEPS.result, valid: false },
+        { step: STEPS.approval, valid:false}
     ];
     
     validateStep(step: string) {

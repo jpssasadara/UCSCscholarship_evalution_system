@@ -1,4 +1,5 @@
 export class FormData {
+    _id : string = '';
     fullName: string = '';
     registration : string = '';
     email: string = '';
@@ -51,7 +52,7 @@ export class FormData {
     members : fmember[];
 
     status : boolean = false;
-    gpa : number;
+    gpa : number = 0;
 
     clear() {
         this.fullName = '';

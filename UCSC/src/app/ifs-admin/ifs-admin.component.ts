@@ -17,7 +17,7 @@ export class IfsAdminComponent implements OnInit {
   @Input() formData: FormData;
   isFormValid: boolean = false;
   ifs:Ifs;
-  arr : Ifs[];
+  arr : FormData[];
   constructor(private formDataService: FormDataService, private ifsService: IfsService) {
   }
 
@@ -28,7 +28,7 @@ export class IfsAdminComponent implements OnInit {
       console.log('Admin IFS feature loaded!');
 
       this.ifsService.getForm().subscribe((res)=>{
-        this.arr = res as Ifs[];
+        this.arr = res as FormData[] ;
       });
 
   }
