@@ -14,6 +14,9 @@ import { IncomeComponent } from './income/income.component';
 import { FamilyComponent } from './family/family.component';
 import { ResultComponent } from './result/result.component';
 
+import { IfsAdminComponent } from './ifs-admin/ifs-admin.component';
+import { IfsApplicationComponent } from './ifs-application/ifs-application.component';
+
 export const routes: Routes = [
  { path: '', redirectTo: '/homepage', pathMatch: 'full'},
  { path: 'homepage' , component: HomepageComponent},
@@ -31,6 +34,11 @@ export const routes: Routes = [
  { path: 'ifs/result',  component: ResultComponent },
 
  { path: 'ifs/',   redirectTo: 'ifs/personal', pathMatch: 'full' },
+
+ { path: 'admin/ifs' , component: IfsAdminComponent },
+
+ { path: 'admin/ifs/:_id',component:IfsApplicationComponent},
+ 
 
  //{ path: '**', component: PersonalComponent },
  { path: 'scholarship/getWelfareStu', component:AdminForWelfareScholComponent}

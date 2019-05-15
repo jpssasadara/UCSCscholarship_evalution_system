@@ -1,6 +1,6 @@
 import { Component, OnInit, Input }   from '@angular/core';
 
-import { FormData }                   from '../data/form-data.model';
+import { FormData, fmember }                   from '../data/form-data.model';
 import { FormDataService }            from '../data/form-data.service';
 
 import { Ifs } from '../shared/ifs.model';
@@ -15,13 +15,14 @@ export class ResultComponent implements OnInit {
     @Input() formData: FormData;
     isFormValid: boolean = false;
     ifs:Ifs;
+    membs : fmember[];
     constructor(private formDataService: FormDataService, private ifsService: IfsService) {
     }
 
     ngOnInit() {
         this.formData = this.formDataService.getFormData();
         this.isFormValid = this.formDataService.isFormValid();
-        
+        this.membs  = this.formDataService.getMembers();
         console.log('Result feature loaded!');
     }
 

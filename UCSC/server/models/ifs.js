@@ -1,4 +1,10 @@
+const fmember = require('./fmember');
+
 const mongoose = require('mongoose');
+
+const mem1 = new fmember();
+const mem2 = new fmember();
+const mem3 = new fmember();
 
 var Ifs = mongoose.model('Ifs',{
   
@@ -39,8 +45,15 @@ var Ifs = mongoose.model('Ifs',{
   mother : {type:Number},
   mtotal : {type:Number},
   mtax : {type:String},
-  net: {type:Number}
+  net: {type:Number},
   
+
+  married : {type:String},
+  
+ members : { type : []},
+
+ status : { type : Boolean },
+ gpa : { type : Number}
 
 });
 

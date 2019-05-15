@@ -1,6 +1,6 @@
 import { Injectable }                        from '@angular/core';
 
-import { FormData, Personal, Address, Work }       from './form-data.model';
+import { FormData, Personal, Address, Work, fmember }       from './form-data.model';
 import { WorkflowService }                   from '../workflow/workflow.service';
 import { STEPS }                             from '../workflow/workflow.model';
 
@@ -123,7 +123,12 @@ export class FormDataService {
             street: this.formData.street,
             city: this.formData.city,
             state: this.formData.state,
-            zip: this.formData.zip
+            zip: this.formData.zip,
+            married : this.formData.married,
+            nspouse : this.formData.nspouse,
+            dom : this.formData.dom,
+            employed : this.formData.employed,
+            empDetails : this.formData.empdetails
         };
         return address;
     }
@@ -135,7 +140,13 @@ export class FormDataService {
         this.formData.city = data.city;
         this.formData.state = data.state;
         this.formData.zip = data.zip;
+        this.formData.married = data.married;
+        this.formData.dom = data.dom;
+        this.formData.nspouse = data.nspouse;
+        this.formData.employed = data.employed;
+        this.formData.empdetails = data.empDetails
         // Validate Address Step in Workflow
+        
         this.workflowService.validateStep(STEPS.family);
     }
 
@@ -158,5 +169,39 @@ export class FormDataService {
         return this.isPersonalFormValid &&
                 this.isWorkFormValid && 
                 this.isAddressFormValid;
+    }
+
+    setMember(arr:fmember[]){
+        this.formData.members = arr;
+    }
+
+    getMember() : fmember {
+        var member: fmember = {
+            name: "",
+            year: "",
+            dob: "",
+            school: "",
+            course: "",
+            registration: "",
+            scholar: "",
+            employed: "",
+        }
+        return member;
+}
+    getMembers() : fmember[] {
+        return this.formData.members;
+    }
+
+    setChecked(state : boolean,val:number) {
+        this.formData.status = state;
+        this.formData.gpa = val;
+    }
+
+    getState():boolean{
+        return this.formData.status;
+    }
+
+    getVal():number {
+        return this.formData.gpa;
     }
 }

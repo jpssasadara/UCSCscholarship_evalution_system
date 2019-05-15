@@ -2,6 +2,7 @@ const express = require('express');
 var router = express.Router();
 var ObjectId = require('mongoose').Types.ObjectId;
 var {Ifs} = require('../models/ifs');
+var {fmember} = require('../models/fmember');
 
 router.get('/',(req,res)=>{
     Ifs.find((err,docs)=>{
@@ -11,7 +12,7 @@ router.get('/',(req,res)=>{
 });
 
 router.get('/:id',(req,res)=>{
-    if(ObjectId.isValid(req.params.id))
+    if(!ObjectId.isValid(req.params.id))
         return res.status(400).send(`No record with given id : ${req.params.id}`);
 
     Ifs.findById(req.params.id,(err,doc)=>{
@@ -92,7 +93,15 @@ router.post('/',(req,res)=>{
         mother : req.body.mother,
         mtotal : req.body.mtotal,
         mtax : req.body.mtax,
-        net : req.body.net
+        net : req.body.net,
+        
+        married : req.body.married,
+
+        members : req.body.members,
+
+        status : req.body.status,
+        gpa : req.body.gpa
+        
     });
     shol.save((err,doc)=>{
         if(!err) { res.send(doc);}

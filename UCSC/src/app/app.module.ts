@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 
+
 import { AppRoutingModule , routingComponents } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -19,9 +20,16 @@ import { IncomeComponent } from './income/income.component';
 import { AdminForWelfareScholComponent } from './admin-for-welfare-schol/admin-for-welfare-schol.component';
 import { StudentWellfareService } from './student-wellfare.service';
 
-
+//import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FormDataService } from './data/form-data.service';
 import { WorkflowService } from './workflow/workflow.service';
+
+
+import { NgxSmartModalModule } from 'ngx-smart-modal';
+
+import { IfsAdminComponent } from './ifs-admin/ifs-admin.component';
+import { IfsApplicationComponent } from './ifs-application/ifs-application.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,15 +44,23 @@ import { WorkflowService } from './workflow/workflow.service';
     PersonalComponent,
     ResultComponent,
     IncomeComponent,
-    AdminForWelfareScholComponent
+    AdminForWelfareScholComponent,
+   
+    IfsAdminComponent,
+   
+    IfsApplicationComponent,
+
     
     
   ],
-  imports: [
+  imports: [    
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+   
+    NgxSmartModalModule.forRoot()
+    
   ],
   providers: [EnrollmentService,{provide:FormDataService,useClass: FormDataService}, WorkflowService,StudentWellfareService ],
   bootstrap: [AppComponent]

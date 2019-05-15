@@ -18,7 +18,8 @@ export class IfsComponent implements OnInit {
 
   title = 'Multi-Step Wizard';
   @Input() formData;
- 
+  
+  schol : Ifs[];
 
   constructor(private ifsService:IfsService,private formDataService: FormDataService) { }
 

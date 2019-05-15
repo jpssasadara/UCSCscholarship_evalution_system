@@ -92,7 +92,7 @@
                   </div>
               </div>
               <div class='col-xs-9 col-sm-10'>
-                  {{formData.email}}
+                  {{formData.married}}
               </div>
          </div>     
           <div class="row">
@@ -126,6 +126,25 @@
           <div class="col-xs-9 col-sm-10">
                 {{ formData.samurdhi + ' and ' + formData.scholar}}
           </div>
+          </div>
+
+          <div class="row">
+              <table>
+                  <tr>
+                  <th>Name</th>
+                  <th>Year</th>
+                </tr>
+                <tr *ngFor="let mem of membs">
+                    <td>{{mem.name}}</td>
+                    <td>{{mem.year}}</td>
+                </tr>
+              </table>
+
+          </div>
+
+          <div class="row">
+            <label >Spouse Details </label> 
+            {{formData.dom}} + " " + {{formData.nspouse}}+ " " + {{formData.empDetails}}
           </div>
           
       </div>

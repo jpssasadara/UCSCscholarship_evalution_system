@@ -1,88 +1,253 @@
 <section style="background:#efefe9;">
   <div class="container">
-      <div class="board">
-<div class="board-inner" id="status-buttons">
-  <ul class="nav nav-tabs" id="myTab">
-      <div class="liner"></div>
-                  
-      <!-- circular user icon -->
-      <li>
-          <a routerLink="ifs/personal" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" data-toggle="tab" title="personal">
+    <div class="board">
+      <div class="board-inner" id="status-buttons">
+        <ul class="nav nav-tabs" id="myTab">
+          <div class="liner"></div>
+
+          <!-- circular user icon -->
+          <li>
+            <a routerLink="ifs/personal" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+              data-toggle="tab" title="personal">
               <span class="round-tabs one">
-                  <i class="glyphicon glyphicon-user"></i>
+                <i class="glyphicon glyphicon-user"></i>
               </span>
-          </a>
-      </li>
+            </a>
+          </li>
 
-      <!-- circular tasks icon -->
-       <li>
-          <a routerLink="ifs/work" routerLinkActive="active" data-toggle="tab" title="work">
+          <!-- circular tasks icon -->
+          <li>
+            <a routerLink="ifs/work" routerLinkActive="active" data-toggle="tab" title="work">
               <span class="round-tabs two">
-                  <i class="glyphicon glyphicon-tasks"></i>
-              </span> 
-          </a>
-      </li>
+                <i class="glyphicon glyphicon-tasks"></i>
+              </span>
+            </a>
+          </li>
 
-      <!-- circular home icon -->
-      <li>
-          <a routerLink="ifs/address" routerLinkActive="active" data-toggle="tab" title="address">
+          <!-- circular home icon -->
+          <li>
+            <a routerLink="ifs/address" routerLinkActive="active" data-toggle="tab" title="address">
               <span class="round-tabs three">
-                  <i class="glyphicon glyphicon-home"></i>
+                <i class="glyphicon glyphicon-home"></i>
               </span>
-          </a>
-      </li>
+            </a>
+          </li>
 
-      <!-- circular ok icon -->
-      <li>
-          <a routerLink="ifs/result" routerLinkActive="active" data-toggle="tab" title="completed">
+          <!-- circular ok icon -->
+          <li>
+            <a routerLink="ifs/result" routerLinkActive="active" data-toggle="tab" title="completed">
               <span class="round-tabs four">
-                  <i class="glyphicon glyphicon-ok"></i>
+                <i class="glyphicon glyphicon-ok"></i>
               </span>
-          </a>
-      </li>
-              
-  </ul>
-  <div class="clearfix"></div>
-</div>
+            </a>
+          </li>
 
-<form #addressForm="ngForm" class="editForm" novalidate>
-  <div class="tab-pane fade in active">
-      <h4 class="head text-center">{{title}}</h4>
-      <br/>
-      <div class='row'>
-          <div class='col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10'>
+        </ul>
+        <div class="clearfix"></div>
+      </div>
+
+
+      <div class="tab-pane fade in active">
+        <h4 class="head text-center">{{title}}</h4>
+        <br />
+        <div class='row'>
+          <form #addressForm="ngForm" class="editForm" novalidate>
+            <div class='col-xs-offset-1 col-xs-10 col-sm-offset-1 col-sm-10'>
               <div class="form-group">
-                  <label class="control-label" for="street">Street Address</label>  
-                  <input class="form-control input-md" #street="ngModel" required id="street" name="street" type="text" placeholder="Street Address" [(ngModel)]="address.street">
-                  <div class="alert alert-danger" [hidden]="street.valid">Street Address is required</div>
-              </div>   
-              <div class="row">
-                  <div class='col-xs-12 col-sm-4'>
-                      <div class="form-group">
-                          <label class="control-label" for="city">City</label>  
-                          <input class="form-control input-md" #city="ngModel" required id="city" name="city" type="text" placeholder="City" [(ngModel)]="address.city">
-                          <div class="alert alert-danger" [hidden]="city.valid">City is required</div>
-                      </div>
-                  </div>
-                  
-                  <div class='col-xs-offset-1 col-xs-7 col-sm-offset-1 col-sm-3'>
-                      <div class="form-group">
-                          <label class="control-label" for="zip">Zip</label>  
-                          <input class="form-control input-md" #zip="ngModel" required id="zip" name="zip" type="text" placeholder="Zip" [(ngModel)]="address.zip">
-                          <div class="alert alert-danger" [hidden]="zip.valid">Zip is required</div>
-                      </div>  
-                  </div> 
+                <label class="control-label" for="street">Street Address</label>
+                <input class="form-control input-md" #street="ngModel" required id="street" name="street" type="text"
+                  placeholder="Street Address" [(ngModel)]="address.street">
+                <div class="alert alert-danger" [hidden]="street.valid">Street Address is required</div>
               </div>
-          </div>
+              <div class="row">
+                <div class='col-xs-12 col-sm-4'>
+                  <div class="form-group">
+                    <label class="control-label" for="city">City</label>
+                    <input class="form-control input-md" #city="ngModel" required id="city" name="city" type="text"
+                      placeholder="City" [(ngModel)]="address.city">
+                    <div class="alert alert-danger" [hidden]="city.valid">City is required</div>
+                  </div>
+                </div>
+                <div class='col-xs-4 col-sm-offset-1 col-sm-3'>
+                  <div class="form-group">
+                    <label class="control-label" for="state">State</label>
+                    <input class="form-control input-md" #state="ngModel" required id="state" name="state" type="text"
+                      placeholder="State" [(ngModel)]="address.state">
+                    <div class="alert alert-danger" [hidden]="state.valid">State is required</div>
+                  </div>
+                </div>
+                <div class='col-xs-offset-1 col-xs-7 col-sm-offset-1 col-sm-3'>
+                  <div class="form-group">
+                    <label class="control-label" for="zip">Zip</label>
+                    <input class="form-control input-md" #zip="ngModel" required id="zip" name="zip" type="text"
+                      placeholder="Zip" [(ngModel)]="address.zip">
+                    <div class="alert alert-danger" [hidden]="zip.valid">Zip is required</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class='row'>
+                    <div class="form-group">
+                          <label class="control-label">State whether you are married or not  </label>  
+                          
+                          <div class="justify-content-right">
+                            <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" required name="married" value="Yes" name="married" #married="ngModel" [(ngModel)]="address.married" (click)="activateYes()" >
+                            <label class="form-check-label"> &nbsp; Yes</label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input type="radio" required name="married" value="No" name="married" #married="ngModel" [(ngModel)]="address.married" (click)="activateNo()" >
+                            <label class="form-check-label"> &nbsp; No</label>
+                          </div>
+                    </div>
+                  </div>
+                <div class="row" *ngIf="txtActive">
+                        <div class="form-group">
+                                <label class="control-label" for="street">Name of spouse</label>
+                                <input class="form-control input-md" #nspouse="ngModel" required id="nspouse" name="nspouse" type="text"
+                                  placeholder="Street Address" [(ngModel)]="address.nspouse">
+                                <div class="alert alert-danger" [hidden]="nspouse.valid">Name of spouse required</div>
+                         </div>
+                         <div class="form-group">
+                                <label class="control-label" for="street">Date of Marrage</label>
+                                <input class="form-control input-md" #dom="ngModel" required id="dom" name="dom" type="text"
+                                  placeholder="Street Address" [(ngModel)]="address.dom">
+                                <div class="alert alert-danger" [hidden]="dom.valid">Date of Marrage is required</div>
+                         </div>
+                         <div class="form-group">
+                                <label class="control-label">State whether your spouse is employed  </label>  
+                                
+                                <div class="justify-content-right">
+                                  <br/>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                  <input type="radio" required name="employed" value="Yes"  #employed="ngModel" [(ngModel)]="address.employed" (click)="employedYes()" >
+                                  <label class="form-check-label"> &nbsp; Yes</label>
+                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                  <input type="radio" required name="employed" value="No" #employed="ngModel" [(ngModel)]="address.employed" (click)="employedNo()" >
+                                  <label class="form-check-label"> &nbsp; No</label>
+                                </div>
+                          </div>
+                          <div class="row" *ngIf = "empActive">
+                                <div class="form-group">
+                                        <label class="control-label" for="street">Name of the work place where 
+                                                she/he is employed, Post held and the 
+                                                present salary inclusive of all allowances
+                                                </label>
+                                        <input class="form-control input-md" #empDetails="ngModel" required id="dom" name="empDetails" type="text"
+                                          placeholder="Street Address" [(ngModel)]="address.empDetails">
+                                        <div class="alert alert-danger" [hidden]="empDetails.valid">Employ details of the spouse is required</div>
+                                 </div>
+                          </div>
 
-          <div class="form-group text-center">
-              <button class="btn btn-outline-rounded btn-default" (click)="goToPrevious(addressForm)"> <span style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></span> Previous</button>
-              <button class="btn btn-outline-rounded btn-info" [disabled]="!addressForm.valid" (click)="goToNext(addressForm)"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></button>
-          </div>
+                </div>
+            <div class="container">
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Year</th>
+                        <th>DOB</th>
+                        <th>School</th>
+                        <th>Course</th>
+                        <th>Registration</th>
+                        <th>Scholar</th>
+                        <th>Employed</th>
+                    </tr>
+                    <tr *ngFor="let mem of membs">
+                        <td>{{mem.name}}</td>
+                        <td>{{mem.year}}</td>
+                        <td>{{mem.dob}}</td>
+                        <td>{{mem.school}}</td>
+                        <td>{{mem.course}}</td>
+                        <td>{{mem.registration}}</td>
+                        <td>{{mem.Scholar}}</td>
+                        <td>{{mem.employed}}</td>
+                    </tr>
+                </table>
+            </div>
+
+
+
+
+            <ngx-smart-modal #myModal identifier="myModal">
+              <div class="row">
+               
+                <div class='col-xs-offset-1 col-xs-7 col-sm-offset-1 col-sm-3'>
+                  <div class="form-group">
+                    <label class="control-label" for="year">Year</label>
+                    <input class="form-control input-md" #year="ngModel" required id="year" name="year" type="text"
+                      placeholder="year" [(ngModel)]="member.year">
+                  </div>
+                </div>
+                <div class='col-xs-offset-1 col-xs-7 col-sm-offset-1 col-sm-3'>
+                  <div class="form-group">
+                    <label class="control-label" for="dob">DOB</label>
+                    <input class="form-control input-md" #dob="ngModel" required id="dob" name="dob" type="text"
+                      placeholder="year" [(ngModel)]="member.dob">
+                  </div>
+                </div>
+                <div class='col-xs-offset-1 col-xs-7 col-sm-offset-1 col-sm-3'>
+                  <div class="form-group">
+                    <label class="control-label" for="school">School</label>
+                    <input class="form-control input-md" #school="ngModel" required id="school" name="school" type="text"
+                      placeholder="school" [(ngModel)]="member.school">
+                  </div>
+                </div>
+                <div class='col-xs-offset-1 col-xs-7 col-sm-offset-1 col-sm-3'>
+                  <div class="form-group">
+                    <label class="control-label" for="course">Course</label>
+                    <input class="form-control input-md" #course="ngModel" required id="course" name="course" type="text"
+                      placeholder="course" [(ngModel)]="member.course">
+                  </div>
+                </div>
+                <div class='col-xs-offset-1 col-xs-7 col-sm-offset-1 col-sm-3'>
+                  <div class="form-group">
+                    <label class="control-label" for="registration">Registration</label>
+                    <input class="form-control input-md" #registration="ngModel" required id="registration" name="registration" type="text"
+                      placeholder="registration" [(ngModel)]="member.registration">
+                  </div>
+                </div>
+                <div class='col-xs-offset-1 col-xs-7 col-sm-offset-1 col-sm-3'>
+                  <div class="form-group">
+                    <label class="control-label" for="scholar">Scholar</label>
+                    <input class="form-control input-md" #scholar="ngModel" required id="scholar" name="scholar" type="text"
+                      placeholder="scholar" [(ngModel)]="member.scholar">
+                  </div>
+                </div>
+                <div class='col-xs-offset-1 col-xs-7 col-sm-offset-1 col-sm-3'>
+                  <div class="form-group">
+                    <label class="control-label" for="employed">Employed</label>
+                    <input class="form-control input-md" #employed="ngModel" required id="employed" name="employed" type="text"
+                      placeholder="employed" [(ngModel)]="member.employed">
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-outline-rounded btn-default" (click)="addMember(addressForm)">Add</button> <br>
+              <button (click)="myModal.close()">Close</button>
+            </ngx-smart-modal>
+
+            <button (click)="ngxSmartModalService.getModal('myModal').open()">Open myModal</button>
+
+            
+
+            <div class="form-group text-center">
+              <button class="btn btn-outline-rounded btn-default" (click)="goToPrevious(addressForm)"> <span
+                  style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></span> Previous</button>
+              <button class="btn btn-outline-rounded btn-info" [disabled]="!addressForm.valid"
+                (click)="goToNext(addressForm)"> Next <span style="margin-left:10px;"
+                  class="glyphicon glyphicon-arrow-right"></span></button>
+            </div>
+          </form>
+
+
+
+
+        </div>
+
+
+
+
       </div>
-  
-  </div>
-</form>
-      </div>
+
+    </div>
   </div>
 </section>

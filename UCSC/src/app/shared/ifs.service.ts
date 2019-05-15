@@ -36,6 +36,10 @@ export class IfsService {
     return this.http.get(this.baseURL);
   }
 
+  getApplication(id:string){
+    return this.http.get(this.baseURL+`/${id}`);
+  }
+
   putForm(ifs:Ifs){
     return this.http.put(this.baseURL+`/${ifs._id}`,ifs);
   }

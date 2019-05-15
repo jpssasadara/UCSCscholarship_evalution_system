@@ -40,7 +40,18 @@ export class FormData {
     mtax : string;
 
     net : number;
+    //new : string;
 
+    married : string;
+    dom ?: string;
+    nspouse ?: string;
+    employed ?: string;
+    empdetails ?: string;
+
+    members : fmember[];
+
+    status : boolean = false;
+    gpa : number;
 
     clear() {
         this.fullName = '';
@@ -81,6 +92,13 @@ export class Address {
     city:string = '';
     state:string = '';
     zip:string = '';
+  //  member : fmember[];
+    married : string = 'No';
+    nspouse ?: string;
+    employed ?: string = "No";
+    empDetails ?: string;
+    dom ?: string;
+  
 }
 
 export class Work {
@@ -108,4 +126,28 @@ export class Work {
     mtotal : number =0 ;
     mtax : string;
     net : number;
+}
+
+export class fmember{
+    public name : string = "";
+    public year ?: string = "";
+    public dob : string;
+    public school : string;
+    public course ?: string;
+    public registration ?: string;
+   
+    public scholar : string;
+    public employed : string;
+
+   /* constructor (str1:string,str2:string,str3:string,str4:string,str5:string,str6:string,str7:string,str8:string){
+        this.name = str1;
+        this.dob = str2;
+        this.school = str3;
+        this.course = str4;
+        this.registration = str5;
+        this.year = str6;
+        this.scholar = str7;
+        this.employed = str8;
+    }
+*/
 }
