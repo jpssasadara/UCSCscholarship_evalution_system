@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentWellfareService } from '../student-wellfare.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-admin-for-welfare-schol',
@@ -10,6 +11,7 @@ export class AdminForWelfareScholComponent implements OnInit {
   public students = [];
   public listOfStudents: Student[];
   FatherMonth = "dffgf";
+  public application=[];
 
   //initialization of default marks 
   distance1= 0 ;
@@ -31,12 +33,12 @@ export class AdminForWelfareScholComponent implements OnInit {
   special5 = 0;
   special6 = 0;
   special7 = 0;
-  constructor(private _studentwelfareview: StudentWellfareService) { }
+  constructor(private router: Router , private _studentwelfareview: StudentWellfareService) { }
 
   ngOnInit() {
     this._studentwelfareview.getStudents()
       .subscribe(data => this.students = data);
-
+      
   }
   //initialization of default marks 
   setDefault(){
@@ -143,7 +145,7 @@ export class AdminForWelfareScholComponent implements OnInit {
       let emp1 = new Student();
       //emp1.Distance = this.students[_i]["distance"];
       emp1.Distance=this.finalMarkCalcuator( this.students[_i]["distance"],this.students[_i]["Samurdhi"],this.students[_i]["FatherMotherTotalIncome"],this.students[_i]["FatherLiving"],this.students[_i]["MotherLiving"],this.students[_i]["FatherEmployee"],this.students[_i]["MotherEmployee:string"] );
-      emp1.StudentId = this.students[_i]["regNumber"];
+      emp1.StudentId = this.students[_i]["_id"];
       emp1.StudentName = this.students[_i]["fullName"];
       this.listOfStudents[_i] = emp1;
       //console.log(this.listOfStudents[_i].Distance);
@@ -167,6 +169,11 @@ export class AdminForWelfareScholComponent implements OnInit {
       
     }
 
+  }
+  // View selected Student data
+  viewprofile(StudentId:string){
+    
+      this.router.navigate(['/admin/welfare/app',StudentId]);
   }
 
 }

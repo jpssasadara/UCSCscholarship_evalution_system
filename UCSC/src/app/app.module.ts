@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { EnrollmentService } from './enrollment.service';
 import { AdminForWelfareScholComponent } from './admin-for-welfare-schol/admin-for-welfare-schol.component';
 import { StudentWellfareService } from './student-wellfare.service';
+import { WelfareAdminComponent } from './welfare-admin/welfare-admin.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { StudentWellfareService } from './student-wellfare.service';
     WelfareComponent,
     ShoreaComponent,
     IfsComponent,
-    AdminForWelfareScholComponent
+    AdminForWelfareScholComponent,
+    WelfareAdminComponent
     
     
   ],

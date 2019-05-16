@@ -1,4 +1,5 @@
 export interface IViewWelfareStudent{
+    _id:string,
     regNumber: String,
     fullName: String,
     distance: Number,
@@ -7,5 +8,20 @@ export interface IViewWelfareStudent{
     FatherLiving:string,
     MotherLiving:string,
     FatherEmployee:string,
-    MotherEmployee:string 
+    MotherEmployee:string,
+    brother1Name:string,
+    brother1Age:string,
+    brother1University:string,
+    brother2Name:string,
+    brother2Age:string,
+    brother2University:string,
+    brother3Name:string,
+    brother3Age:string,
+    brother3University:string,
+    brother4Name:string,
+    brother4Age:string,
+    brother4University:string,
+    brother5Name:string,
+    brother5Age:string,
+    brother5University:string,
 }

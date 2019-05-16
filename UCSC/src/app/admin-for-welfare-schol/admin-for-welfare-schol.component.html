@@ -55,7 +55,7 @@
   <input type="text" name="sdf" [(ngModel)]="FatherMonth">
 
   <ul *ngFor="let studentob of listOfStudents">
-    <li>{{studentob.StudentId}} - - {{studentob.StudentName}} - - {{studentob.Distance}}</li>
+    <li>{{studentob.StudentId}} - - {{studentob.StudentName}} - - {{studentob.Distance}} <button (click)="viewprofile(studentob.StudentId)">View</button></li>
   </ul>
 </div>
 <!--{{studentob.StudentId}}  -  -  {{studentob.StudentName}} - - {{studentob.Distance}}-->
