@@ -1,21 +1,26 @@
 <div class="home-block">
 
   <form (ngSubmit)="onSubmit()">
-    {{userModel | json}}
+    
 
     <div class="container  ">
+        
       <div class="form-group col-md-12">
         <label for="formGroupExampleInput2">
           <h4><u>............................................ APPLICATION FOR SCHOLARSHIPS FROM STUDENT WELFARE AND
               DISTRESS FUND ....................................</u></h4>
         </label>
       </div>
+      <div>
+          <button class="btn btn-primary"  (click)="getdata()">View Application of {{userModel.regNumber}} </button>
+          <button class="btn btn-primary" >Delete Application of {{userModel.regNumber}}</button>
+      </div>
 
     </div>
     <!-- 1 st part-->
     <div class="container well ">
       <p>
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample1"
+        <button (click)="getdata()" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample1"
           aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-fullscreen"
             aria-hidden="true"></span>
         </button>
@@ -98,7 +103,7 @@
     <!-- 2 nd part -->
     <div class="container well ">
       <p>
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample2"
+        <button (click)="getdata()" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample2"
           aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-fullscreen"
             aria-hidden="true"></span>
         </button>
@@ -119,7 +124,7 @@
     <!-- 3 rd part -->
     <div class="container well ">
       <p>
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample3"
+        <button (click)="getdata()" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample3"
           aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-fullscreen"
             aria-hidden="true"></span>
         </button>
@@ -143,7 +148,7 @@
     <!--4 th part-->
     <div class="container well ">
       <p>
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample4"
+        <button  (click)="getdata()" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample4"
           aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-fullscreen"
             aria-hidden="true"></span>
         </button>
@@ -189,7 +194,7 @@
     <!--5 th part-->
     <div class="container well ">
       <p>
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
+        <button (click)="getdata()" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
           aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-fullscreen"
             aria-hidden="true"></span>
         </button>
@@ -339,7 +344,7 @@
     <!--6 th part-->
     <div class="container well ">
       <p>
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample6"
+        <button (click)="getdata()" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample6"
           aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-fullscreen"
             aria-hidden="true"></span>
         </button>
@@ -456,7 +461,7 @@
     <!--7 th part-->
     <div class="container well ">
       <p>
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample7"
+        <button (click)="getdata()" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample7"
           aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-fullscreen"
             aria-hidden="true"></span>
         </button>
@@ -558,7 +563,7 @@
     <!-- 8 rd part -->
     <div class="container well ">
       <p>
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample8"
+        <button (click)="getdata()" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample8"
           aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-fullscreen"
             aria-hidden="true"></span>
         </button>
@@ -600,7 +605,7 @@
     <!-- 9 rd part -->
     <div class="container well ">
       <p>
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample9"
+        <button (click)="getdata()" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample9"
           aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-fullscreen"
             aria-hidden="true"></span>
         </button>
@@ -644,7 +649,7 @@
     <!-- 10 rd part -->
     <div class="container well ">
       <p>
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample10"
+        <button (click)="getdata()" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample10"
           aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-fullscreen"
             aria-hidden="true"></span>
         </button>
@@ -670,7 +675,7 @@
     <!-- 11 rd part -->
     <div class="container well ">
       <p>
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample11"
+        <button (click)="getdata()" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample11"
           aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-fullscreen"
             aria-hidden="true"></span>
         </button>
@@ -854,7 +859,7 @@
     <!-- 12 rd part -->
     <div class="container well ">
       <p>
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample12"
+        <button (click)="getdata()" class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample12"
           aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-fullscreen"
             aria-hidden="true"></span>
         </button>
@@ -905,7 +910,5 @@
     </div>
     <button type="submit">Edit</button>
   </form>
-  <div>
-    <button (click)="getdata()">gggg</button>
-  </div>
+  
 </div>
