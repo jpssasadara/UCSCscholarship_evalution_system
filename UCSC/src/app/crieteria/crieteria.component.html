@@ -1,0 +1,190 @@
+<section class="home-block">
+  <div class="container">
+    
+    <form #crieteriaForm="ngForm" class="editForm" novalidate>
+        <h2>Distance</h2>
+    <ngx-smart-modal #myModal identifier="myModal">
+        <div class="row">
+            <div class="form-group"></div>
+            <input type="text" name="index" #index="ngModel" [(ngModel)]="dist.index">
+        </div>
+            <div class='col-xs-offset-1 col-xs-7 col-sm-offset-1 col-sm-3'>
+              <div class="form-group">
+                <label class="control-label" for="from">Form</label>
+                <input class="form-control input-md" #from="ngModel" required id="from" name="year" type="text"
+                  placeholder="year" [(ngModel)]="dist.from">
+              </div>
+              <div class="form-group">
+                
+                  <label class="control-label" for="to">To</label>
+                  <input class="form-control input-md" #to="ngModel" required id="to" name="to" type="text"
+                    placeholder="year" [(ngModel)]="dist.to">
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="marks">Marks</label>
+                    <input class="form-control input-md" #marks="ngModel" required id="marks" name="marks" type="text"
+                      placeholder="year" [(ngModel)]="dist.marks">
+                  </div>
+                  <div class="form-group">
+                      <button class="btn btn-outline-rounded btn-default" (click)="addDistance(crieteriaForm)">Add</button>
+                  </div>
+            </div>
+            
+        <button (click)="myModal.close()">Close</button>
+      </ngx-smart-modal>
+      <button (click)="ngxSmartModalService.getModal('myModal').open()">Open myModal</button>
+      <ngx-smart-modal #editModal identifier="editModal">
+          <div class="row">
+              <div class="form-group"></div>
+              <input type="text" name="index" #index="ngModel" [(ngModel)]="dist.index">
+          </div>
+              <div class='col-xs-offset-1 col-xs-7 col-sm-offset-1 col-sm-3'>
+                <div class="form-group">
+                  <label class="control-label" for="from">Form</label>
+                  <input class="form-control input-md" #from="ngModel" required id="from" name="year" type="text" value="{{d[distSelected].from}}"
+                    placeholder="year" [(ngModel)]="dist.from">
+                </div>
+                <div class="form-group">
+                  
+                    <label class="control-label" for="to">To</label>
+                    <input class="form-control input-md" #to="ngModel" required id="to" name="to" type="text" value="{{d[distSelected].to}}"
+                      placeholder="year" [(ngModel)]="dist.to">
+                  </div>
+                  <div class="form-group">
+                      <label class="control-label" for="marks">Marks</label>
+                      <input class="form-control input-md" #marks="ngModel" required id="marks" name="marks" type="text" value="{{d[distSelected].marks}}"
+                        placeholder="year" [(ngModel)]="dist.marks">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-outline-rounded btn-default" (click)="changeDistance(crieteriaForm)">Add</button>
+                    </div>
+              </div>
+              
+          <button (click)="myModal.close()">Close</button>
+         
+        </ngx-smart-modal>
+      <div class="container">
+        <table>
+          <tr>
+            <th>To</th>
+            <th>From</th>
+            <th>Marks</th>
+            <th></th>
+          </tr>
+          <tr *ngFor="let i of d">
+            <td>{{i.to}}</td>
+            <td>{{i.from}}</td>
+            <td>{{i.marks}}</td>
+            <td>  <button (click)="ngxSmartModalService.getModal('editModal').open(); passIndex(i.index)">Edit</button></td>
+          </tr>
+        </table>
+      </div>
+      
+      <h2>Parents</h2>
+      <ngx-smart-modal #myModal1 identifier="myModal1">
+          <div class="row">
+              <div class="form-group"></div>
+              <input type="text" name="index" #index="ngModel" [(ngModel)]="parent.index">
+          </div>
+              <div class='col-xs-offset-1 col-xs-7 col-sm-offset-1 col-sm-3'>
+                <div class="form-group">
+                  <label class="control-label" for="from">Form</label>
+                  <input class="form-control input-md" #from="ngModel" required id="from" name="year" type="text"
+                    placeholder="year" [(ngModel)]="parent.from">
+                </div>
+                <div class="form-group">
+                  
+                    <label class="control-label" for="to">To</label>
+                    <input class="form-control input-md" #to="ngModel" required id="to" name="to" type="text"
+                      placeholder="year" [(ngModel)]="parent.to">
+                  </div>
+                  <div class="form-group">
+                      <label class="control-label" for="marks">Marks</label>
+                      <input class="form-control input-md" #marks="ngModel" required id="marks" name="marks" type="text"
+                        placeholder="year" [(ngModel)]="parent.marks">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-outline-rounded btn-default" (click)="addParent(crieteriaForm)">Add</button>
+                    </div>
+              </div>
+              
+          <button (click)="myModal1.close()">Close</button>
+        </ngx-smart-modal>
+        <button (click)="ngxSmartModalService.getModal('myModal1').open()">Open myModal</button>
+        <ngx-smart-modal #editModal1 identifier="editModal1">
+            <div class="row">
+                <div class="form-group"></div>
+                <input type="text" name="index" #index="ngModel" [(ngModel)]="parent.index">
+            </div>
+                <div class='col-xs-offset-1 col-xs-7 col-sm-offset-1 col-sm-3'>
+                  <div class="form-group">
+                    <label class="control-label" for="from">Form</label>
+                    <input class="form-control input-md" #from="ngModel" required id="from" name="year" type="text" value="{{d[parntSelected].from}}"
+                      placeholder="year" [(ngModel)]="parent.from">
+                  </div>
+                  <div class="form-group">
+                    
+                      <label class="control-label" for="to">To</label>
+                      <input class="form-control input-md" #to="ngModel" required id="to" name="to" type="text" value="{{d[parntSelected].to}}"
+                        placeholder="year" [(ngModel)]="parent.to">
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="marks">Marks</label>
+                        <input class="form-control input-md" #marks="ngModel" required id="marks" name="marks" type="text" value="{{d[parntSelected].marks}}"
+                          placeholder="year" [(ngModel)]="parent.marks">
+                      </div>
+                      <div class="form-group">
+                          <button class="btn btn-outline-rounded btn-default" (click)="changeParent(crieteriaForm)">Add</button>
+                      </div>
+                </div>
+                
+            <button (click)="myModal1.close()">Close</button>
+           
+          </ngx-smart-modal>
+        <div class="container">
+          <table>
+            <tr>
+              <th>To</th>
+              <th>From</th>
+              <th>Marks</th>
+              <th></th>
+            </tr>
+            <tr *ngFor="let j of p">
+              <td>{{j.to}}</td>
+              <td>{{j.from}}</td>
+              <td>{{j.marks}}</td>
+              <td>  <button (click)="ngxSmartModalService.getModal('editModal1').open(); passIndex(j.index)">Edit</button></td>
+            </tr>
+          </table>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="cr1">Both father and mother are dead</label>
+            <input class="form-control input-md" #crt1="ngModel" required id="crt1" name="crt1" type="text"
+              placeholder="year" [(ngModel)]="crteria.crt1">
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="cr2">Either father or mother dead</label>
+            <input class="form-control input-md" #crt2="ngModel" required id="crt2" name="crt2" type="text"
+              placeholder="year" [(ngModel)]="crteria.crt2">
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="cr1">Father or mother unemployed, Disable</label>
+            <input class="form-control input-md" #crt3="ngModel" required id="crt3" name="crt3" type="text"
+              placeholder="year" [(ngModel)]="crteria.crt3">
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="cr1">Sister/brother following a course in a University</label>
+            <input class="form-control input-md" #sibil1="ngModel" required id="sibil1" name="sibil1" type="text"
+              placeholder="year" [(ngModel)]="crteria.sibil1">
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="cr1">School going sister/brother who is 18 years or under</label>
+            <input class="form-control input-md" #sibil2="ngModel" required id="sibil2" name="sibil2" type="text"
+              placeholder="year" [(ngModel)]="crteria.sibil2">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-outline-rounded btn-default" (click)="onEdit()">Submit</button>
+        </div>
+      </form>
+  </div>
+  </section>

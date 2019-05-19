@@ -16,6 +16,7 @@ import { ResultComponent } from './result/result.component';
 
 import { IfsAdminComponent } from './ifs-admin/ifs-admin.component';
 import { IfsApplicationComponent } from './ifs-application/ifs-application.component';
+import { CrieteriaComponent } from './crieteria/crieteria.component';
 
 export const routes: Routes = [
  { path: '', redirectTo: '/homepage', pathMatch: 'full'},
@@ -39,6 +40,7 @@ export const routes: Routes = [
 
  { path: 'admin/ifs/:_id',component:IfsApplicationComponent},
  
+ { path: 'admin/ifs/crieteria/home', component:CrieteriaComponent},
 
  //{ path: '**', component: PersonalComponent },
  { path: 'scholarship/getWelfareStu', component:AdminForWelfareScholComponent}
