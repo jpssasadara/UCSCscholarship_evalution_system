@@ -30,6 +30,8 @@ import { NgxSmartModalModule } from 'ngx-smart-modal';
 import { IfsAdminComponent } from './ifs-admin/ifs-admin.component';
 import { IfsApplicationComponent } from './ifs-application/ifs-application.component';
 import { CrieteriaComponent } from './crieteria/crieteria.component';
+import { ClistComponent } from './clist/clist.component';
+import { CitemsComponent } from './citems/citems.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,10 @@ import { CrieteriaComponent } from './crieteria/crieteria.component';
     IfsApplicationComponent,
    
     CrieteriaComponent,
+   
+    ClistComponent,
+   
+    CitemsComponent,
 
     
     

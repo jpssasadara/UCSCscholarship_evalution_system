@@ -159,7 +159,7 @@ export class FormDataService {
         // Reset the workflow
         this.workflowService.resetSteps();
         // Return the form data after all this.* members had been reset
-        this.formData.clear();
+        
         this.isPersonalFormValid = this.isWorkFormValid = this.isAddressFormValid = false;
         return this.formData;
     }

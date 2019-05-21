@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const { mongoose } = require('./db.js');
 var ifsController = require('./controllers/ifsController.js');
 var crieteriaController = require('./controllers/crieteriaController.js');
+var marksController = require('./controllers/marksController');
 var app = express();
 app.use(bodyParser.json());
 
@@ -23,3 +24,4 @@ app.use((req,res,next)=>{
 
 app.use('/ifs',ifsController);
 app.use('/crieteria',crieteriaController);
+app.use('/marks',marksController);

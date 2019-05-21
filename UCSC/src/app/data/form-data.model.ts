@@ -54,27 +54,9 @@ export class FormData {
     status : boolean = false;
     gpa : number = 0;
 
-    clear() {
-        this.fullName = '';
-        this.registration = '';
-        this.email = '';
-        this.course = '';
-        this.address = '';
-        this.distance = 0;
-        this.telephone = '';
-        this.scholar = '';
-        this.samurdhi = '';
-        this.reason = "";
-        this.nfather = "";
-        this.faddress = "";
-        this.fage = "";
-        this.foccupation = "";
-        this.nmother = "";
-        this.maddress = "";
-        this.mage = "";
-        this.moccupation = "";
+   
     }
-}
+
 
 export class Personal {
     fullName: string = '';

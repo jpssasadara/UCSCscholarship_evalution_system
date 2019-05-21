@@ -1,0 +1,190 @@
+<div class="container">
+  <form #arrForm="ngForm" class="arrForm" novalidate>
+    <div class='row'>
+      <div class='col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8'>
+        <div class="row">
+          <div class='col-xs-12 col-sm-3'>
+            <div class="form-group">
+              <label class="control-label" for="registration">Distance</label>
+              <input class="form-control input-md" value="{{candiate.distance}}">
+
+            </div>
+          </div>
+          <div class='col-xs-12 col-sm-3'>
+
+            <label class="control-label" for="fullName">Range</label> <br>
+            <p>{{range1}}</p>
+
+          </div>
+
+          <div class='col-xs-12 col-sm-6'>
+            <div class="form-group">
+              <label class="control-label" for="fullName">Marks</label>
+              <input class="form-control input-md" name="mark1" #mark1="ngModel" [(ngModel)]="mrk1">
+              <div class="alert alert-danger" [hidden]="mark1.valid">course Number is required</div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="row">
+          <div class='col-xs-12 col-sm-3'>
+            <div class="form-group">
+              <label class="control-label" for="registration">Income Level</label>
+              <input class="form-control input-md" value="{{total}}">
+
+            </div>
+          </div>
+          <div class='col-xs-12 col-sm-3'>
+
+            <label class="control-label" for="fullName">Range</label> <br>
+            <p>{{range2}}</p>
+
+          </div>
+
+          <div class='col-xs-12 col-sm-6'>
+            <div class="form-group">
+              <label class="control-label" for="fullName">Marks</label>
+              <input class="form-control input-md" name="mark2" #mark2="ngModel" [(ngModel)]="mrk2">
+              <div class="alert alert-danger" [hidden]="mark2.valid">course Number is required</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class='col-xs-12 col-sm-6'>
+            <div class="form-group">
+              <label class="control-label" for="registration">For special reasons related to parents:</label>
+              <input class="form-control input-md" value="{{state}}">
+
+            </div>
+          </div>
+          <div class='col-xs-12 col-sm-6'>
+            <div class="form-group">
+              <label class="control-label" for="fullName">Marks</label>
+              <input class="form-control input-md" name="mark3" #mark3="ngModel" [(ngModel)]="mrk3">
+              <div class="alert alert-danger" [hidden]="mark3.valid">course Number is required</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <table>
+            <tr>
+              <th>Name</th>
+              <th>Date of Birth/age</th>
+              <th>School/Institute</th>
+              <th>University Details</th>
+              <th>Scholarship <br>owner</th>
+              <th>Whether employed</th>
+
+            </tr>
+            <tr *ngFor="let i of sibil; index as j">
+              <td>{{i.name}}</td>
+              <td>{{i.dob}}</td>
+              <td>{{i.school}}</td>
+              <td>`{{i.registration}} {{i.course}} {{i.year}}</td>
+              <td>{{i.scholar}}</td>
+              <td>{{i.employed}}</td>
+
+            </tr>
+          </table>
+        </div>
+        <h4>Category 1</h4>
+        <div class="row">
+
+
+          <div class='col-xs-12 col-sm-6'>
+            <div class="form-group">
+              <label></label>
+              <p>Sister/brother following a course in a <br>
+                University</p>
+            </div>
+          </div>
+          <div class='col-xs-12 col-sm-2'>
+            <div class="form-group">
+              <label class="control-label" for="fullName">Amount</label>
+              <input class="form-control input-md" type="text" name="count1" #count1="ngModel"
+                [(ngModel)]="sibilng.count1">
+
+            </div>
+          </div>
+          <div class='col-xs-12 col-sm-2'>
+            <div class="form-group">
+              <label class="control-label" for="fullName">Points</label>
+              <p>{{cat1}}</p>
+
+            </div>
+          </div>
+          <div class='col-xs-12 col-sm-2'>
+            <div class="form-group">
+              <label class="control-label" for="fullName">Marks</label>
+              <input class="form-control input-md" type="text" value="{{(crt.sibil1*1*sibilng.count1*1)}}">
+
+            </div>
+          </div>
+        </div>
+        <h4>Category 2</h4>
+        <div class="row">
+
+
+          <div class='col-xs-12 col-sm-6'>
+            <div class="form-group">
+              <label></label>
+              <p>School going sister/brother who is 18 <br>
+                years or under</p>
+            </div>
+          </div>
+          <div class='col-xs-12 col-sm-2'>
+            <div class="form-group">
+              <label class="control-label" for="fullName">Amount</label>
+              <input class="form-control input-md" type="text" name="count2" #count2="ngModel"
+                [(ngModel)]="sibilng.count2">
+
+            </div>
+          </div>
+          <div class='col-xs-12 col-sm-2'>
+            <div class="form-group">
+              <label class="control-label" for="fullName">Points</label>
+              <p>{{cat2}}</p>
+
+            </div>
+          </div>
+          <div class='col-xs-12 col-sm-2'>
+            <div class="form-group">
+              <label class="control-label" for="fullName">Marks</label>
+              <input class="form-control input-md" type="text" value="{{(crt.sibil2*1*sibilng.count2*1)}}" >
+
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class='col-xs-12 col-sm-6'>
+            <div class="form-group">
+              <label></label>
+              <p>Total points for special reasons related to siblings</p>
+            </div>
+          </div>
+          <div class="col-xs-12 col-md-2"></div>
+          <div class='col-xs-12 col-sm-3'>
+            <div class="form-group">
+              <label class="control-label" for="fullName">Marks</label>
+              <input class="form-control input-md" type="text" name="mark4" #mark4="ngModel" [(ngModel)]="mrk4" value="{{(crt.sibil2*1*sibilng.count2*1+crt.sibil1*1*sibilng.count1*1)}}">
+
+            </div>
+          </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <label class="control-label" for="fullName">Final Marks</label>
+                <input class="form-control input-md" type="text" name="mark4" #mark4="ngModel" [(ngModel)]="mrk4" value="{{(crt.sibil2*1*sibilng.count2*1+crt.sibil1*1*sibilng.count1*1)+mrk1*1+mrk2*1+mrk3*1}}">
+  
+              </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="form-group text-center">
+        <button class="btn btn-success btn-outline-rounded btn-info" (click)="submit()"> Submit <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></button>
+    </div>
+  </form>
+</div>

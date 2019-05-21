@@ -27,6 +27,7 @@ export class IfsApplicationComponent implements OnInit {
   }
 
   submit(){
+    this.arr.status = true;
    this.ifsService.putForm(this.arr).subscribe((res)=>{
      console.log("Updated successfully");
    });
