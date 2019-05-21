@@ -9,6 +9,7 @@ import{ ShoreaComponent} from './shorea/shorea.component';
 import{ AdminForWelfareScholComponent} from './admin-for-welfare-schol/admin-for-welfare-schol.component';
 import {  FormsModule} from '@angular/forms';
 import { WelfareAdminComponent } from './welfare-admin/welfare-admin.component';
+import { HtmltopdfComponent } from './htmltopdf/htmltopdf.component';
 
 const routes: Routes = [
  { path: '', redirectTo: '/homepage', pathMatch: 'full'},
@@ -19,7 +20,8 @@ const routes: Routes = [
  { path: 'ifs' , component:IfsComponent},
  { path: 'shorea' ,component:ShoreaComponent},
  { path: 'scholarship/getWelfareStu', component:AdminForWelfareScholComponent},
- { path:'admin/welfare/app/:application',component:WelfareAdminComponent}
+ { path:'admin/welfare/app/:application',component:WelfareAdminComponent},
+ { path: 'welfare/getpdf',component:HtmltopdfComponent}
 ];
 
 @NgModule({
@@ -30,4 +32,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [HomepageComponent,RegisterComponent,LoginComponent,WelfareComponent,IfsComponent,ShoreaComponent,AdminForWelfareScholComponent,WelfareAdminComponent]
+export const routingComponents = [HomepageComponent,RegisterComponent,LoginComponent,WelfareComponent,IfsComponent,ShoreaComponent,AdminForWelfareScholComponent,WelfareAdminComponent,HtmltopdfComponent]

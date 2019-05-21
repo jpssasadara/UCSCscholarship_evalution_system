@@ -14,6 +14,7 @@ import { EnrollmentService } from './enrollment.service';
 import { AdminForWelfareScholComponent } from './admin-for-welfare-schol/admin-for-welfare-schol.component';
 import { StudentWellfareService } from './student-wellfare.service';
 import { WelfareAdminComponent } from './welfare-admin/welfare-admin.component';
+import { HtmltopdfComponent } from './htmltopdf/htmltopdf.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { WelfareAdminComponent } from './welfare-admin/welfare-admin.component';
     ShoreaComponent,
     IfsComponent,
     AdminForWelfareScholComponent,
-    WelfareAdminComponent
+    WelfareAdminComponent,
+    HtmltopdfComponent
     
     
   ],
