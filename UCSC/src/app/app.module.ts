@@ -15,6 +15,8 @@ import { AdminForWelfareScholComponent } from './admin-for-welfare-schol/admin-f
 import { StudentWellfareService } from './student-wellfare.service';
 import { WelfareAdminComponent } from './welfare-admin/welfare-admin.component';
 import { HtmltopdfComponent } from './htmltopdf/htmltopdf.component';
+import { WelfareEditComponent } from './welfare-edit/welfare-edit.component';
+import { CookieService } from 'ngx-cookie-service';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { HtmltopdfComponent } from './htmltopdf/htmltopdf.component';
     IfsComponent,
     AdminForWelfareScholComponent,
     WelfareAdminComponent,
-    HtmltopdfComponent
+    HtmltopdfComponent,
+    WelfareEditComponent
+   
     
     
   ],
@@ -38,7 +42,7 @@ import { HtmltopdfComponent } from './htmltopdf/htmltopdf.component';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [EnrollmentService,StudentWellfareService],
+  providers: [EnrollmentService,StudentWellfareService,CookieService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,6 +3,7 @@ import { RegScho } from 'src/app/RegScho';
 import { EnrollmentService } from '../enrollment.service';
 import {Router} from '@angular/router';
 import Swal from 'sweetalert2';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-welfare',
@@ -16,7 +17,7 @@ export class WelfareComponent implements OnInit {
   userModel = new RegScho('batch','Degree...','',"",'','','','','','','','','','','','','','','','','','','','','','','','','','','','',''
   ,'','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','',''
   ,'','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','');
-  constructor(private router: Router, private _enrollmentService: EnrollmentService) { }
+  constructor(private cookieService: CookieService, private router: Router, private _enrollmentService: EnrollmentService) { }
 
   ngOnInit() {
   }
@@ -33,13 +34,18 @@ export class WelfareComponent implements OnInit {
         response => console.log("Success !", response),
         error => this.errorMsg = error.statusText,
       )
-      if(this.errorMsg ==null){
+      if(this.errorMsg !=null){
+
         this.router.navigate(['/welfare/getpdf']);
+        this.cookieService.set( 'Test', 'Hello World' );
+        
+        this.cookieService.set( 'appdata', JSON.stringify(this.userModel) );
+        //console.log(this.cookieService.get('appdata'));
       }
       else{
         console.log( error =>error.statusText+"sasa");
         Swal.fire({
-          title: 'error !!1! ',
+          title: 'error !! ',
           text: 'A Some required attribute has been missed please Check Again ',
           type: 'warning'
         });
