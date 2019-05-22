@@ -28,7 +28,7 @@
   </div>
 
   <div class="col-md-5 ">
-      <label>................................... For special reasons..................................</label>
+      <label>................................ For special reasons.................................</label>
       <div class="well">
           <li>Either father or mother dead<input class="form-control" type="number" placeholder="Marks" [(ngModel)]="special2"></li>
           <li>Father or mother unemployed, Disable<input class="form-control" type="number" placeholder="Marks" [(ngModel)]="special3"></li>
@@ -41,21 +41,36 @@
   </div>
 </div>
 <div>
-  admin-for-welfare-schol works!
-  <hr />
+ 
+  <hr /><hr/>
+  <!--
   <ul>
     <li>Student_id - - Student_name - - Distance </li>
   </ul>
   <hr />
   <ul *ngFor="let student of students">
     <li>{{student.regNumber}} - - {{student.fullName}} - - {{student.distance}}</li>
-  </ul>
+  </ul>  
   <hr />
   <button (click)="sasa()">sasa</button>
   <input type="text" name="sdf" [(ngModel)]="FatherMonth">
+ -->
+ <select id="batch" class="form-control" name="batch" [(ngModel)]="searchText">
+    <option selected>Batch Number</option>
+    <option>2013/2014</option>
+    <option>2014/2015</option>
+    <option>2015/2016</option>
+    <option>2016/2017</option>
+    <option>2017/2018</option>
+  </select>
 
-  <ul *ngFor="let studentob of listOfStudents">
-    <li>{{studentob.StudentId}} - - {{studentob.StudentName}} - - {{studentob.Distance}} <button (click)="viewprofile(studentob.StudentId)">View</button></li>
+  <div class="row well"><div class="col-md-3"><b>Id</b></div ><div class="col-md-2"><b>Batch</b></div><div class="col-md-3"><b>Student Name</b></div><div class="col-md-1"><b>Total Marks</b></div><div class="col-md-2"><b>View</b></div></div>   
+  <hr>
+
+
+  <ul *ngFor="let studentob of listOfStudentsfinal ">
+    <li ><div class="row"><div class="col-md-3">{{studentob.StudentId}} </div ><div class="col-md-2">{{studentob.batch}}</div><div class="col-md-3">{{studentob.StudentName}}</div><div class="col-md-1">{{studentob.Distance}}</div><div class="col-md-2"><button class="btn btn-link" (click)="viewprofile(studentob.StudentId)">View</button></div></div>   </li>
+    <hr>
   </ul>
 </div>
 <!--{{studentob.StudentId}}  -  -  {{studentob.StudentName}} - - {{studentob.Distance}}-->

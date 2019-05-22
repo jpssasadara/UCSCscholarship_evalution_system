@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentWellfareService } from '../student-wellfare.service';
 import {Router} from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-admin-for-welfare-schol',
@@ -10,8 +11,10 @@ import {Router} from '@angular/router';
 export class AdminForWelfareScholComponent implements OnInit {
   public students = [];
   public listOfStudents: Student[];
+  public listOfStudentsfinal: Student[];
   FatherMonth = "dffgf";
   public application=[];
+  searchText = "Batch Number";
 
   //initialization of default marks 
   distance1= 0 ;
@@ -137,6 +140,15 @@ export class AdminForWelfareScholComponent implements OnInit {
       return finalMark;
   }
   sasa() {
+    this.listOfStudentsfinal=null;
+    if(this.searchText=="Batch Number" || this.searchText==null){
+      Swal.fire({
+        title: 'Warning !! ',
+        text: 'Could you please select batch number ... ',
+        type: 'warning'
+      });
+    }else{
+      
     this.listOfStudents = new Array(this.students.length);
     this.FatherMonth = "sasadara";
     //console.log(this.students[0]["fullName"]);
@@ -147,6 +159,7 @@ export class AdminForWelfareScholComponent implements OnInit {
       emp1.Distance=this.finalMarkCalcuator( this.students[_i]["distance"],this.students[_i]["Samurdhi"],this.students[_i]["FatherMotherTotalIncome"],this.students[_i]["FatherLiving"],this.students[_i]["MotherLiving"],this.students[_i]["FatherEmployee"],this.students[_i]["MotherEmployee:string"] );
       emp1.StudentId = this.students[_i]["_id"];
       emp1.StudentName = this.students[_i]["fullName"];
+      emp1.batch = this.students[_i]["batch"];
       this.listOfStudents[_i] = emp1;
       //console.log(this.listOfStudents[_i].Distance);
     }
@@ -163,11 +176,17 @@ export class AdminForWelfareScholComponent implements OnInit {
       this.listOfStudents[index] = this.listOfStudents[_r];
       this.listOfStudents[_r] = smallerNumber;
     }
-
-    for (var _r = 0; _r < this.listOfStudents.length; _r++) {
-      console.log(this.listOfStudents[_r].Distance);
+    this.listOfStudentsfinal = new Array();
+    for (var _rr = 0; _rr < this.listOfStudents.length; _rr++) {
+      console.log(this.listOfStudents[_rr].Distance);
+      if(this.searchText==this.listOfStudents[_rr].batch){
+        console.log(this.listOfStudents[_rr].Distance+" "+this.searchText+" "+this.listOfStudents[_rr].batch);
+        this.listOfStudentsfinal.push(this.listOfStudents[_rr]);
+      }
       
     }
+    }
+    
 
   }
   // View selected Student data
@@ -182,6 +201,13 @@ class Student {
   private _Distance: any;
   private _StudentId: String;
   private _StudentName: String;
+  private _batch: String;
+  public get batch(): String {
+    return this._batch;
+  }
+  public set batch(value: String) {
+    this._batch = value;
+  }
 
   public get Distance(): any {
     return this._Distance;

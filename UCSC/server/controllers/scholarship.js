@@ -159,7 +159,7 @@ exports.create_enrollment = (req, res, next) => {
 
 exports.view_enrollment = (req, res, next) => {
     Scholarship.find()
-        .select('fullName regNumber distance Samurdhi FatherMotherTotalIncome FatherLiving MotherLiving FatherEmployee MotherEmployee brother1Name brother1Age brother1University brother2Name brother2Age brother2University brother3Name brother3Age brother3University brother4Name brother4Age brother4University brother5Name brother5Age brother5University')
+        .select('fullName regNumber distance Samurdhi FatherMotherTotalIncome FatherLiving MotherLiving FatherEmployee MotherEmployee brother1Name brother1Age brother1University brother2Name brother2Age brother2University brother3Name brother3Age brother3University brother4Name brother4Age brother4University brother5Name brother5Age brother5University batch')
         .exec()
         .then(docs => {
             console.log(docs);
@@ -190,7 +190,8 @@ exports.view_enrollment = (req, res, next) => {
                         brother4University: doc.brother4University,
                         brother5Name: doc.brother5Name,
                         brother5Age: doc.brother5Age,
-                        brother5University: doc.brother5University
+                        brother5University: doc.brother5University,
+                        batch:doc.batch
 
                     };
                 })

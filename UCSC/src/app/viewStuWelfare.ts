@@ -24,4 +24,5 @@ export interface IViewWelfareStudent{
     brother5Name:string,
     brother5Age:string,
     brother5University:string,
+    batch:string,
 }
