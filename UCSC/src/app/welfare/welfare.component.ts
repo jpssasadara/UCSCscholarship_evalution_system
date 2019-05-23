@@ -34,8 +34,8 @@ export class WelfareComponent implements OnInit {
         response => console.log("Success !", response),
         error => this.errorMsg = error.statusText,
       )
-      if(this.errorMsg !=null){
-
+      if(this.errorMsg != null){
+        console.log(this.errorMsg.length);
         this.router.navigate(['/welfare/getpdf']);
         this.cookieService.set( 'Test', 'Hello World' );
         

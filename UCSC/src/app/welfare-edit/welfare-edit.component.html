@@ -2,7 +2,7 @@
 
     <form (ngSubmit)="onSubmit()">
       
-  
+      {{userModel | json}}
       <div class="container  ">
           
         <div class="form-group col-md-12">
@@ -64,7 +64,7 @@
           </div>
           <div class="form-group col-md-6">
             <label for="formGroupExampleInput2">Registration Number: </label>
-            <input type="text" class="form-control" name="regNumber" id="regNumber" placeholder="Registration Number"
+            <input input type="hidden" class="form-control" name="regNumber" id="regNumber" placeholder="Registration Number"
               [(ngModel)]="userModel.regNumber">
           </div>
           <div class="form-group col-md-6">
@@ -912,9 +912,8 @@
   
         </div>
         <div class="col-md-2 ">
-            <button class="btn btn-primary" type="submit">Edit</button>
-        </div>
-        
+          <button class="btn btn-primary" type="submit">Edit</button>
+      </div>
       </div>
       
     </form>
