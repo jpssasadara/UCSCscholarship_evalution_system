@@ -19,6 +19,7 @@ import { IfsApplicationComponent } from './ifs-application/ifs-application.compo
 import { CrieteriaComponent } from './crieteria/crieteria.component';
 import { ClistComponent } from './clist/clist.component';
 import { CitemsComponent } from './citems/citems.component';
+import { CtableComponent } from './ctable/ctable.component';
 
 export const routes: Routes = [
  { path: '', redirectTo: '/homepage', pathMatch: 'full'},
@@ -47,6 +48,8 @@ export const routes: Routes = [
  { path: 'admin/ifs/clist/list', component:ClistComponent},
 
  { path: 'admin/ifs/clist/list/:_id', component:CitemsComponent},
+
+ { path: 'ifs/admin/ctable', component:CtableComponent},
 
  //{ path: '**', component: PersonalComponent },
  { path: 'scholarship/getWelfareStu', component:AdminForWelfareScholComponent}

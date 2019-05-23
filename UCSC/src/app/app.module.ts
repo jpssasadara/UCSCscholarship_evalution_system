@@ -19,7 +19,7 @@ import { ResultComponent } from './result/result.component';
 import { IncomeComponent } from './income/income.component';
 import { AdminForWelfareScholComponent } from './admin-for-welfare-schol/admin-for-welfare-schol.component';
 import { StudentWellfareService } from './student-wellfare.service';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FormDataService } from './data/form-data.service';
 import { WorkflowService } from './workflow/workflow.service';
@@ -32,7 +32,15 @@ import { IfsApplicationComponent } from './ifs-application/ifs-application.compo
 import { CrieteriaComponent } from './crieteria/crieteria.component';
 import { ClistComponent } from './clist/clist.component';
 import { CitemsComponent } from './citems/citems.component';
+import { CtableComponent } from './ctable/ctable.component';
+import { from } from 'rxjs';
 
+import {MatIconModule} from '@angular/material/icon';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort'; 
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule, MatInput } from '@angular/material';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,7 +67,7 @@ import { CitemsComponent } from './citems/citems.component';
    
     CitemsComponent,
 
-    
+    CtableComponent    
     
   ],
   imports: [    
@@ -67,7 +75,13 @@ import { CitemsComponent } from './citems/citems.component';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
-   
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
     NgxSmartModalModule.forRoot()
     
   ],
