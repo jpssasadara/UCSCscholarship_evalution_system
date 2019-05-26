@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import { NgModule,ChangeDetectorRef } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 
 
@@ -41,6 +41,10 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort'; 
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule, MatInput } from '@angular/material';
+import { MatDialogModule,MatToolbarModule,MatGridListModule,MatButtonModule } from '@angular/material';
+
+import { CformComponent } from './cform/cform.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,8 +71,10 @@ import { MatInputModule, MatInput } from '@angular/material';
    
     CitemsComponent,
 
-    CtableComponent    
-    
+    CtableComponent,
+
+    CformComponent,
+
   ],
   imports: [    
     BrowserModule,
@@ -82,10 +88,30 @@ import { MatInputModule, MatInput } from '@angular/material';
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
-    NgxSmartModalModule.forRoot()
+    MatDialogModule,
+    MatToolbarModule,
+    MatGridListModule,
+    MatToolbarModule,
+    MatGridListModule,
+    MatFormFieldModule,
+    MatInputModule,
+    
+    MatButtonModule,
+   
+    MatTableModule,
+    MatIconModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatDialogModule,
+    NgxSmartModalModule.forRoot(),
+
+    FormsModule,
+    ReactiveFormsModule,
+    
     
   ],
   providers: [EnrollmentService,{provide:FormDataService,useClass: FormDataService}, WorkflowService,StudentWellfareService ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents : [CformComponent]
 })
 export class AppModule { }

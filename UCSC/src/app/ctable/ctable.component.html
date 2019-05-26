@@ -1,6 +1,6 @@
 <div class="search-div">
-  <button mat-raised-button>
-    <mat-icon>Add</mat-icon>Create
+  <button mat-raised-button (click)="onCreate()" >
+    <mat-icon>visibility</mat-icon>Add
     </button>
     <mat-form-field class="search-form-field" floatLabel="never">
         <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter()">
@@ -17,16 +17,24 @@
     </ng-container>
     <ng-container matColumnDef="status">
         <mat-header-cell *matHeaderCellDef mat-sort-header>Status</mat-header-cell>
-        <mat-cell *matCellDef="let element">{{element.status}}</mat-cell>
+        <mat-cell *matCellDef="let element"  >{{element.status}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="marks">
         <mat-header-cell *matHeaderCellDef mat-sort-header>Marks</mat-header-cell>
         <mat-cell *matCellDef="let element">{{element.marks}}</mat-cell>
     </ng-container>
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        
+          <button mat-icon-button (click)="onEdit(row)"><mat-icon>edit</mat-icon></button>
+      </mat-cell>
+    </ng-container>
+    
     
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
     
   </mat-table>
-  <mat-paginator [pageSizeOptions]="[2,5,10,25]" [pageSize]="2" showFirstLastButtons></mat-paginator>
+  <mat-paginator [pageSizeOptions]="[2,5,10,25]" [pageSize]="5" showFirstLastButtons></mat-paginator>
 </div>

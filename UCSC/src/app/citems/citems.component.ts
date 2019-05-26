@@ -71,6 +71,10 @@ export class CitemsComponent implements OnInit {
       ids : "",
       name : "",
       registration : "",
+      distance : 0,
+      income : 0,
+      parent : 0,
+      sibiling : 0,
       marks : 0,
       rank : 0,
       cat1 : 0,
@@ -91,6 +95,7 @@ export class CitemsComponent implements OnInit {
       this.total = this.candiate.fother + this.candiate.fproperty + this.candiate.fannual + this.candiate.mother + this.candiate.mproperty;
       this.mForm.ids = this.candiate._id;
       this.mForm.name = this.candiate.fullName;
+      this.mForm.registration = this.candiate.registration;
       console.log("Total " + this.total);
       this.sibil = this.candiate.members;
     });
@@ -191,8 +196,15 @@ export class CitemsComponent implements OnInit {
   submit(){
  
     this.mForm.status = "Yes";
+    this.mForm.distance = this.mrk1;
+    this.mForm.income = this.mrk2;
+    this.mForm.parent = this.mrk3;
+    
     this.mForm.cat1 = this.sibilng.count1;
     this.mForm.cat2 = this.sibilng.count2;
+
+    this.mForm.sibiling = this.mForm.cat1*5+this.mForm.cat2*3.5;
+
     this.mForm.marks = this.mrk1*1+this.mrk2*1+this.mrk3*1+this.mForm.cat1*5+this.mForm.cat2*3.5;
     this.marks.postForm(this.mForm).subscribe((res)=>{
       console.log("Final marks " + this.mForm.marks);
