@@ -52,26 +52,42 @@
           <label for="formGroupExampleInput2">Full Name: </label>
           <input type="text" id="fullName" class="form-control" name="fullName" id="formGroupExampleInput2"
             placeholder="Mr./Miss./Mrs./Rev" [(ngModel)]="userModel.fullName" required #fullName="ngModel" [class.is-invalid]="fullName.invalid && fullName.touched">
+            
             <div *ngIf="fullName.errors && (fullName.invalid || fullName.touched)">
-                <small class="text-danger" *ngIf="fullName.errors.required">Phone Number is required</small>
+                <small class="text-danger" *ngIf="fullName.errors.required">Full Name is required</small>
                 
               </div>
         </div>
         <div class="form-group col-md-12">
           <label for="formGroupExampleInput2">Permanent Address: </label>
           <textarea class="form-control" id="address" name="address" rows="3"
-            [(ngModel)]="userModel.address"></textarea>
+            [(ngModel)]="userModel.address" required #PermanentAddress="ngModel" [class.is-invalid]="PermanentAddress.invalid && PermanentAddress.touched"></textarea>
+
+            <div *ngIf="PermanentAddress.errors && (PermanentAddress.invalid || PermanentAddress.touched)">
+              <small class="text-danger" *ngIf="PermanentAddress.errors.required">Permanent Address is required</small>
+              
+            </div>
         </div>
         <div class="form-group col-md-6">
           <label for="formGroupExampleInput2">Registration Number: </label>
           <input type="text" class="form-control" name="regNumber" id="regNumber" placeholder="Registration Number"
-            [(ngModel)]="userModel.regNumber">
+            [(ngModel)]="userModel.regNumber" required #regNumber="ngModel" [class.is-invalid]="regNumber.invalid && regNumber.touched">
+
+            <div *ngIf="regNumber.errors && (regNumber.invalid || regNumber.touched)">
+              <small class="text-danger" *ngIf="regNumber.errors.required">Permanent Address is required</small>
+              
+            </div>
         </div>
         <div class="form-group col-md-6">
           <label for="formGroupExampleInput2">Contact Numbers: </label>
           <input type="text" class="form-control" name="contactNumber" id="contactNumber" placeholder="Contact Numbers"
-            [(ngModel)]="userModel.contactNumber">
-        </div>
+            [(ngModel)]="userModel.contactNumber" required #contactNumber="ngModel" [class.is-invalid]="contactNumber.invalid && contactNumber.touched">
+        
+            <div *ngIf="contactNumber.errors && (contactNumber.invalid || contactNumber.touched)">
+              <small class="text-danger" *ngIf="contactNumber.errors.required">Permanent Address is required</small>
+              
+            </div>
+          </div>
         <div class="form-group col-md-6">
           <label for="formGroupExampleInput2"> Email Address: </label>
           <input type="text" class="form-control" name="email" id="email" placeholder="Email Address"
