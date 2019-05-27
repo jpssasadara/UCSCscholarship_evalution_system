@@ -544,7 +544,7 @@ exports.delete_enrollment = (req, res, next) => {
                 return doc.regNumber
             })
             //res.status(200).json(response.application);
-            //----------------------------------------------------
+            //-------------------E MAIL SENDING PART ---------------------------------
             var transporter = nodemailer.createTransport({
                 service: 'gmail',
                 auth: {
