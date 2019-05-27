@@ -29,27 +29,27 @@ export class WelfareComponent implements OnInit {
     this.fileAddView=false;
   }
   onSubmit(){
+    
     this._enrollmentService.enroll(this.userModel)
       .subscribe(
         response => console.log("Success !", response),
         error => this.errorMsg = error.statusText,
       )
-      if(this.errorMsg != null){
+     
+        alert(this.errorMsg);
         console.log(this.errorMsg.length);
         this.router.navigate(['/welfare/getpdf']);
         this.cookieService.set( 'Test', 'Hello World' );
         
         this.cookieService.set( 'appdata', JSON.stringify(this.userModel) );
         //console.log(this.cookieService.get('appdata'));
-      }
-      else{
-        console.log( error =>error.statusText+"sasa");
+
         Swal.fire({
-          title: 'error !! ',
-          text: 'A Some required attribute has been missed please Check Again ',
-          type: 'warning'
+          title: 'Yes !!!  ',
+          text: 'Your Application was submitted .... ',
+          type: 'success'
         });
-      }
+      
       
   }
 }

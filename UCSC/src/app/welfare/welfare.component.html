@@ -913,7 +913,7 @@
   
         </div>
         <div class="col-md-2 ">
-            <button class="btn btn-primary" type="submit">submit</button>
+            <button [disabled]= "fullName.errors && (fullName.invalid || fullName.touched)" class="btn btn-primary" type="submit" >submit</button>
         </div>
         
       </div>
