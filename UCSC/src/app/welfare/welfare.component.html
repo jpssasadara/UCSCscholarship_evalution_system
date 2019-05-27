@@ -81,21 +81,21 @@
         <div class="form-group col-md-6">
           <label for="formGroupExampleInput2">Contact Numbers: </label>
           <input type="text" class="form-control" name="contactNumber" id="contactNumber" placeholder="Contact Numbers"
-            [(ngModel)]="userModel.contactNumber" required #contactNumber="ngModel" [class.is-invalid]="contactNumber.invalid && contactNumber.touched">
+            [(ngModel)]="userModel.contactNumber" pattern="^\d{10}$" required #contactNumber="ngModel" [class.is-invalid]="contactNumber.invalid && contactNumber.touched">
         
             <div *ngIf="contactNumber.errors && (contactNumber.invalid || contactNumber.touched)">
               <small class="text-danger" *ngIf="contactNumber.errors.required">Contact Number is required</small>
-              
+              <small class="text-danger" *ngIf="contactNumber.errors.pattern">Contact Number is invalied</small>
             </div>
           </div>
         <div class="form-group col-md-6">
           <label for="formGroupExampleInput2"> Email Address: </label>
           <input type="text" class="form-control" name="email" id="email" placeholder="Email Address"
-            [(ngModel)]="userModel.email" required #email="ngModel" [class.is-invalid]="email.invalid && email.touched">
+            [(ngModel)]="userModel.email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required #email="ngModel" [class.is-invalid]="email.invalid && email.touched">
 
             <div *ngIf="email.errors && (email.invalid || email.touched)">
               <small class="text-danger" *ngIf="email.errors.required">Email Address is required</small>
-              
+              <small class="text-danger" *ngIf="email.errors.pattern">Contact Number is invalied</small>
             </div>
         </div>
         <div class="form-group col-md-6">
@@ -127,7 +127,7 @@
             [(ngModel)]="userModel.district" required #district="ngModel" [class.is-invalid]="district.invalid && district.touched">
         
             <div *ngIf="district.errors && (district.invalid || district.touched)">
-              <small class="text-danger" *ngIf="district.errors.required">Distance is required</small>
+              <small class="text-danger" *ngIf="district.errors.required">District is required</small>
               
             </div>
           </div>
@@ -152,8 +152,13 @@
           <label for="formGroupExampleInput2"><span class="glyphicon glyphicon-record" aria-hidden="true"></span>Reason
             for applying for a Scholarship: </label>
           <textarea class="form-control" name="ReasonForApplyingScholarship" id="ReasonForApplyingScholarship" rows="6"
-            [(ngModel)]="userModel.ReasonForApplyingScholarship"></textarea>
-        </div>
+            [(ngModel)]="userModel.ReasonForApplyingScholarship" required #ReasonForApplyingScholarship="ngModel" [class.is-invalid]="ReasonForApplyingScholarship.invalid && ReasonForApplyingScholarship.touched"></textarea>
+       
+            <div *ngIf="ReasonForApplyingScholarship.errors && (ReasonForApplyingScholarship.invalid || ReasonForApplyingScholarship.touched)">
+              <small class="text-danger" *ngIf="ReasonForApplyingScholarship.errors.required">District is required</small>
+              
+            </div>
+          </div>
       </div>
     </div>
     <!-- 3 rd part -->
@@ -949,7 +954,16 @@
   
         </div>
         <div class="col-md-2 ">
-            <button [disabled]= "fullName.errors && (fullName.invalid || fullName.touched)" class="btn btn-primary" type="submit" >submit</button>
+            <button [disabled]= "(fullName.errors && (fullName.invalid || fullName.touched)) ||
+            (district.errors && (district.invalid || district.touched)) ||
+            (distance.errors && (distance.invalid || distance.touched))||
+            (divisionGramasevaNiladhari.errors && (divisionGramasevaNiladhari.invalid || divisionGramasevaNiladhari.touched))||
+            (email.errors && (email.invalid || email.touched))||
+            (contactNumber.errors && (contactNumber.invalid || contactNumber.touched))||
+            (regNumber.errors && (regNumber.invalid || regNumber.touched))||
+            (PermanentAddress.errors && (PermanentAddress.invalid || PermanentAddress.touched)) || 
+            (ReasonForApplyingScholarship.errors && (ReasonForApplyingScholarship.invalid || ReasonForApplyingScholarship.touched))
+            " class="btn btn-primary" type="submit" >submit</button>
         </div>
         
       </div>

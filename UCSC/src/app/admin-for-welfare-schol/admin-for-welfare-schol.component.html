@@ -64,12 +64,13 @@
     <option>2017/2018</option>
   </select>
 
-  <div class="row well"><div class="col-md-3"><b>Id</b></div ><div class="col-md-2"><b>Batch</b></div><div class="col-md-3"><b>Student Name</b></div><div class="col-md-1"><b>Total Marks</b></div><div class="col-md-2"><b>View</b></div></div>   
+  <div class="row well"><div class="col-md-3"><b>Id</b></div ><div class="col-md-2"><b>Batch</b></div><div class="col-md-3"><b>Student Name</b></div><div class="col-md-2"><b>Total Marks</b></div><div class="col-md-1"><b>View</b></div><div class="col-md-1"><b>Delete</b></div></div>   
   <hr>
 
 
   <ul *ngFor="let studentob of listOfStudentsfinal ">
-    <li ><div class="row"><div class="col-md-3">{{studentob.StudentId}} </div ><div class="col-md-2">{{studentob.batch}}</div><div class="col-md-3">{{studentob.StudentName}}</div><div class="col-md-1">{{studentob.Distance}}</div><div class="col-md-2"><button class="btn btn-link" (click)="viewprofile(studentob.StudentId)">View</button></div></div>   </li>
+    <li ><div class="row"><div class="col-md-3">{{studentob.StudentId}} </div ><div class="col-md-2">{{studentob.batch}}</div><div class="col-md-3">{{studentob.StudentName}}</div><div class="col-md-2">{{studentob.Distance}}</div><div class="col-md-1"><button class="btn btn-link" (click)="viewprofile(studentob.StudentId)">View</button></div>
+      <div class="col-md-1"><button class="btn btn-link" (click)="deleteprofile(studentob.StudentId)">Delete</button></div></div>   </li>
     <hr>
   </ul>
 </div>

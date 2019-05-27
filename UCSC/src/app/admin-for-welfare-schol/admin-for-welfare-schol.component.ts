@@ -195,6 +195,16 @@ export class AdminForWelfareScholComponent implements OnInit {
       this.router.navigate(['/admin/welfare/app',StudentId]);
   }
 
+  //Delete profile
+  //deleteprofile(studentob.StudentId)
+  deleteprofile(StudentId:string){
+    Swal.fire({
+      title: 'Warning !! ',
+      text: 'Developing yet ... ',
+      type: 'warning'
+    });
+  }
+
 }
 
 class Student {

@@ -515,3 +515,39 @@ exports.update_enrollment=(req,res,next)=>{
             });
         })
 }
+
+//delete_enrollment
+
+exports.delete_enrollment = (req,res,next)=>{
+    const regNum = req.params.stuId;
+    
+
+   // Scholarship.find({ _id: regNumber})
+   // .exec()
+   // .then(docs => {
+   //     const response = docs. email;
+
+   Scholarship.find({ regNumber: regNum})
+        .exec()
+        .then(docs => {
+            const response = {
+            application: docs.map(doc =>{
+                return{
+                    email: doc. email}})}
+                    //res.status(200).json(response.application);
+            
+            Scholarship.remove({regNumber:regNum})
+            .exec()
+            .then(result =>{
+               res.status(200).json({
+                   message: 'Application Deleted ',
+               })
+            })
+        
+        })
+        
+                 //email: doc. email
+   
+    //})
+   
+}
