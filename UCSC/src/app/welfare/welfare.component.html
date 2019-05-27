@@ -74,7 +74,7 @@
             [(ngModel)]="userModel.regNumber" required #regNumber="ngModel" [class.is-invalid]="regNumber.invalid && regNumber.touched">
 
             <div *ngIf="regNumber.errors && (regNumber.invalid || regNumber.touched)">
-              <small class="text-danger" *ngIf="regNumber.errors.required">Permanent Address is required</small>
+              <small class="text-danger" *ngIf="regNumber.errors.required">Registration Number is required</small>
               
             </div>
         </div>
@@ -84,33 +84,53 @@
             [(ngModel)]="userModel.contactNumber" required #contactNumber="ngModel" [class.is-invalid]="contactNumber.invalid && contactNumber.touched">
         
             <div *ngIf="contactNumber.errors && (contactNumber.invalid || contactNumber.touched)">
-              <small class="text-danger" *ngIf="contactNumber.errors.required">Permanent Address is required</small>
+              <small class="text-danger" *ngIf="contactNumber.errors.required">Contact Number is required</small>
               
             </div>
           </div>
         <div class="form-group col-md-6">
           <label for="formGroupExampleInput2"> Email Address: </label>
           <input type="text" class="form-control" name="email" id="email" placeholder="Email Address"
-            [(ngModel)]="userModel.email">
+            [(ngModel)]="userModel.email" required #email="ngModel" [class.is-invalid]="email.invalid && email.touched">
+
+            <div *ngIf="email.errors && (email.invalid || email.touched)">
+              <small class="text-danger" *ngIf="email.errors.required">Email Address is required</small>
+              
+            </div>
         </div>
         <div class="form-group col-md-6">
           <label for="formGroupExampleInput2"> Division of the Gramaseva Niladhari: </label>
           <input type="text" class="form-control" name="divisionGramasevaNiladhari" id="divisionGramasevaNiladhari"
-            placeholder="Division of the Gramaseva Niladhari:" [(ngModel)]="userModel.divisionGramasevaNiladhari">
-        </div>
+            placeholder="Division of the Gramaseva Niladhari:" [(ngModel)]="userModel.divisionGramasevaNiladhari" required #divisionGramasevaNiladhari="ngModel" [class.is-invalid]="divisionGramasevaNiladhari.invalid && divisionGramasevaNiladhari.touched">
+        
+            <div *ngIf="divisionGramasevaNiladhari.errors && (divisionGramasevaNiladhari.invalid || divisionGramasevaNiladhari.touched)">
+              <small class="text-danger" *ngIf="divisionGramasevaNiladhari.errors.required">Division of the Gramaseva Niladhari is required</small>
+              
+            </div>
+          </div>
         <div class="form-group col-md-6">
           <label for="formGroupExampleInput2"> Write down the distance (to the closest kilometer) from your
             Permanent residence (i.e. your home) to the University of Colombo.
             (1 mile = 1.6 k.m.)
           </label>
           <input type="text" class="form-control" name="distance" id="distance" placeholder="Ex-: 5km"
-            [(ngModel)]="userModel.distance">
-        </div>
+            [(ngModel)]="userModel.distance" required #distance="ngModel" [class.is-invalid]="distance.invalid && distance.touched">
+
+            <div *ngIf="distance.errors && (distance.invalid || distance.touched)">
+              <small class="text-danger" *ngIf="distance.errors.required">Distance is required</small>
+              
+            </div>
+          </div>
         <div class="form-group col-md-6">
           <label for="formGroupExampleInput2"> District: </label>
           <input type="text" class="form-control" name="district" id="district" placeholder="District"
-            [(ngModel)]="userModel.district">
-        </div>
+            [(ngModel)]="userModel.district" required #district="ngModel" [class.is-invalid]="district.invalid && district.touched">
+        
+            <div *ngIf="district.errors && (district.invalid || district.touched)">
+              <small class="text-danger" *ngIf="district.errors.required">Distance is required</small>
+              
+            </div>
+          </div>
 
       </div>
     </div>
