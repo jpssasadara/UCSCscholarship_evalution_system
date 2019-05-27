@@ -208,7 +208,7 @@ export class AdminForWelfareScholComponent implements OnInit {
       if (result.value) {
         Swal.fire(
           'Deleted!',
-          'Your imaginary file has been deleted.',
+          'Your imaginary file has been deleted. A Email was sent...',
           'success'
         )
       //------------OUR CODE HRARE -----------------------
