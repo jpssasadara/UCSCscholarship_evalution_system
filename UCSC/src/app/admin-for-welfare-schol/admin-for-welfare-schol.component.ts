@@ -196,13 +196,43 @@ export class AdminForWelfareScholComponent implements OnInit {
   }
 
   //Delete profile
-  //deleteprofile(studentob.StudentId)
   deleteprofile(StudentId:string){
     Swal.fire({
-      title: 'Warning !! ',
-      text: 'Developing yet ... ',
-      type: 'warning'
-    });
+      title: 'Are you sure?',
+      text: 'You will not be able to recover this imaginary file!',
+      type: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'No, keep it'
+    }).then((result) => {
+      if (result.value) {
+        Swal.fire(
+          'Deleted!',
+          'Your imaginary file has been deleted.',
+          'success'
+        )
+      //------------OUR CODE HRARE -----------------------
+      this._studentwelfareview.deleteApplication(StudentId)
+      .subscribe(
+        response => console.log("Success !", response),
+        error => console.log("hi error can not delete",error),
+      )
+
+      this._studentwelfareview.getStudents()
+      .subscribe(data => this.students = data);
+      //----------------------------------------------------
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire(
+          'Cancelled',
+          'Your imaginary file is safe :)',
+          'error'
+        )
+      }
+    })
+
+    
+
+      
   }
 
 }

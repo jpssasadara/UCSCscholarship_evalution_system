@@ -527,7 +527,7 @@ exports.delete_enrollment = (req,res,next)=>{
    // .then(docs => {
    //     const response = docs. email;
 
-   Scholarship.find({ regNumber: regNum})
+   Scholarship.find({ _id: regNum})
         .exec()
         .then(docs => {
             const response = {
@@ -536,7 +536,7 @@ exports.delete_enrollment = (req,res,next)=>{
                     email: doc. email}})}
                     //res.status(200).json(response.application);
             
-            Scholarship.remove({regNumber:regNum})
+            Scholarship.remove({_id:regNum})
             .exec()
             .then(result =>{
                res.status(200).json({
