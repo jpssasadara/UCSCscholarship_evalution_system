@@ -82,6 +82,58 @@ export class AdminForWelfareScholComponent implements OnInit {
     this.special6 = 0;
     this.special7 = 0;
   }
+  finalMarkCalcuator( distance: any, Samurdhi: string, FatherMotherTotalIncome:string,FatherLiving:string,MotherLiving:string,FatherEmployee:string,MotherEmployee:string ){
+      let finalMark=0;
+      //Distance 
+      if(parseInt(distance,10)>=200){
+        finalMark+=this.distance1;
+      }else if(parseInt(distance,10)>=150){
+        finalMark+=this.distance2;
+      }else if(parseInt(distance,10)>=100){
+        finalMark+=this.distance3;
+      }else if(parseInt(distance,10)>=70){
+        finalMark+=this.distance4;
+      }else if(parseInt(distance,10)>=40){
+        finalMark+=this.distance5;
+      }else if(parseInt(distance,10)>=30){
+        finalMark+=this.distance6;
+      }else{
+        finalMark+=0;
+      }
+      //Income Level
+      if(parseInt(FatherMotherTotalIncome,10)>400000){
+        finalMark+= this.Income6;
+      }else if(parseInt(FatherMotherTotalIncome,10)>300000){
+        finalMark+= this.Income5;
+      }else if(parseInt(FatherMotherTotalIncome,10)>200000){
+        finalMark+= this.Income4;
+      }else if(parseInt(FatherMotherTotalIncome,10)>100000){
+        finalMark+= this.Income3;
+      }else if(parseInt(FatherMotherTotalIncome,10)>50000){
+        finalMark+= this.Income2;
+      }else{
+        finalMark+=0;
+      }
+      //Samurdhi Recipient
+      if(Samurdhi=="Yes"){
+        finalMark+=this.Income1;
+      }else{
+        finalMark+=0;
+      }
+      //FatherLiving,MotherLiving,FatherEmployee,MotherEmployee
+      if(FatherLiving=="No" && MotherLiving=="No"){
+        finalMark+=this.special1;
+      }else if(FatherLiving=="No" || MotherLiving=="No"){
+        finalMark+=this.special2;
+      }
+      if(FatherEmployee=="" || MotherEmployee==""){
+        finalMark+=this.special3;
+      }
+      else{
+        finalMark+=0;
+      }
+      return finalMark;
+  }
   sasa() {
     this.listOfStudents = new Array(this.students.length);
     this.FatherMonth = "sasadara";
@@ -89,7 +141,8 @@ export class AdminForWelfareScholComponent implements OnInit {
 
     for (var _i = 0; _i < this.students.length; _i++) {
       let emp1 = new Student();
-      emp1.Distance = this.students[_i]["distance"];
+      //emp1.Distance = this.students[_i]["distance"];
+      emp1.Distance=this.finalMarkCalcuator( this.students[_i]["distance"],this.students[_i]["Samurdhi"],this.students[_i]["FatherMotherTotalIncome"],this.students[_i]["FatherLiving"],this.students[_i]["MotherLiving"],this.students[_i]["FatherEmployee"],this.students[_i]["MotherEmployee:string"] );
       emp1.StudentId = this.students[_i]["regNumber"];
       emp1.StudentName = this.students[_i]["fullName"];
       this.listOfStudents[_i] = emp1;
@@ -99,11 +152,12 @@ export class AdminForWelfareScholComponent implements OnInit {
     for (var _r = 0; _r < this.listOfStudents.length; _r++) {
       let index = _r;
       for (var _t = _r + 1; _t < this.listOfStudents.length; _t++) {
-        if (this.listOfStudents[_t].Distance < this.listOfStudents[index].Distance) {
+        if (parseInt(this.listOfStudents[_t].Distance,10) < parseInt(this.listOfStudents[index].Distance,10)) {
           index = _t;
         }
       }
       let smallerNumber = this.listOfStudents[index];
+      
       this.listOfStudents[index] = this.listOfStudents[_r];
       this.listOfStudents[_r] = smallerNumber;
     }
@@ -118,14 +172,14 @@ export class AdminForWelfareScholComponent implements OnInit {
 }
 
 class Student {
-  private _Distance: Number;
+  private _Distance: any;
   private _StudentId: String;
   private _StudentName: String;
 
-  public get Distance(): Number {
+  public get Distance(): any {
     return this._Distance;
   }
-  public set Distance(value: Number) {
+  public set Distance(value: any) {
     this._Distance = value;
   }
 

@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule,ChangeDetectorRef } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
 import { AppComponent } from './app.component';
 
 
@@ -18,7 +20,7 @@ import { PersonalComponent } from './personal/personal.component';
 import { ResultComponent } from './result/result.component';
 import { IncomeComponent } from './income/income.component';
 import { AdminForWelfareScholComponent } from './admin-for-welfare-schol/admin-for-welfare-schol.component';
-import { StudentWellfareService } from './student-wellfare.service';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FormDataService } from './data/form-data.service';
@@ -44,6 +46,13 @@ import { MatInputModule, MatInput } from '@angular/material';
 import { MatDialogModule,MatToolbarModule,MatGridListModule,MatButtonModule } from '@angular/material';
 
 import { CformComponent } from './cform/cform.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { AdminStudentApplicationComponent } from './admin-student-application/admin-student-application.component';
+import { ApllicantDetailsComponent } from './apllicant-details/apllicant-details.component';
+import { StudentWellfareService } from './student-wellfare.service';
+import { PaymentsSaveComponent } from './payments-save/payments-save.component';
+import { PaymentApplicantDetailsComponent } from './payment-applicant-details/payment-applicant-details.component';
+import { NotificationComponent } from './notification/notification.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +83,13 @@ import { CformComponent } from './cform/cform.component';
     CtableComponent,
 
     CformComponent,
+    NavigationComponent,
+    AdminStudentApplicationComponent,
+    ApllicantDetailsComponent,
+    PaymentsSaveComponent,
+    PaymentApplicantDetailsComponent,
+    NotificationComponent
+
 
   ],
   imports: [    
@@ -109,6 +125,8 @@ import { CformComponent } from './cform/cform.component';
     ReactiveFormsModule,
     
     
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [EnrollmentService,{provide:FormDataService,useClass: FormDataService}, WorkflowService,StudentWellfareService ],
   bootstrap: [AppComponent],

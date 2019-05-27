@@ -8,6 +8,10 @@ import{ IfsComponent} from './ifs/ifs.component';
 import{ ShoreaComponent} from './shorea/shorea.component';
 import{ AdminForWelfareScholComponent} from './admin-for-welfare-schol/admin-for-welfare-schol.component';
 import {  FormsModule} from '@angular/forms';
+import { AdminStudentApplicationComponent } from './admin-student-application/admin-student-application.component';
+import { ApllicantDetailsComponent } from './apllicant-details/apllicant-details.component';
+import { PaymentsSaveComponent } from './payments-save/payments-save.component';
+import { PaymentApplicantDetailsComponent } from './payment-applicant-details/payment-applicant-details.component';
 
 import { PersonalComponent } from './personal/personal.component';
 import { IncomeComponent } from './income/income.component';
@@ -52,7 +56,13 @@ export const routes: Routes = [
  { path: 'ifs/admin/ctable', component:CtableComponent},
 
  //{ path: '**', component: PersonalComponent },
- { path: 'scholarship/getWelfareStu', component:AdminForWelfareScholComponent}
+ { path: 'scholarship/getWelfareStu', component:AdminForWelfareScholComponent},
+ { path: 'adminstudent' ,component:AdminStudentApplicationComponent},
+ { path: 'applicationDetails/:id' ,component:ApllicantDetailsComponent},
+ { path: 'paymentsSave' ,component:PaymentsSaveComponent},
+ { path: 'paymentdetialsapplicant/:id' ,component:PaymentApplicantDetailsComponent}
+
+
 ];
 
 
@@ -65,4 +75,6 @@ export const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [HomepageComponent,RegisterComponent,LoginComponent,WelfareComponent,IfsComponent,ShoreaComponent,AdminForWelfareScholComponent]
+export const routingComponents = [HomepageComponent,RegisterComponent,LoginComponent,
+  WelfareComponent,IfsComponent,ShoreaComponent,ApllicantDetailsComponent,ApllicantDetailsComponent,
+  PaymentsSaveComponent,PaymentApplicantDetailsComponent]

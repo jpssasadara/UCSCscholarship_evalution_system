@@ -1,0 +1,7 @@
+<label for="staticEmail2">Notification message</label>
+<br>
+<textarea [(ngModel)]="notification" #ctrl="ngModel" required></textarea>
+<p>Valid: {{ ctrl.valid }}</p>
+
+<br>
+<button class="btn btn-success" (click)="sendNotification()">Send Notification</button>

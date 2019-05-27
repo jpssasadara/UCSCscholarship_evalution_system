@@ -1,0 +1,64 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <h1>Scholarship Applicants</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <form [formGroup]="form" class="form-inline mb-5" (submit)="getStudents()">
+                <div class="form-group mb-2">
+                    <label for="staticEmail2">Batch(Please enter in the given format)</label>
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                    <input type="text" class="form-control" id="inputPassword2" formControlName="batch" placeholder="2013/2014">
+                </div>
+                <button type="submit" class="btn btn-primary mb-2">View</button>
+            </form>
+            <!--<label for="staticEmail2">Notification message</label>
+            <br>
+            <textarea [(ngModel)]="notification" #ctrl="ngModel" required></textarea>
+            <p>Valid: {{ ctrl.valid }}</p>
+
+            <br>
+            <button class="btn btn-success" (click)="sendNotification()">Send Notification</button>
+            -->
+            <app-notification></app-notification>
+        </div>
+        <div class="col-md-7">
+            <div style="height:350px;overflow-y: scroll">
+                <table class="table">
+                    {{this.headerTitle}}
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">Registration Number</th>
+
+                            <th scope="col">Name</th>
+                            <th scope="col">Batch</th>
+                            <th scope="col">Degree</th>
+                            <th scope="col"></th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let applicant of this.applicants; let i = index">
+                            <td><input type="checkbox" value="{{ applicant._id }}" (change)="getUserSelect($event,i)"></td>
+
+                            <th scope="row">{{applicant.regNumber}}</th>
+                            <td>{{applicant.fullName}}</td>
+                            <td>{{applicant.batch}}</td>
+                            <td>{{applicant.degree}}</td>
+                            <td><a class="btn btn-primary" routerLink="/applicationDetails/{{applicant._id}}">View</a></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+            <button *ngIf="isLoading" class="btn btn-primary mb-2" (click)="saveSelectedApplicants()">Selected Applicants save</button>
+
+        </div>
+    </div>
+</div>

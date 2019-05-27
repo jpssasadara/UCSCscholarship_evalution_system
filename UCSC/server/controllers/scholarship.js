@@ -16,6 +16,10 @@ exports.create_enrollment = (req, res, next) => {
         distance: req.body.distance,
         district: req.body.district,
 
+        ReasonForApplyingScholarship: req.body. ReasonForApplyingScholarship,
+        OtherScholarship: req.body.OtherScholarship,
+        Samurdhi: req.body.Samurdhi,
+
         brother1Name:req.body.brother1Name,
         brother1Age:req.body.brother1Age,
         brother1CivilStatus:req.body.brother1CivilStatus,
@@ -155,7 +159,7 @@ exports.create_enrollment = (req, res, next) => {
 
 exports.view_enrollment = (req, res,next)=>{
     Scholarship.find()
-        .select('fullName regNumber distance')
+        .select('fullName regNumber distance Samurdhi FatherMotherTotalIncome FatherLiving MotherLiving FatherEmployee MotherEmployee')
         .exec()
         .then(docs => {
             console.log(docs);
@@ -164,7 +168,13 @@ exports.view_enrollment = (req, res,next)=>{
                     return{
                         fullName: doc.fullName,
                         regNumber:doc.regNumber,
-                        distance: doc.distance
+                        distance: doc.distance,
+                        Samurdhi:doc.Samurdhi,
+                        FatherMotherTotalIncome:doc.FatherMotherTotalIncome,
+                        FatherLiving:doc.FatherLiving,
+                        MotherLiving:doc.MotherLiving,
+                        FatherEmployee:doc.FatherEmployee,
+                        MotherEmployee:doc.MotherEmployee
                     };
                 })
             }
