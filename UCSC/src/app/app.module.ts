@@ -54,6 +54,12 @@ import { PaymentsSaveComponent } from './payments-save/payments-save.component';
 import { PaymentApplicantDetailsComponent } from './payment-applicant-details/payment-applicant-details.component';
 import { NotificationComponent } from './notification/notification.component';
 
+import { ComponentsModule } from './components/components.module';
+
+
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -88,8 +94,8 @@ import { NotificationComponent } from './notification/notification.component';
     ApllicantDetailsComponent,
     PaymentsSaveComponent,
     PaymentApplicantDetailsComponent,
-    NotificationComponent
-
+    NotificationComponent,
+    AdminLayoutComponent
 
   ],
   imports: [    
@@ -126,7 +132,8 @@ import { NotificationComponent } from './notification/notification.component';
     
     
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ComponentsModule,
   ],
   providers: [EnrollmentService,{provide:FormDataService,useClass: FormDataService}, WorkflowService,StudentWellfareService ],
   bootstrap: [AppComponent],

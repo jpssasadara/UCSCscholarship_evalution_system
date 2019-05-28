@@ -125,7 +125,7 @@ export class PaymentsSaveComponent implements OnInit {
 getUserSelect(ev, index) {
     if(ev.target.checked == true) {
         this.idArr.push(ev.target.value);
-        this.notificationService.setElementEmailArr(this.applicants[index].email);
+        this.notificationService.setElementEmailArr(this.applicants[index]);
 
     }
     else {

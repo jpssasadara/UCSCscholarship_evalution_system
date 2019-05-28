@@ -69,7 +69,7 @@ export class AdminStudentApplicationComponent implements OnInit {
         this.idArr.push(ev.target.value);
         console.log(this.applicants[index]);
        // this.emailArr.push(this.applicants[index].email);
-        this.notificationService.setElementEmailArr(this.applicants[index].email);
+        
     }
     else {
         // removing any entry if user unchecked any previously selected value

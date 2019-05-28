@@ -24,9 +24,29 @@ import { CrieteriaComponent } from './crieteria/crieteria.component';
 import { ClistComponent } from './clist/clist.component';
 import { CitemsComponent } from './citems/citems.component';
 import { CtableComponent } from './ctable/ctable.component';
+import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
 export const routes: Routes = [
  { path: '', redirectTo: '/homepage', pathMatch: 'full'},
+
+ {
+  path: '',
+  redirectTo: 'dashboard',
+  pathMatch: 'full',
+}, {
+  path: '',
+  component: AdminLayoutComponent,
+  children: [
+      {
+    path: '',
+    loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
+}]},
+
+{
+  path: '**',
+  redirectTo: 'dashboard'
+},
+
  { path: 'homepage' , component: HomepageComponent},
  { path: 'register' , component:RegisterComponent},
  { path: 'login' , component: LoginComponent},
