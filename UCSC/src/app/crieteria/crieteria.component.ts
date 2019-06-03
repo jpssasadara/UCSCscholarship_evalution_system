@@ -3,6 +3,7 @@ import { Crieteria,range,fincome } from '../shared/crieteria.model';
 import { from } from 'rxjs';
 import { CrieteriaService } from '../shared/crieteria.service';
 import { NgxSmartModalService } from 'ngx-smart-modal';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-crieteria',
   templateUrl: './crieteria.component.html',
@@ -31,7 +32,7 @@ export class CrieteriaComponent implements OnInit {
   distSelected : number = 0;
   parntSelected : number = 0;
   cexp : any;
-  constructor(private crtService:CrieteriaService,public ngxSmartModalService: NgxSmartModalService) { }
+  constructor(private crtService:CrieteriaService,public ngxSmartModalService: NgxSmartModalService, private toastr:ToastrService) { }
 
   ngOnInit() {
     this.dist = {
@@ -183,7 +184,16 @@ export class CrieteriaComponent implements OnInit {
     this.crteria.parent = this.p;
     this.crtService.putForm(this.crteria).subscribe((res)=>{
       console.log("Crieteria has been updated");
+     this.toastr.info('<span class="now-ui-icons ui-1_bell-53"></span> Criteria has been <b>updated</b> - <br/> Successfully.', '', {
+        timeOut: 8000,
+        closeButton: true,
+        enableHtml: true,
+        toastClass: "alert alert-info alert-with-icon",
+        positionClass: 'toast-' + 'top' + '-' +  'right'
+      });
+      
     });
+    
   }
 
 }

@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 import { AppRoutingModule , routingComponents } from './app-routing.module';
@@ -21,6 +22,8 @@ import { ResultComponent } from './result/result.component';
 import { IncomeComponent } from './income/income.component';
 import { AdminForWelfareScholComponent } from './admin-for-welfare-schol/admin-for-welfare-schol.component';
 
+import { IfsApplicationComponent } from './ifs-application/ifs-application.component';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FormDataService } from './data/form-data.service';
@@ -29,9 +32,9 @@ import { WorkflowService } from './workflow/workflow.service';
 
 import { NgxSmartModalModule } from 'ngx-smart-modal';
 
-import { IfsAdminComponent } from './ifs-admin/ifs-admin.component';
-import { IfsApplicationComponent } from './ifs-application/ifs-application.component';
-import { CrieteriaComponent } from './crieteria/crieteria.component';
+
+
+
 import { ClistComponent } from './clist/clist.component';
 import { CitemsComponent } from './citems/citems.component';
 import { CtableComponent } from './ctable/ctable.component';
@@ -58,7 +61,9 @@ import { ComponentsModule } from './components/components.module';
 
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { TestComponent } from './test/test.component';
 
+import { ToastrService, ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -76,11 +81,11 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     IncomeComponent,
     AdminForWelfareScholComponent,
    
-    IfsAdminComponent,
+   
    
     IfsApplicationComponent,
    
-    CrieteriaComponent,
+   
    
     ClistComponent,
    
@@ -95,7 +100,8 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     PaymentsSaveComponent,
     PaymentApplicantDetailsComponent,
     NotificationComponent,
-    AdminLayoutComponent
+    AdminLayoutComponent,
+    TestComponent
 
   ],
   imports: [    
@@ -126,6 +132,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     MatSortModule,
     MatDialogModule,
     NgxSmartModalModule.forRoot(),
+    ToastrModule.forRoot(),
 
     FormsModule,
     ReactiveFormsModule,
@@ -134,6 +141,8 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     FormsModule,
     ReactiveFormsModule,
     ComponentsModule,
+
+    NgbModule
   ],
   providers: [EnrollmentService,{provide:FormDataService,useClass: FormDataService}, WorkflowService,StudentWellfareService ],
   bootstrap: [AppComponent],

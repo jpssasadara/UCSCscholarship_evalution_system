@@ -1,0 +1,18 @@
+.nav-link.active, .nav-pills .show > .nav-link {
+    background-color: transparent !important;
+    color: primary !important;
+    border-radius: 0;
+    border-bottom: 3px solid;
+    padding-bottom: 2px;
+    border-color: #ff0000 #55ff12 primary !important;
+  }
+  .tab-title {
+    margin-bottom: 25px !important;
+    color: primary !important;
+    border-left: 0px solid !important;
+    border-right: 0px solid !important;
+    border-top: 0px solid !important;
+  }
+  .nav-tabs{
+    border-bottom: 0 !important;
+  }

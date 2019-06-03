@@ -18,34 +18,33 @@ import { IncomeComponent } from './income/income.component';
 import { FamilyComponent } from './family/family.component';
 import { ResultComponent } from './result/result.component';
 
-import { IfsAdminComponent } from './ifs-admin/ifs-admin.component';
 import { IfsApplicationComponent } from './ifs-application/ifs-application.component';
-import { CrieteriaComponent } from './crieteria/crieteria.component';
+
+
 import { ClistComponent } from './clist/clist.component';
 import { CitemsComponent } from './citems/citems.component';
 import { CtableComponent } from './ctable/ctable.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-
+import { TestComponent } from './test/test.component';
+import { from } from 'rxjs';
 export const routes: Routes = [
- { path: '', redirectTo: '/homepage', pathMatch: 'full'},
+ //{ path: '', redirectTo: '/homepage', pathMatch: 'full'},
 
  {
   path: '',
-  redirectTo: 'dashboard',
+  redirectTo: 'admin',
   pathMatch: 'full',
 }, {
   path: '',
   component: AdminLayoutComponent,
   children: [
       {
-    path: '',
+    path: 'admin',
     loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'
 }]},
 
-{
-  path: '**',
-  redirectTo: 'dashboard'
-},
+{ path:'ifs/list/:_id',component:IfsApplicationComponent},
+
 
  { path: 'homepage' , component: HomepageComponent},
  { path: 'register' , component:RegisterComponent},
@@ -63,17 +62,19 @@ export const routes: Routes = [
 
  { path: 'ifs/',   redirectTo: 'ifs/personal', pathMatch: 'full' },
 
- { path: 'admin/ifs' , component: IfsAdminComponent },
-
- { path: 'admin/ifs/:_id',component:IfsApplicationComponent},
  
- { path: 'admin/ifs/crieteria/home', component:CrieteriaComponent},
+
+ 
+ 
+ 
 
  { path: 'admin/ifs/clist/list', component:ClistComponent},
 
  { path: 'admin/ifs/clist/list/:_id', component:CitemsComponent},
 
  { path: 'ifs/admin/ctable', component:CtableComponent},
+
+ { path: 'test/test',component : TestComponent},
 
  //{ path: '**', component: PersonalComponent },
  { path: 'scholarship/getWelfareStu', component:AdminForWelfareScholComponent},

@@ -1,8 +1,22 @@
-<section class="home-block">
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        
+        <div class="header text-center">
+          <h2 class="title">&nbsp;</h2>
+          <h2 class="title">IFS Scholarship</h2>
+          <h2><p class="category">Selection Criteria</p></h2>
+           
+        </div>
+        <div class="card-body all-icons">
+          <div class="row">
   <div class="container">
     
     <form #crieteriaForm="ngForm" class="editForm" novalidate>
-        <h2>Distance</h2>
+        <h4>Distance from home to university</h4>
     <ngx-smart-modal #myModal identifier="myModal">
         <div class="row">
             <div class="form-group"></div>
@@ -32,7 +46,7 @@
             
         <button (click)="myModal.close()">Close</button>
       </ngx-smart-modal>
-      <button (click)="ngxSmartModalService.getModal('myModal').open()">Open myModal</button>
+     
       <ngx-smart-modal #editModal identifier="editModal">
           <div class="row">
               <div class="form-group"></div>
@@ -63,21 +77,38 @@
           <button (click)="myModal.close()">Close</button>
          
         </ngx-smart-modal>
-      <div class="container">
-        <table>
-          <tr>
-            <th>To</th>
-            <th>From</th>
-            <th>Marks</th>
-            <th></th>
-          </tr>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead class=" text-primary">
+                <th>
+                  From
+                </th>
+                <th>
+                  To
+                </th>
+                <th>
+                  Marks
+                </th>
+                
+                <th class="text-right">
+                  <button class="btn btn-primary btn-round btn-sm" type="button" (click)="ngxSmartModalService.getModal('myModal').open()">
+                      <i class="now-ui-icons ui-1_simple-add" style="font-size:12px;"></i> Add
+                  </button>
+                 
+                </th>
+              </thead>
+              <tbody>
           <tr *ngFor="let i of d">
-            <td>{{i.to}}</td>
             <td>{{i.from}}</td>
+            <td>{{i.to}}</td>
             <td>{{i.marks}}</td>
-            <td>  <button (click)="ngxSmartModalService.getModal('editModal').open(); passIndex(i.index)">Edit</button></td>
+            
+            <td>  <button (click)="ngxSmartModalService.getModal('editModal').open(); passIndx(i.index); " class="btn btn-neutral btn-simple btn-round"><i class="glyphicon glyphicon-edit" style="font-size:18px; color: green; background: transparent"></i></button></td>
           </tr>
+          </tbody>
         </table>
+          </div>
       </div>
       
       <h2>Parents</h2>
@@ -110,7 +141,7 @@
               
           <button (click)="myModal1.close()">Close</button>
         </ngx-smart-modal>
-        <button (click)="ngxSmartModalService.getModal('myModal1').open()">Open myModal</button>
+       
         <ngx-smart-modal #editModal1 identifier="editModal1">
             <div class="row">
                 <div class="form-group"></div>
@@ -119,18 +150,18 @@
                 <div class='col-xs-offset-1 col-xs-7 col-sm-offset-1 col-sm-3'>
                   <div class="form-group">
                     <label class="control-label" for="from">Form</label>
-                    <input class="form-control input-md" #from="ngModel" required id="from" name="year" type="text" value="{{d[parntSelected].from}}"
+                    <input class="form-control input-md" #from="ngModel" required id="from" name="year" type="text" value="{{p[parntSelected].from}}"
                       placeholder="year" [(ngModel)]="parent.from">
                   </div>
                   <div class="form-group">
                     
                       <label class="control-label" for="to">To</label>
-                      <input class="form-control input-md" #to="ngModel" required id="to" name="to" type="text" value="{{d[parntSelected].to}}"
+                      <input class="form-control input-md" #to="ngModel" required id="to" name="to" type="text" value="{{p[parntSelected].to}}"
                         placeholder="year" [(ngModel)]="parent.to">
                     </div>
                     <div class="form-group">
                         <label class="control-label" for="marks">Marks</label>
-                        <input class="form-control input-md" #marks="ngModel" required id="marks" name="marks" type="text" value="{{d[parntSelected].marks}}"
+                        <input class="form-control input-md" #marks="ngModel" required id="marks" name="marks" type="text" value="{{p[parntSelected].marks}}"
                           placeholder="year" [(ngModel)]="parent.marks">
                       </div>
                       <div class="form-group">
@@ -141,24 +172,40 @@
             <button (click)="myModal1.close()">Close</button>
            
           </ngx-smart-modal>
-        <div class="container">
-          <table>
-            <tr>
-              <th>To</th>
-              <th>From</th>
-              <th>Marks</th>
-              <th></th>
-            </tr>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class=" text-primary">
+                  <th>
+                    From
+                  </th>
+                  <th>
+                    To
+                  </th>
+                  <th>
+                    Marks
+                  </th>
+                  <th class="text-right">
+                      <button class="btn btn-primary btn-round btn-sm" type="button" (click)="ngxSmartModalService.getModal('myModal1').open()">
+                          <i class="now-ui-icons ui-1_simple-add" style="font-size:12px;"></i> Add
+                      </button>
+                    
+                  </th>
+                </thead>
+                <tbody>
             <tr *ngFor="let j of p">
-              <td>{{j.to}}</td>
               <td>{{j.from}}</td>
+              <td>{{j.to}}</td>
               <td>{{j.marks}}</td>
-              <td>  <button (click)="ngxSmartModalService.getModal('editModal1').open(); passIndex(j.index)">Edit</button></td>
+              <td>  <button (click)="ngxSmartModalService.getModal('editModal1').open(); passIndx(j.index); " class="btn btn-neutral btn-simple btn-round"><i class="glyphicon glyphicon-edit" style="font-size:18px; color: green; background: transparent"></i></button></td>
             </tr>
+                </tbody>
           </table>
-        </div>
+            </div>
+          </div>
+       
         <div class="form-group">
-            <label class="control-label" for="cr1">Both father and mother are dead</label>
+            <label class="control-label" for="cr1">Both father and mother are dead</label>    
             <input class="form-control input-md" #crt1="ngModel" required id="crt1" name="crt1" type="text"
               placeholder="year" [(ngModel)]="crteria.crt1">
         </div>
@@ -182,9 +229,19 @@
             <input class="form-control input-md" #sibil2="ngModel" required id="sibil2" name="sibil2" type="text"
               placeholder="year" [(ngModel)]="crteria.sibil2">
         </div>
-        <div class="form-group">
-            <button class="btn btn-outline-rounded btn-default" (click)="onEdit()">Submit</button>
-        </div>
+        <div class="row justify-content-center">
+        
+            <button class="btn btn-right btn-round btn-info" (click)="onEdit()">Update Criteria</button>
+        
+       
+            
+       
+      </div>
       </form>
   </div>
-  </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

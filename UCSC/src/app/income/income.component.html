@@ -1,3 +1,4 @@
+<app-navigation></app-navigation>
 <section style="background:#efefe9;">
     <div class="container">
         <div class="card">
@@ -64,12 +65,13 @@
                           <input type="radio" required name="scholar" value="No" (click)="scholarN()" #scholar="ngModel" [(ngModel)]="workType.scholar">
                           <label class="form-check-label"> &nbsp; No</label>
                         </div>
-                    </div>
+                    
                     <div *ngIf="scholActive">
                         <label>If so, state the name of the scholarship and total amount received    </label>
                         <input class="form-control input-md" >
                         <div class="alert alert-danger" [hidden]="address.valid">Address is required</div>
                     </div>
+                </div>
                     <div class="form-group">
                         <label class="control-label">Is your family receiving “Samurdhi” allowance (Yes or No)  </label>  
                         
@@ -88,18 +90,20 @@
                         <input class="custom-file-input" type="file" name="fileToUpload" id="fileToUpload">
                        
                     </div>
-                    <div class="row">
-                        <hr>
-                    </div>
+                    <br>
+                    
                    
-                    <div class='row'> 
-                        <label for="formGroupExampleInput2">Details
-                          of parents/Guardians: (Applicants presenting guardians should fill cage 12 in addition to this.)
-                        </label>
+                            <div class="row"> 
+                                    <label for="formGroupExampleInput2">Details
+                                            of parents/Guardians: (Applicants presenting guardians should fill cage 12 in addition to this.)
+                                          </label>
+                            </div>
                         <br>
-                        <br>
-                        <div>
-                          (a) Details of Father:
+                        
+                        <div class="row">
+                          <label>
+                                (a) Details of Father:
+                          </label>
                         </div>
                         <br>
                         <div class="form-group">
@@ -154,11 +158,12 @@
                         </div>
                         <div class="form-group">
                           <label for="control-label">State the full income derived from employment / Pension Rs: </label> <br>
+                          <label>
                           (Full annual income as at 31st December 2018, should be declared.)
                           (If employed, a letter stating the annual salary inclusive of all allowances certified by the Head of the
                           workplace, should be annexed. If retired, a letter stating the annual pension inclusive of all allowances,
                           or the full annual widows’ and orphans’ pension certified by Director of Pensions or the Government Agent
-                          should be annexed)
+                          should be annexed)</label>
                           <input class="form-control input-md" #fannual="ngModel" required id="fannual" name="fannual" type="text" placeholder="Rs -: " [(ngModel)]="workType.fannual">
                           <div class="alert alert-danger" [hidden]="fannual.valid">Father's annual income is required</div>
                           
@@ -198,7 +203,9 @@
                         
                         <br>
                         <div>
-                            (a) Details of Mother:
+                            <label>
+                                    (a) Details of Mother:
+                            </label>
                           </div>
                           <br>
                           <div class="form-group">
@@ -253,11 +260,12 @@
                           </div>
                           <div class="form-group">
                             <label for="control-label">State the full income derived from employment / Pension Rs: </label> <br>
+                            <label>
                             (Full annual income as at 31st December 2018, should be declared.)
                             (If employed, a letter stating the annual salary inclusive of all allowances certified by the Head of the
                             workplace, should be annexed. If retired, a letter stating the annual pension inclusive of all allowances,
                             or the full annual widows’ and orphans’ pension certified by Director of Pensions or the Government Agent
-                            should be annexed)
+                            should be annexed)</label>
                             <input class="form-control input-md" #mannual="ngModel" required id="mannual" name="mannual" type="text" placeholder="Rs -: " [(ngModel)]="workType.mannual">
                             <div class="alert alert-danger" [hidden]="fannual.valid">Mother's annual income is required</div>
                             
@@ -306,7 +314,7 @@
                 <button class="btn btn-outline-rounded btn-default" (click)="goToPrevious(workForm)"> <span style="margin-right:10px;" class="glyphicon glyphicon-arrow-left"></span> Previous</button>
                 <button class="btn btn-outline-rounded btn-info" [disabled]="!workForm.valid" (click)="goToNext(workForm)"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></button>
             </div>
-            </div>
+            
           
         </div>
     </div>
