@@ -1,0 +1,268 @@
+<app-admin-nav></app-admin-nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <h1>Application Details</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <table>
+                <h3>Personal details</h3>
+                <tr>
+                    <td>Batch</td>
+                    <td>{{this.regSchol.batch}}</td>
+                </tr>
+                <tr>
+                    <td>Degree</td>
+                    <td>{{this.regSchol.degree}}</td>
+                </tr>
+                <tr>
+                    <td>Reg. No.</td>
+                    <td>{{this.regSchol.regNumber}}</td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>{{this.regSchol.fullName}}</td>
+                </tr>
+                <tr>
+                    <td>email</td>
+                    <td>{{this.regSchol.email}}</td>
+                </tr>
+                <tr>
+                    <td>Cotact Number</td>
+                    <td>{{this.regSchol.contactNumber}}</td>
+                </tr>
+
+
+            </table>
+            <hr>
+        </div>
+        <div class="col-md-3">
+            <table>
+                <h3>Address</h3>
+                <tr>
+                    <td>Division Gramasevaniladari</td>
+                    <td>{{this.regSchol.divisionGramasevaNiladhari}}</td>
+                </tr>
+                <tr>
+                    <td>Distance</td>
+                    <td>{{this.regSchol.distance}}</td>
+                </tr>
+                <tr>
+                    <td>District</td>
+                    <td>{{this.regSchol.district}}</td>
+                </tr>
+
+
+
+            </table>
+
+        </div>
+        <div class="col-md-3">
+            <table>
+                <h3>Other Scholarships</h3>
+                <tr>
+                    <td>{{this.regSchol.divisionGramasevaNiladhari}}</td>
+                </tr>
+                <tr>
+                    <td>Samurdhi</td>
+                    <td>{{this.regSchol.divisionGramasevaNiladhari}}</td>
+                </tr>
+                <tr>
+                    <td>Reason for the scholarship</td>
+                    <td>{{this.regSchol.ReasonForApplyingScholarship}}</td>
+
+                </tr>
+
+
+            </table>
+        </div>
+        <hr>
+
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+
+        <div class="col-md-4">
+            <h3>Family details</h3>
+            <table>
+                <h3>Brothers & Sisters</h3>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Civil Status</th>
+                    <th>University</th>
+                </tr>
+                <tr></tr>
+
+
+
+            </table>
+        </div>
+        <div class="col-md-4">
+            <table>
+                <h3>Owner details</h3>
+
+                <tr>
+                    <th>Name</th>
+                    <th>Relationship</th>
+                    <th>Location</th>
+                    <th>Cultivation</th>
+                    <th>Extent</th>
+                    <th>Income</th>
+
+                </tr>
+
+
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-7">
+            <table>
+
+                <h3>House owner details</h3>
+
+                <tr>
+                    <th>Owner</th>
+                    <th>Relationship</th>
+                    <th>AssessmentNo</th>
+                    <th>OwnerNo</th>
+                    <th>Address</th>
+                    <th>AnualIncome</th>
+                    <th>RentDetail</th>
+
+                </tr>
+
+            </table>
+        </div>
+        <hr>
+
+    </div>
+    <div class="row">
+        <div class="col-md-1"></div>
+
+        <div class="col-md-5">
+            <table>
+
+                <h3>Work details</h3>
+
+                <tr>
+                    <th>WorkingPlace</th>
+                    <th>WorkingPost</th>
+                    <th>WorkingSalaryScale</th>
+                    <th>WorkingSalary</th>
+                    <th>WorkingAppointment</th>
+                    <th>MarriageData</th>
+                    <th>Spouse</th>
+                    <th>SpouseInstitution</th>
+                    <th>SpousePost</th>
+                    <th>PresentSalary</th>
+                    <th>SriLankanCitizen</th>
+
+                </tr>
+
+            </table>
+        </div>
+        <hr>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-1"></div>
+
+        <div class="col-md-7">
+            <table>
+
+                <h3>Parent and guardian details</h3>
+                <tr>
+                    <th>#</th>
+                    <th>Father</th>
+                    <th>Mother</th>
+                    <th>Guardian</th>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>{{this.regSchol.FatherName}}</td>
+                    <td>{{this.regSchol.MotherName}}</td>
+                    <td>{{this.regSchol.GuardianName}}</td>
+                </tr>
+                <tr>
+                    <td>Living</td>
+                    <td>{{this.regSchol.FatherLiving}}</td>
+                    <td>{{this.regSchol.MotherLiving}}</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Year</td>
+                    <td>{{this.regSchol.FatherYear}}</td>
+                    <td>{{this.regSchol.MotherYear}}</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Month</td>
+                    <td>{{this.regSchol.FatherMonth}}</td>
+                    <td>{{this.regSchol.MotherMonth}}</td>
+
+
+                    <td>Age: {{this.regSchol.GuardianAge}}</td>
+                </tr>
+                <tr>
+                    <td>Employee</td>
+                    <td>{{this.regSchol.FatherEmployee}}</td>
+                    <td>{{this.regSchol.MotherEmployee}}</td>
+                    <td>{{this.regSchol.GuardianEmployedPost}}</td>
+                </tr>
+                <tr>
+
+                    <td>EmployeeAddress</td>
+                    <td>{{this.regSchol.FatherEmployeeAddress}}</td>
+                    <td>{{this.regSchol.MotherEmployeeAddress}}</td>
+                    <td>{{this.regSchol.GuardianAddress}}</td>
+                </tr>
+                <tr>
+
+                    <td>Pension</td>
+                    <td>{{this.regSchol.FatherPension}}</td>
+                    <td>{{this.regSchol.MotherPension}}</td>
+                </tr>
+                <tr>
+
+                    <td>HousesProperties</td>
+                    <td>{{this.regSchol.FatherHousesProperties}}</td>
+                    <td>{{this.regSchol.MotherHousesProperties}}</td>
+                </tr>
+                <tr>
+
+                    <td>OtherSources</td>
+                    <td>{{this.regSchol.FatherOtherSources}}</td>
+                    <td>{{this.regSchol.MotherOtherSources}}</td>
+                </tr>
+                <tr>
+
+                    <td>AnualIncome</td>
+                    <td>{{this.regSchol.FatherAnualIncome}}</td>
+                    <td>{{this.regSchol.MotherAnualIncome}}</td>
+                    <td>{{this.regSchol.GuardianAnualSalary}}</td>
+                </tr>
+                <tr>
+
+                    <td>FatherMotherTotalIncome</td>
+                    <td>{{this.regSchol.FatherMotherTotalIncome}}</td>
+                    <td></td>
+                    <td>Annual Income{{this.regSchol.GuardianAnualIncome}}</td>
+
+                </tr>
+
+            </table>
+        </div>
+        <hr>
+
+    </div>
+</div>

@@ -1,0 +1,67 @@
+<app-admin-nav></app-admin-nav>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <h1>{{student.name}}'s payment history</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <table class="table">
+                <tr>
+                    <td scope="col">Registration Number</td>
+                    <td>{{student.regNumber}}</td>
+                </tr>
+                <tr>
+
+                    <td scope="col">Name</td>
+                    <td>{{student.fullName}}</td>
+                </tr>
+                <tr>
+
+                    <td scope="col">Batch</td>
+                    <td>{{student.batch}}</td>
+                </tr>
+                <tr>
+
+                    <td scope="col">Degree</td>
+                    <td>{{student.degree}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-7">
+            <div style="height:350px;overflow-y: scroll">
+                <table class="table">
+                    {{this.headerTitle}}
+                    <thead>
+                        <tr>
+                            <th scope="col">Date</th>
+
+                            <th scope="col">Time</th>
+                            <th scope="col">Term</th>
+                            <th scope="col">Amount(Rs.)</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let payment of this.paymentHistory; let i=index">
+                            <th scope="row">{{(payment.date).split("T")[0]}}</th>
+                            <td>{{(payment.date).split("T")[1]}}</td>
+                            <td>{{payment.term}}</td>
+                            <td>{{payment.amount}}</td>
+                            <!-- <td><input type="checkbox" value="{{ applicant._id }}" (change)="getUserSelect($event,i)"></td>-->
+                            <td>
+                                <button class="btn btn-primary" (click)="removePayment(payment._id,i)">Remove</button>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

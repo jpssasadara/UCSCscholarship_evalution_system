@@ -1,0 +1,29 @@
+<app-admin-nav></app-admin-nav>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <h3>Reset Credentials</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-4">
+            <form [formGroup]="formCredentials">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Change Email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" formControlName="email" aria-describedby="emailHelp" placeholder="Enter email">
+                    <button class="btn btn-primary mt-3" (click)="emailChange()">Save</button>
+                    <input class="btn btn-primary mt-3 ml-3" type="reset" value="Cancel">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Change Password</label>
+                    <input type="password" class="form-control" id="exampleInputEmail1" formControlName="password" aria-describedby="emailHelp" placeholder="Enter password">
+                    <button class="btn btn-primary mt-3" (click)="passwordChange()">Save</button>
+                    <input class="btn btn-primary mt-3 ml-3" type="reset" value="Cancel">
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
