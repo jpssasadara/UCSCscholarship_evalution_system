@@ -32,7 +32,7 @@
       <div class="collapse" id="collapseExample1">
         <div class="form-group col-md-7">
           <label for="formGroupExampleInput">Course for which applicant has been selected: </label>
-          <select id="batch" class="form-control" name="batch" [(ngModel)]="userModel.batch">
+          <select id="batch" class="form-control" name="batch" [(ngModel)]="userModel.batch" [disabled]=true>
             <option selected>Batch Number</option>
             <option>2013/2014</option>
             <option>2014/2015</option>
@@ -44,7 +44,7 @@
 
         <div class="form-group col-md-6">
           <label for="formGroupExampleInput">Course for which applicant has been selected: </label>
-          <select id="degree" class="form-control" name="degree" [(ngModel)]="userModel.degree">
+          <select id="degree" class="form-control" name="degree" [(ngModel)]="userModel.degree" [disabled]=true>
             <option selected>Degree...</option>
             <option>BSc(Hons)in Software Engineering</option>
             <option>BSc(Hons)in Computer Science</option>
@@ -56,31 +56,31 @@
         <div class="form-group col-md-6">
           <label for="formGroupExampleInput2">Full Name: </label>
           <input type="text" id="fullName" class="form-control" name="fullName" id="formGroupExampleInput2"
-            placeholder="Mr./Miss./Mrs./Rev" [(ngModel)]="userModel.fullName">
+            placeholder="Mr./Miss./Mrs./Rev" [(ngModel)]="userModel.fullName" [disabled]=true>
         </div>
         <div class="form-group col-md-12">
           <label for="formGroupExampleInput2">Permanent Address: </label>
-          <textarea class="form-control" id="address" name="address" rows="3"
+          <textarea class="form-control" id="address" name="address" rows="3" [disabled]=true
             [(ngModel)]="userModel.address"></textarea>
         </div>
         <div class="form-group col-md-6">
           <label for="formGroupExampleInput2">Registration Number: </label>
-          <input type="text" class="form-control" name="regNumber" id="regNumber" placeholder="Registration Number"
+          <input type="text" class="form-control" name="regNumber" id="regNumber" placeholder="Registration Number" [disabled]=true
             [(ngModel)]="userModel.regNumber">
         </div>
         <div class="form-group col-md-6">
           <label for="formGroupExampleInput2">Contact Numbers: </label>
-          <input type="text" class="form-control" name="contactNumber" id="contactNumber" placeholder="Contact Numbers"
+          <input type="text" class="form-control" name="contactNumber" id="contactNumber" placeholder="Contact Numbers" [disabled]=true
             [(ngModel)]="userModel.contactNumber">
         </div>
         <div class="form-group col-md-6">
           <label for="formGroupExampleInput2"> Email Address: </label>
-          <input type="text" class="form-control" name="email" id="email" placeholder="Email Address"
+          <input type="text" class="form-control" name="email" id="email" placeholder="Email Address" [disabled]=true
             [(ngModel)]="userModel.email">
         </div>
         <div class="form-group col-md-6">
           <label for="formGroupExampleInput2"> Division of the Gramaseva Niladhari: </label>
-          <input type="text" class="form-control" name="divisionGramasevaNiladhari" id="divisionGramasevaNiladhari"
+          <input type="text" class="form-control" name="divisionGramasevaNiladhari" id="divisionGramasevaNiladhari" [disabled]=true
             placeholder="Division of the Gramaseva Niladhari:" [(ngModel)]="userModel.divisionGramasevaNiladhari">
         </div>
         <div class="form-group col-md-6">
@@ -88,12 +88,12 @@
             Permanent residence (i.e. your home) to the University of Colombo.
             (1 mile = 1.6 k.m.)
           </label>
-          <input type="text" class="form-control" name="distance" id="distance" placeholder="Ex-: 5km"
+          <input type="text" class="form-control" name="distance" id="distance" placeholder="Ex-: 5km" [disabled]=true
             [(ngModel)]="userModel.distance">
         </div>
         <div class="form-group col-md-6">
           <label for="formGroupExampleInput2"> District: </label>
-          <input type="text" class="form-control" name="district" id="district" placeholder="District"
+          <input type="text" class="form-control" name="district" id="district" placeholder="District" [disabled]=true
             [(ngModel)]="userModel.district">
         </div>
 
@@ -116,7 +116,7 @@
         <div class="form-group col-md-12">
           <label for="formGroupExampleInput2"><span class="glyphicon glyphicon-record" aria-hidden="true"></span>Reason
             for applying for a Scholarship: </label>
-          <textarea class="form-control" name="ReasonForApplyingScholarship" id="ReasonForApplyingScholarship" rows="6"
+          <textarea class="form-control" name="ReasonForApplyingScholarship" id="ReasonForApplyingScholarship" rows="6" [disabled]=true
             [(ngModel)]="userModel.ReasonForApplyingScholarship"></textarea>
         </div>
       </div>
@@ -140,7 +140,7 @@
             government or local
             Government authorities or other institution or association, state the amount received and other details:
           </label>
-          <textarea class="form-control" id="OtherScholarship" name="OtherScholarship" rows="6"
+          <textarea class="form-control" id="OtherScholarship" name="OtherScholarship" rows="6" [disabled]=true
             [(ngModel)]="userModel.OtherScholarship"></textarea>
         </div>
       </div>
@@ -167,7 +167,7 @@
             </div>
             <div class="col-md-7">
               <div class="form-check">
-                <input class="form-check-input custom-control-input" type="radio" name="Samurdhi" id="exampleRadios1"
+                <input class="form-check-input custom-control-input" type="radio" name="Samurdhi" id="exampleRadios1" [disabled]=true
                   value="Yes" (click)=" fileaddYes()" [(ngModel)]="userModel.Samurdhi">
                 <label class="form-check-label" for="exampleRadios1">
                   <i>Yes</i>
@@ -175,7 +175,7 @@
 
               </div>
               <div class="form-check">
-                <input class="form-check-input custom-control-input" type="radio" name="Samurdhi" id="exampleRadios2"
+                <input class="form-check-input custom-control-input" type="radio" name="Samurdhi" id="exampleRadios2" [disabled]=true
                   value="No" (click)=" fileaddNo()" [(ngModel)]="userModel.Samurdhi">
                 <label class="form-check-label" for="exampleRadios2">
                   <i>No</i>
@@ -185,7 +185,7 @@
           </div>
           <div *ngIf="fileAddView">
             <label class="bg-primary">Please attach certified copies of proof documents</label>
-            <input class="custom-file-input" type="file" name="fileToUpload" id="fileToUpload">
+            <input class="custom-file-input" type="file" name="fileToUpload" id="fileToUpload" [disabled]=true>
           </div>
 
         </div>
@@ -221,15 +221,15 @@
           </div>
           <label> ( 1 )</label>
           <div class="row">
-            <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Name"
+            <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Name" [disabled]=true
                 name="namest1" [(ngModel)]="userModel.brother1Name"></div>
 
             <div class="col-md-1">
-              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Age" name="brother1Age"
+              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Age" name="brother1Age" [disabled]=true
                 [(ngModel)]="userModel.brother1Age">
             </div>
             <div class="col-md-2">
-              <select id="inputState" class="form-control" name="brother1CivilStatus"
+              <select id="inputState" class="form-control" name="brother1CivilStatus" [disabled]=true
                 [(ngModel)]="userModel.brother1CivilStatus">
                 <option selected>Civil Status</option>
                 <option>Male</option>
@@ -237,7 +237,7 @@
               </select>
             </div>
             <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2"
-                placeholder="School/ University/ Employment" name="brother1University"
+                placeholder="School/ University/ Employment" name="brother1University" [disabled]=true
                 [(ngModel)]="userModel.brother1University"></div>
             <div class="col-md-3"><input class="custom-file-input" type="file" name="fileToUpload" id="fileToUpload">
             </div>
@@ -245,22 +245,22 @@
           <!--st2-->
           <label> ( 2 )</label>
           <div class="row">
-            <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Name"
+            <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Name" [disabled]=true
                 name="namest2" [(ngModel)]="userModel.brother2Name"></div>
 
             <div class="col-md-1">
-              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Age" name="brother2Age"
+              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Age" name="brother2Age" [disabled]=true
                 [(ngModel)]="userModel.brother2Age">
             </div>
             <div class="col-md-2">
-              <select id="inputState" class="form-control" name="brother2CivilStatus"
+              <select id="inputState" class="form-control" name="brother2CivilStatus" [disabled]=true
                 [(ngModel)]="userModel.brother2CivilStatus">
                 <option selected>Civil Status</option>
                 <option>Male</option>
                 <option>Female</option>
               </select>
             </div>
-            <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2"
+            <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true
                 placeholder="School/ University/ Employment" name="brother2University"
                 [(ngModel)]="userModel.brother2University"></div>
             <div class="col-md-3"><input class="custom-file-input" type="file" name="fileToUpload" id="fileToUpload">
@@ -269,39 +269,39 @@
           <!--st3-->
           <label>( 3 )</label>
           <div class="row">
-            <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Name"
+            <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Name" [disabled]=true
                 name="namest3" [(ngModel)]="userModel.brother3Name"></div>
 
             <div class="col-md-1">
-              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Age" name="brother3Age"
+              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Age" name="brother3Age" [disabled]=true
                 [(ngModel)]="userModel.brother3Age">
             </div>
             <div class="col-md-2">
-              <select id="inputState" class="form-control" name="brother3CivilStatus"
+              <select id="inputState" class="form-control" name="brother3CivilStatus" [disabled]=true
                 [(ngModel)]="userModel.brother3CivilStatus">
                 <option selected>Civil Status</option>
                 <option>Male</option>
                 <option>Female</option>
               </select>
             </div>
-            <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2"
+            <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true
                 placeholder="School/ University/ Employment" name="brother3University"
                 [(ngModel)]="userModel.brother3University"></div>
-            <div class="col-md-3"><input class="custom-file-input" type="file" name="fileToUpload" id="fileToUpload">
+            <div class="col-md-3"><input class="custom-file-input" type="file" name="fileToUpload" id="fileToUpload" [disabled]=true>
             </div>
           </div>
           <!--st4-->
           <label> ( 4 )</label>
           <div class="row">
-            <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Name"
+            <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Name" [disabled]=true
                 name="namest4" [(ngModel)]="userModel.brother4Name"></div>
 
             <div class="col-md-1">
-              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Age" name="brother4Age"
+              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Age" name="brother4Age" [disabled]=true
                 [(ngModel)]="userModel.brother4Age">
             </div>
             <div class="col-md-2">
-              <select id="inputState" class="form-control" name="brother4CivilStatus"
+              <select id="inputState" class="form-control" name="brother4CivilStatus" [disabled]=true
                 [(ngModel)]="userModel.brother4CivilStatus">
                 <option selected>Civil Status</option>
                 <option>Male</option>
@@ -309,7 +309,7 @@
               </select>
             </div>
             <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2"
-                placeholder="School/ University/ Employment" name="brother4University"
+                placeholder="School/ University/ Employment" name="brother4University" [disabled]=true
                 [(ngModel)]="userModel.brother4University"></div>
             <div class="col-md-3"><input class="custom-file-input" type="file" name="fileToUpload" id="fileToUpload">
             </div>
@@ -317,22 +317,22 @@
           <!--st5-->
           <label> ( 5 )</label>
           <div class="row">
-            <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Name"
+            <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Name" [disabled]=true
                 name="namest5" [(ngModel)]="userModel.brother5Name"></div>
 
             <div class="col-md-1">
-              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Age" name="brother5Age"
+              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Age" name="brother5Age" [disabled]=true
                 [(ngModel)]="userModel.brother5Age">
             </div>
             <div class="col-md-2">
-              <select id="inputState" class="form-control" name="brother5CivilStatus"
+              <select id="inputState" class="form-control" name="brother5CivilStatus" [disabled]=true
                 [(ngModel)]="userModel.brother5CivilStatus">
                 <option selected>Civil Status</option>
                 <option>Male</option>
                 <option>Female</option>
               </select>
             </div>
-            <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2"
+            <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true
                 placeholder="School/ University/ Employment" name="brother5University"
                 [(ngModel)]="userModel.brother5University"></div>
             <div class="col-md-3"><input class="custom-file-input" type="file" name="fileToUpload" id="fileToUpload">
@@ -361,22 +361,22 @@
           <label> ( 1 )
             _________________________________________________________________________________________________</label>
           <div class="row">
-            <div class="col-md-4">Name of Owner :<input type="text" class="form-control" id="formGroupExampleInput2"
+            <div class="col-md-4">Name of Owner :<input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true
                 placeholder="Name of Owner" name="Owner1Name" [(ngModel)]="userModel.Owner1Name"></div>
-            <div class="col-md-4">Relationship :<input type="text" class="form-control" id="formGroupExampleInput2"
+            <div class="col-md-4">Relationship :<input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true
                 placeholder="Relationship" name="Owner1Relationship" [(ngModel)]="userModel.Owner1Relationship"></div>
-            <div class="col-md-4">Location :<input type="text" class="form-control" id="formGroupExampleInput2"
+            <div class="col-md-4">Location :<input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true
                 placeholder="Location" name="Owner1Location" [(ngModel)]="userModel.Owner1Location"></div>
 
           </div>
           <div class="row">
             <div class="col-md-4">Nature of Cultivation :<input type="text" class="form-control"
-                id="formGroupExampleInput2" placeholder="Nature of Cultivation" name="Owner1Cultivation"
+                id="formGroupExampleInput2" placeholder="Nature of Cultivation" name="Owner1Cultivation" [disabled]=true
                 [(ngModel)]="userModel.Owner1Cultivation"></div>
             <div class="col-md-4">Extent of Land Description of Property :<input type="text" class="form-control"
-                id="formGroupExampleInput2" placeholder="Extent of Land Description of Property" name="Owner1Extent"
+                id="formGroupExampleInput2" placeholder="Extent of Land Description of Property" name="Owner1Extent" [disabled]=true
                 [(ngModel)]="userModel.Owner1Extent"></div>
-            <div class="col-md-4">Annual Income Rs :<input type="text" class="form-control" id="formGroupExampleInput2"
+            <div class="col-md-4">Annual Income Rs :<input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true
                 placeholder="Annual Income Rs" name="Owner1Income" [(ngModel)]="userModel.Owner1Income"></div>
 
           </div>
@@ -385,22 +385,22 @@
           <label> ( 2 )
             _________________________________________________________________________________________________</label>
           <div class="row">
-            <div class="col-md-4">Name of Owner :<input type="text" class="form-control" id="formGroupExampleInput2"
+            <div class="col-md-4">Name of Owner :<input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true
                 placeholder="Name of Owner" name="Owner2Name" [(ngModel)]="userModel.Owner2Name"></div>
-            <div class="col-md-4">Relationship :<input type="text" class="form-control" id="formGroupExampleInput2"
+            <div class="col-md-4">Relationship :<input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true
                 placeholder="Relationship" name="Owner2Relationship" [(ngModel)]="userModel.Owner2Relationship"></div>
-            <div class="col-md-4">Location :<input type="text" class="form-control" id="formGroupExampleInput2"
+            <div class="col-md-4">Location :<input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true
                 placeholder="Location" name="Owner2Location" [(ngModel)]="userModel.Owner2Location"></div>
 
           </div>
           <div class="row">
-            <div class="col-md-4">Nature of Cultivation :<input type="text" class="form-control"
+            <div class="col-md-4">Nature of Cultivation :<input type="text" class="form-control" [disabled]=true
                 id="formGroupExampleInput2" placeholder="Nature of Cultivation" name="Owner2Cultivation"
                 [(ngModel)]="userModel.Owner2Cultivation"></div>
-            <div class="col-md-4">Extent of Land Description of Property :<input type="text" class="form-control"
+            <div class="col-md-4">Extent of Land Description of Property :<input type="text" class="form-control" [disabled]=true
                 id="formGroupExampleInput2" placeholder="Extent of Land Description of Property" name="Owner2Extent"
                 [(ngModel)]="userModel.Owner2Extent"></div>
-            <div class="col-md-4">Annual Income Rs :<input type="text" class="form-control" id="formGroupExampleInput2"
+            <div class="col-md-4">Annual Income Rs :<input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true
                 placeholder="Annual Income Rs" name="Owner2Income" [(ngModel)]="userModel.Owner2Income"></div>
 
           </div>
@@ -409,22 +409,22 @@
           <label> ( 3 )
             _________________________________________________________________________________________________</label>
           <div class="row">
-            <div class="col-md-4">Name of Owner :<input type="text" class="form-control" id="formGroupExampleInput2"
+            <div class="col-md-4">Name of Owner :<input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true
                 placeholder="Name of Owner" name="Owner3Name" [(ngModel)]="userModel.Owner3Name"></div>
-            <div class="col-md-4">Relationship :<input type="text" class="form-control" id="formGroupExampleInput2"
+            <div class="col-md-4">Relationship :<input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true
                 placeholder="Relationship" name="Owner3Relationship" [(ngModel)]="userModel.Owner3Relationship"></div>
-            <div class="col-md-4">Location :<input type="text" class="form-control" id="formGroupExampleInput2"
+            <div class="col-md-4">Location :<input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true
                 placeholder="Location" name="Owner3Location" [(ngModel)]="userModel.Owner3Location"></div>
 
           </div>
           <div class="row">
-            <div class="col-md-4">Nature of Cultivation :<input type="text" class="form-control"
-                id="formGroupExampleInput2" placeholder="Nature of Cultivation" name="Owner3Cultivation"
+            <div class="col-md-4">Nature of Cultivation :<input type="text" class="form-control" [disabled]=true
+                id="formGroupExampleInput2" placeholder="Nature of Cultivation" name="Owner3Cultivation" 
                 [(ngModel)]="userModel.Owner3Cultivation"></div>
-            <div class="col-md-4">Extent of Land Description of Property :<input type="text" class="form-control"
-                id="formGroupExampleInput2" placeholder="Extent of Land Description of Property" name="Owner3Extent"
+            <div class="col-md-4">Extent of Land Description of Property :<input type="text" class="form-control" [disabled]=true
+                id="formGroupExampleInput2" placeholder="Extent of Land Description of Property" name="Owner3Extent" 
                 [(ngModel)]="userModel.Owner3Extent"></div>
-            <div class="col-md-4">Annual Income Rs :<input type="text" class="form-control" id="formGroupExampleInput2"
+            <div class="col-md-4">Annual Income Rs :<input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true
                 placeholder="Annual Income Rs" name="Owner3Income" [(ngModel)]="userModel.Owner3Income"></div>
 
           </div>
@@ -433,22 +433,22 @@
           <label> ( 4 )
             _________________________________________________________________________________________________</label>
           <div class="row">
-            <div class="col-md-4">Name of Owner :<input type="text" class="form-control" id="formGroupExampleInput2"
+            <div class="col-md-4">Name of Owner :<input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true
                 placeholder="Name of Owner" name="Owner4Name" [(ngModel)]="userModel.Owner4Name"></div>
-            <div class="col-md-4">Relationship :<input type="text" class="form-control" id="formGroupExampleInput2"
+            <div class="col-md-4">Relationship :<input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true
                 placeholder="Relationship" name="Owner4Relationship" [(ngModel)]="userModel.Owner4Relationship"></div>
-            <div class="col-md-4">Location :<input type="text" class="form-control" id="formGroupExampleInput2"
+            <div class="col-md-4">Location :<input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true
                 placeholder="Location" name="Owner4Location" [(ngModel)]="userModel.Owner4Location"></div>
 
           </div>
           <div class="row">
-            <div class="col-md-4">Nature of Cultivation :<input type="text" class="form-control"
+            <div class="col-md-4">Nature of Cultivation :<input type="text" class="form-control" [disabled]=true
                 id="formGroupExampleInput2" placeholder="Nature of Cultivation" name="Owner4Cultivation"
                 [(ngModel)]="userModel.Owner4Cultivation"></div>
-            <div class="col-md-4">Extent of Land Description of Property :<input type="text" class="form-control"
+            <div class="col-md-4">Extent of Land Description of Property :<input type="text" class="form-control" [disabled]=true
                 id="formGroupExampleInput2" placeholder="Extent of Land Description of Property" name="Owner4Extent"
                 [(ngModel)]="userModel.Owner4Extent"></div>
-            <div class="col-md-4">Annual Income Rs :<input type="text" class="form-control" id="formGroupExampleInput2"
+            <div class="col-md-4">Annual Income Rs :<input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true
                 placeholder="Annual Income Rs" name="Owner4Income" [(ngModel)]="userModel.Owner4Income"></div>
 
           </div>
@@ -478,23 +478,23 @@
           <label> ( 1 )
             _________________________________________________________________________________________________</label>
           <div class="row">
-            <div class="col-md-3">Name of Owner :<input type="text" class="form-control" id="formGroupExampleInput2"
+            <div class="col-md-3">Name of Owner :<input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true
                 placeholder="Name of Owner" name="House1Owner" [(ngModel)]="userModel.House1Owner"></div>
-            <div class="col-md-3">Relationship :<input type="text" class="form-control" id="formGroupExampleInput2"
+            <div class="col-md-3">Relationship :<input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true
                 placeholder="Relationship" name="House1Relationship" [(ngModel)]="userModel.House1Relationship"></div>
-            <div class="col-md-3">Assessment No :<input type="text" class="form-control" id="formGroupExampleInput2"
+            <div class="col-md-3">Assessment No :<input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true
                 placeholder="Assessment No" name="House1AssessmentNo" [(ngModel)]="userModel.House1AssessmentNo"></div>
-            <div class="col-md-3">Chief House Holder’s No :<input type="text" class="form-control"
+            <div class="col-md-3">Chief House Holder’s No :<input type="text" class="form-control" [disabled]=true
                 id="formGroupExampleInput2" placeholder="Chief House Holder’s No" name="House1OwnerNo"
                 [(ngModel)]="userModel.House1OwnerNo"></div>
 
           </div>
           <div class="row">
-            <div class="col-md-3">Address :<input type="text" class="form-control" id="formGroupExampleInput2"
+            <div class="col-md-3">Address :<input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true
                 placeholder="Address" name="House1Address" [(ngModel)]="userModel.House1Address"></div>
-            <div class="col-md-3">Annual Income :<input type="text" class="form-control" id="formGroupExampleInput2"
+            <div class="col-md-3">Annual Income :<input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true
                 placeholder="Annual Income" name="House1AnualIncome" [(ngModel)]="userModel.House1AnualIncome"></div>
-            <div class="col-md-6">If rented/ leased names and addresses of tenants :<input type="text"
+            <div class="col-md-6">If rented/ leased names and addresses of tenants :<input type="text" [disabled]=true
                 class="form-control" id="formGroupExampleInput2"
                 placeholder="If rented/ leased names and addresses of tenants" name="House1RentDetail"
                 [(ngModel)]="userModel.House1RentDetail"></div>
@@ -505,23 +505,23 @@
           <label> ( 2 )
             _________________________________________________________________________________________________</label>
           <div class="row">
-            <div class="col-md-3">Name of Owner :<input type="text" class="form-control" id="formGroupExampleInput2"
+            <div class="col-md-3">Name of Owner :<input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true
                 placeholder="Name of Owner" name="House2Owner" [(ngModel)]="userModel.House2Owner"></div>
-            <div class="col-md-3">Relationship :<input type="text" class="form-control" id="formGroupExampleInput2"
+            <div class="col-md-3">Relationship :<input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true
                 placeholder="Relationship" name="House2Relationship" [(ngModel)]="userModel.House2Relationship"></div>
-            <div class="col-md-3">Assessment No :<input type="text" class="form-control" id="formGroupExampleInput2"
+            <div class="col-md-3">Assessment No :<input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true
                 placeholder="Assessment No" name="House2AssessmentNo" [(ngModel)]="userModel.House2AssessmentNo"></div>
-            <div class="col-md-3">Chief House Holder’s No :<input type="text" class="form-control"
+            <div class="col-md-3">Chief House Holder’s No :<input type="text" class="form-control" [disabled]=true
                 id="formGroupExampleInput2" placeholder="Chief House Holder’s No" name="House2OwnerNo"
                 [(ngModel)]="userModel.House2OwnerNo"></div>
 
           </div>
           <div class="row">
-            <div class="col-md-3">Address :<input type="text" class="form-control" id="formGroupExampleInput2"
+            <div class="col-md-3">Address :<input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true
                 placeholder="Address" name="House2Address" [(ngModel)]="userModel.House2Address"></div>
-            <div class="col-md-3">Annual Income :<input type="text" class="form-control" id="formGroupExampleInput2"
+            <div class="col-md-3">Annual Income :<input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true
                 placeholder="Annual Income" name="House2AnualIncome" [(ngModel)]="userModel.House2AnualIncome"></div>
-            <div class="col-md-6">If rented/ leased names and addresses of tenants :<input type="text"
+            <div class="col-md-6">If rented/ leased names and addresses of tenants :<input type="text" [disabled]=true
                 class="form-control" id="formGroupExampleInput2"
                 placeholder="If rented/ leased names and addresses of tenants" name="House2RentDetail"
                 [(ngModel)]="userModel.House2RentDetail"></div>
@@ -533,23 +533,23 @@
           <label> ( 3 )
             _________________________________________________________________________________________________</label>
           <div class="row">
-            <div class="col-md-3">Name of Owner :<input type="text" class="form-control" id="formGroupExampleInput2"
+            <div class="col-md-3">Name of Owner :<input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true
                 placeholder="Name of Owner" name="House3Owner" [(ngModel)]="userModel.House3Owner"></div>
-            <div class="col-md-3">Relationship :<input type="text" class="form-control" id="formGroupExampleInput2"
+            <div class="col-md-3">Relationship :<input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true
                 placeholder="Relationship" name="House3Relationship" [(ngModel)]="userModel.House3Relationship"></div>
-            <div class="col-md-3">Assessment No :<input type="text" class="form-control" id="formGroupExampleInput2"
+            <div class="col-md-3">Assessment No :<input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true
                 placeholder="Assessment No" name="House3AssessmentNo" [(ngModel)]="userModel.House3AssessmentNo"></div>
-            <div class="col-md-3">Chief House Holder’s No :<input type="text" class="form-control"
+            <div class="col-md-3">Chief House Holder’s No :<input type="text" class="form-control" [disabled]=true
                 id="formGroupExampleInput2" placeholder="Chief House Holder’s No" name="House3OwnerNo"
                 [(ngModel)]="userModel.House3OwnerNo"></div>
 
           </div>
           <div class="row">
-            <div class="col-md-3">Address :<input type="text" class="form-control" id="formGroupExampleInput2"
+            <div class="col-md-3">Address :<input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true
                 placeholder="Address" name="House3Address" [(ngModel)]="userModel.House3Address"></div>
-            <div class="col-md-3">Annual Income :<input type="text" class="form-control" id="formGroupExampleInput2"
+            <div class="col-md-3">Annual Income :<input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true
                 placeholder="Annual Income" name="House3AnualIncome" [(ngModel)]="userModel.House3AnualIncome"></div>
-            <div class="col-md-6">If rented/ leased names and addresses of tenants :<input type="text"
+            <div class="col-md-6">If rented/ leased names and addresses of tenants :<input type="text" [disabled]=true
                 class="form-control" id="formGroupExampleInput2"
                 placeholder="If rented/ leased names and addresses of tenants" name="House3RentDetail"
                 [(ngModel)]="userModel.House3RentDetail"></div>
@@ -580,23 +580,23 @@
           <br>
           <div class="form-group col-md-12">
             <label>Name and address of Institution / Department where you are employed : </label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="WorkingPlace" [(ngModel)]="userModel.WorkingPlace"></textarea>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="WorkingPlace" [(ngModel)]="userModel.WorkingPlace" [disabled]=true></textarea>
           </div>
           <div class="form-group col-md-6">
             <label>Post : </label>
-            <input type="text" class="form-control" placeholder="Post" name="WorkingPost" [(ngModel)]="userModel.WorkingPost">
+            <input type="text" class="form-control" placeholder="Post" name="WorkingPost" [(ngModel)]="userModel.WorkingPost" [disabled]=true>
           </div>
           <div class="form-group col-md-6">
             <label>Salary Scale : </label>
-            <input type="text" class="form-control" placeholder="Salary Scale" name="WorkingSalaryScale" [(ngModel)]="userModel.WorkingSalaryScale">
+            <input type="text" class="form-control" placeholder="Salary Scale" name="WorkingSalaryScale" [(ngModel)]="userModel.WorkingSalaryScale" [disabled]=true>
           </div>
           <div class="form-group col-md-6">
             <label>Salary : </label>
-            <input type="text" class="form-control" placeholder="Salary" name="WorkingSalary" [(ngModel)]="userModel.WorkingSalary">
+            <input type="text" class="form-control" placeholder="Salary" name="WorkingSalary" [(ngModel)]="userModel.WorkingSalary" [disabled]=true>
           </div>
           <div class="form-group col-md-6">
             <label>Date of appointment : </label>
-            <input type="text" class="form-control" placeholder="Date of appointment" name="WorkingAppointment" [(ngModel)]="userModel.WorkingAppointment">
+            <input type="text" class="form-control" placeholder="Date of appointment" name="WorkingAppointment" [(ngModel)]="userModel.WorkingAppointment" [disabled]=true>
           </div>
         </div>
       </div>
@@ -623,23 +623,23 @@
 
           <div class="form-group col-md-6">
             <label>Date of marriage (annex marriage certificate) : </label>
-            <input type="text" class="form-control" placeholder="Date of marriage" name="MarriageData" [(ngModel)]="userModel.MarriageData">
+            <input type="text" class="form-control" placeholder="Date of marriage" name="MarriageData" [(ngModel)]="userModel.MarriageData" [disabled]=true>
           </div>
           <div class="form-group col-md-6">
             <label>Name of spouse : </label>
-            <input type="text" class="form-control" placeholder="Name of spouse" name="Spouse" [(ngModel)]="userModel.Spouse">
+            <input type="text" class="form-control" placeholder="Name of spouse" name="Spouse" [(ngModel)]="userModel.Spouse" [disabled]=true>
           </div>
           <div class="form-group col-md-6">
             <label>If spouse is employed name of institution where she/he is employed : </label>
-            <input type="text" class="form-control" placeholder="institution" name="SpouseInstitution" [(ngModel)]="userModel.SpouseInstitution">
+            <input type="text" class="form-control" placeholder="institution" name="SpouseInstitution" [(ngModel)]="userModel.SpouseInstitution" [disabled]=true>
           </div>
           <div class="form-group col-md-6">
             <label>Post held : </label>
-            <input type="text" class="form-control" placeholder="Post held" name="SpousePost" [(ngModel)]="userModel.SpousePost">
+            <input type="text" class="form-control" placeholder="Post held" name="SpousePost" [(ngModel)]="userModel.SpousePost" [disabled]=true>
           </div>
           <div class="form-group col-md-6">
             <label>Present salary: (state the monthly salary inclusive of all allowances) : </label>
-            <input type="text" class="form-control" placeholder="Present salary" name="PresentSalary" [(ngModel)]="userModel.PresentSalary">
+            <input type="text" class="form-control" placeholder="Present salary" name="PresentSalary" [(ngModel)]="userModel.PresentSalary" [disabled]=true>
           </div>
 
         </div>
@@ -665,7 +665,7 @@
           </label>
           <br>
           <div class="form-group col-md-6">
-            <input type="text" class="form-control" placeholder="Yes / No" name="SriLankanCitizen" [(ngModel)]="userModel.SriLankanCitizen">
+            <input type="text" class="form-control" placeholder="Yes / No" name="SriLankanCitizen" [(ngModel)]="userModel.SriLankanCitizen" [disabled]=true>
           </div>
 
         </div>
@@ -696,7 +696,7 @@
           <br>
           <div class="form-group col-md-8">
             <label>Full Name : </label>
-            <input type="text" class="form-control" placeholder="Full Name" name="FatherName" [(ngModel)]="userModel.FatherName">
+            <input type="text" class="form-control" placeholder="Full Name" name="FatherName" [(ngModel)]="userModel.FatherName" [disabled]=true>
           </div>
           <div class="form-group col-md-12">
             <div class="row">
@@ -706,7 +706,7 @@
               </div>
               <div class="col-md-7">
                 <div class="form-check">
-                  <input class="form-check-input custom-control-input" type="radio" 
+                  <input class="form-check-input custom-control-input" type="radio" [disabled]=true
                     id="exampleRadios1" value="Yes" (click)=" fileaddYes()" name="FatherLiving" [(ngModel)]="userModel.FatherLiving">
                   <label class="form-check-label" for="exampleRadios1">
                     <i>Yes</i>
@@ -714,7 +714,7 @@
 
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input custom-control-input" type="radio" name="exampleRadios"
+                  <input class="form-check-input custom-control-input" type="radio" name="exampleRadios" [disabled]=true
                     id="exampleRadios2" value="No" (click)=" fileaddNo()" name="FatherLivingno" [(ngModel)]="userModel.FatherLiving">
                   <label class="form-check-label" for="exampleRadios2">
                     <i>No</i>
@@ -725,10 +725,10 @@
             <div *ngIf="fileAddView">
               <label>living, Age </label> <br>
               <div class="form-group col-md-3">
-                <input type="text" class="form-control" placeholder="Years" name="FatherYear" [(ngModel)]="userModel.FatherYear">
+                <input type="text" class="form-control" placeholder="Years" name="FatherYear" [(ngModel)]="userModel.FatherYear" [disabled]=true>
               </div>
               <div class="form-group col-md-3">
-                <input type="text" class="form-control" placeholder="Months" name="FatherMonth" [(ngModel)]="userModel.FatherMonth">
+                <input type="text" class="form-control" placeholder="Months" name="FatherMonth" [(ngModel)]="userModel.FatherMonth" [disabled]=true>
               </div>
             </div>
 
@@ -736,16 +736,16 @@
 
           <div class="form-group col-md-6">
             <label for="formGroupExampleInput2"> Father’s Employment: </label>
-            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Father’s Employment" name="FatherEmployee" [(ngModel)]="userModel.FatherEmployee">
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Father’s Employment" [disabled]=true name="FatherEmployee" [(ngModel)]="userModel.FatherEmployee">
           </div>
           <div class="form-group col-md-6">
             <label for="formGroupExampleInput2"> Address of present / previous employment: </label>
-            <input type="text" class="form-control" id="formGroupExampleInput2"
+            <input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true
               placeholder="Address of present / previous employment" name="FatherEmployeeAddress" [(ngModel)]="userModel.FatherEmployeeAddress">
           </div>
           <div class="form-group col-md-8">
             <label for="formGroupExampleInput2">State the full income derived from employment / Pension Rs: </label>
-            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="full income"
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="full income" [disabled]=true
             name="Pension" [(ngModel)]="userModel.FatherPension">
             (Full annual income as at 31st December 2018, should be declared.)
             (If employed, a letter stating the annual salary inclusive of all allowances certified by the Head of the
@@ -755,15 +755,15 @@
           </div>
           <div class="form-group col-md-8">
             <label for="formGroupExampleInput2"> Annual income derived from houses & properties: </label>
-            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Rs -:" name="FatherHousesProperties" [(ngModel)]="userModel.FatherHousesProperties">
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Rs -:" [disabled]=true name="FatherHousesProperties" [(ngModel)]="userModel.FatherHousesProperties">
           </div>
           <div class="form-group col-md-8">
             <label for="formGroupExampleInput2"> Annual income derived from all other sources: </label>
-            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Rs -:" name="FatherOtherSources" [(ngModel)]="userModel.FatherOtherSources">
+            <input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true placeholder="Rs -:" name="FatherOtherSources" [(ngModel)]="userModel.FatherOtherSources">
           </div>
           <div class="form-group col-md-8">
             <label for="formGroupExampleInput2"> Father’s total annual income: </label>
-            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Rs -:" name="FatherAnualIncome" [(ngModel)]="userModel.FatherAnualIncome">
+            <input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true placeholder="Rs -:" name="FatherAnualIncome" [(ngModel)]="userModel.FatherAnualIncome">
           </div>
 
           <br>
@@ -774,7 +774,7 @@
           <br>
           <div class="form-group col-md-8">
             <label>Full Name : </label>
-            <input type="text" class="form-control" placeholder="Full Name" name="MotherName" [(ngModel)]="userModel.MotherName">
+            <input type="text" class="form-control" placeholder="Full Name" name="MotherName" [(ngModel)]="userModel.MotherName" [disabled]=true>
           </div>
           <div class="form-group col-md-12">
             <div class="row">
@@ -785,7 +785,7 @@
               <div class="col-md-7">
                 <div class="form-check">
                   <input class="form-check-input custom-control-input" type="radio" 
-                    id="exampleRadios1" value="Yes" (click)=" fileaddYes()" name="MotherLiving" [(ngModel)]="userModel.MotherLiving">
+                    id="exampleRadios1" value="Yes" (click)=" fileaddYes()" name="MotherLiving" [(ngModel)]="userModel.MotherLiving" [disabled]=true>
                   <label class="form-check-label" for="exampleRadios1">
                     <i>Yes</i>
                   </label>
@@ -793,7 +793,7 @@
                 </div>
                 <div class="form-check">
                   <input class="form-check-input custom-control-input" type="radio" 
-                    id="exampleRadios2" value="No" (click)=" fileaddNo()" name="MotherLiving" [(ngModel)]="userModel.MotherLiving">
+                    id="exampleRadios2" value="No" (click)=" fileaddNo()" name="MotherLiving" [(ngModel)]="userModel.MotherLiving" [disabled]=true>
                   <label class="form-check-label" for="exampleRadios2">
                     <i>No</i>
                   </label>
@@ -803,10 +803,10 @@
             <div *ngIf="fileAddView">
               <label>living, Age </label> <br>
               <div class="form-group col-md-3">
-                <input type="text" class="form-control" placeholder="Years" name="MotherYear" [(ngModel)]="userModel.MotherYear">
+                <input type="text" class="form-control" placeholder="Years" name="MotherYear" [(ngModel)]="userModel.MotherYear" [disabled]=true>
               </div>
               <div class="form-group col-md-3">
-                <input type="text" class="form-control" placeholder="Months" name="MotherMonth" [(ngModel)]="userModel.MotherMonth">
+                <input type="text" class="form-control" placeholder="Months" name="MotherMonth" [(ngModel)]="userModel.MotherMonth" [disabled]=true>
               </div>
             </div>
 
@@ -814,16 +814,16 @@
 
           <div class="form-group col-md-6">
             <label for="formGroupExampleInput2"> Mother’s Employment: </label>
-            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Father’s Employment" name="MotherEmployee" [(ngModel)]="userModel.MotherEmployee">
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Father’s Employment" name="MotherEmployee" [(ngModel)]="userModel.MotherEmployee" [disabled]=true>
           </div>
           <div class="form-group col-md-6">
             <label for="formGroupExampleInput2"> Address of present / previous employment: </label>
             <input type="text" class="form-control" id="formGroupExampleInput2"
-              placeholder="Address of present / previous employment" name="MotherEmployeeAddress" [(ngModel)]="userModel.MotherEmployeeAddress">
+              placeholder="Address of present / previous employment" name="MotherEmployeeAddress" [(ngModel)]="userModel.MotherEmployeeAddress" [disabled]=true>
           </div>
           <div class="form-group col-md-8">
             <label for="formGroupExampleInput2">State the full income derived from employment / Pension Rs: </label>
-            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="full income" name="MotherPension" [(ngModel)]="userModel.MotherPension">
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="full income" name="MotherPension" [(ngModel)]="userModel.MotherPension" [disabled]=true>
             (Full annual income as at 31st December 2018, should be declared.)
             (If employed, a letter stating the annual salary inclusive of all allowances certified by the Head of the
             workplace, should be annexed. If retired, a letter stating the annual pension inclusive of all allowances,
@@ -832,15 +832,15 @@
           </div>
           <div class="form-group col-md-8">
             <label for="formGroupExampleInput2"> Annual income derived from houses & properties: </label>
-            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Rs -:" name="MotherHousesProperties" [(ngModel)]="userModel.MotherHousesProperties">
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Rs -:" name="MotherHousesProperties" [(ngModel)]="userModel.MotherHousesProperties" [disabled]=true>
           </div>
           <div class="form-group col-md-8">
             <label for="formGroupExampleInput2"> Annual income derived from all other sources: </label>
-            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Rs -:" name="MotherOtherSources" [(ngModel)]="userModel.MotherOtherSources">
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Rs -:" name="MotherOtherSources" [(ngModel)]="userModel.MotherOtherSources" [disabled]=true>
           </div>
           <div class="form-group col-md-8">
             <label for="formGroupExampleInput2"> Mothers’s total annual income: </label>
-            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Rs -:" name="MotherAnualIncome" [(ngModel)]="userModel.MotherAnualIncome">
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Rs -:" name="MotherAnualIncome" [(ngModel)]="userModel.MotherAnualIncome" [disabled]=true>
           </div>
 
           <div class="col-md-12 well">
@@ -848,7 +848,7 @@
               <label for="formGroupExampleInput2"><span class="glyphicon glyphicon-record" aria-hidden="true"></span>
                 Father’s and mother’s total annual income: </label>
               (write total full annual income of father and mother in words)
-              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="in words" name="FatherMotherTotalIncome" [(ngModel)]="userModel.FatherMotherTotalIncome">
+              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="in words" name="FatherMotherTotalIncome" [(ngModel)]="userModel.FatherMotherTotalIncome" [disabled]=true>
             </div>
           </div>
 
@@ -879,30 +879,30 @@
           </div>
           <div class="form-group col-md-6">
             <label for="formGroupExampleInput2">Name of Guardian: </label>
-            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Name of Guardian" name="GuardianName" [(ngModel)]="userModel.GuardianName"> 
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Name of Guardian" name="GuardianName" [(ngModel)]="userModel.GuardianName" [disabled]=true> 
           </div>
           <div class="form-group col-md-6">
             <label for="formGroupExampleInput2">Age: </label>
-            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Age" name="GuardianAge" [(ngModel)]="userModel.GuardianAge">
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Age" name="GuardianAge" [(ngModel)]="userModel.GuardianAge" [disabled]=true>
           </div>
           <div class="form-group col-md-6">
             <label for="formGroupExampleInput2"> Permanent address: </label>
-            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Permanent address" name="GuardianAddress" [(ngModel)]="userModel.GuardianAddress">
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Permanent address" name="GuardianAddress" [(ngModel)]="userModel.GuardianAddress" [disabled]=true>
           </div>
           <div class="form-group col-md-6">
             <label for="formGroupExampleInput2">If employed, post held: </label>
-            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="If employed, post held" name="GuardianEmployedPost" [(ngModel)]="userModel.GuardianEmployedPost">
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="If employed, post held" name="GuardianEmployedPost" [(ngModel)]="userModel.GuardianEmployedPost" [disabled]=true>
           </div>
           <div class="form-group col-md-6">
             <label for="formGroupExampleInput2">Annual salary: (annex details of salary.): </label>
-            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Rs -:" name="GuardianAnualSalary" [(ngModel)]="userModel.GuardianAnualSalary">
+            <input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true placeholder="Rs -:" name="GuardianAnualSalary" [(ngModel)]="userModel.GuardianAnualSalary">
           </div>
           <div class="form-group col-md-8">
             <label for="formGroupExampleInput2"> Annual income derived from houses & properties/ property of temple:
             </label>
             (A certificate issued by the Gramaseva Niladhari/Assistant Government Agent should be annexed in this
             connection.)
-            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Rs -:" name="GuardianAnualIncome" [(ngModel)]="userModel.GuardianAnualIncome">
+            <input type="text" class="form-control" id="formGroupExampleInput2" [disabled]=true placeholder="Rs -:" name="GuardianAnualIncome" [(ngModel)]="userModel.GuardianAnualIncome">
           </div>
 
         </div>
