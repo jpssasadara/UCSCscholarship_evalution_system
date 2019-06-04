@@ -17,6 +17,7 @@ import { WelfareAdminComponent } from './welfare-admin/welfare-admin.component';
 import { HtmltopdfComponent } from './htmltopdf/htmltopdf.component';
 import { WelfareEditComponent } from './welfare-edit/welfare-edit.component';
 import { CookieService } from 'ngx-cookie-service';
+import { RegisterStudentComponent } from './register-student/register-student.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { CookieService } from 'ngx-cookie-service';
     AdminForWelfareScholComponent,
     WelfareAdminComponent,
     HtmltopdfComponent,
-    WelfareEditComponent
+    WelfareEditComponent,
+    RegisterStudentComponent
    
     
     

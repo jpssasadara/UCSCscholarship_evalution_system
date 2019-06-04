@@ -4,7 +4,7 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const scholarshipRoutes = require('./routes/scholarship');
-
+const adminStuRegRoutes = require('./routes/adminStuReg');
 
 
 const mongoConnection = "mongodb+srv://ucsc:ucsc@123@ucscmean-svqsr.mongodb.net/test?retryWrites=true";
@@ -32,6 +32,7 @@ app.use((req,res,next)=>{
 
 
 app.use('/scholarship',scholarshipRoutes);
+app.use('/adminStuReg',adminStuRegRoutes);
 
 // for handling invalied URLs------------>>FROM scholarship/getWelfareStu'
 

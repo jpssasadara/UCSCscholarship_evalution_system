@@ -42,6 +42,7 @@ export class WelfareAdminComponent implements OnInit {
   }
   //register
   createAccount(){
-    this.router.navigate(['register']);
+    this.userModel=this.userModellist[0];
+    this.router.navigate(['admin/register/student', this.userModel.regNumber, this.userModel.email]);
   }
 }
