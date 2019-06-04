@@ -18,6 +18,7 @@ import { HtmltopdfComponent } from './htmltopdf/htmltopdf.component';
 import { WelfareEditComponent } from './welfare-edit/welfare-edit.component';
 import { CookieService } from 'ngx-cookie-service';
 import { RegisterStudentComponent } from './register-student/register-student.component';
+import { AdminRegStudentService } from './admin-reg-student.service';
 
 
 @NgModule({
@@ -44,7 +45,7 @@ import { RegisterStudentComponent } from './register-student/register-student.co
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [EnrollmentService,StudentWellfareService,CookieService ],
+  providers: [EnrollmentService,StudentWellfareService,CookieService,AdminRegStudentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

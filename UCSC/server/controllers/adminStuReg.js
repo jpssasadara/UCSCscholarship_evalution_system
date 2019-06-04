@@ -18,6 +18,40 @@ exports.create_registration = (req, res, next) => {
                 massage: 'Handling post request ',
                 createdproduct: result
             });
+
+
+            //-------------------E MAIL SENDING PART ---------------------------------
+            var transporter = nodemailer.createTransport({
+                service: 'gmail',
+                auth: {
+                    user: 'fmsucscgroup5@gmail.com',
+                    pass: 'fmsucscg5'
+                }
+            });
+
+            var mailOptions = {
+                from: 'fmsucscgroup5@gmail.com',
+                to: regstu.email,
+                subject: 'Exam Branch UCSC',
+                text:
+
+                    '###### UNIVERSITY OF COLOMBO SCHOOL OF COMPUTING ###### \n' +
+
+                    'Dear Student ... \n'
+                    + 'Good Luck !!  your Application form of WELFARE AND DISTRESS FUND SCHOLARSHIP has been accepted. \nplease use \n Username-> ' +regstu.regNumber+
+                    '\n Password-> ' +regstu.password+"\n link==> http://localhost:4200/login \n"+
+                    'from UCSC Exam branch......'
+            };
+
+            transporter.sendMail(mailOptions, function (error, info) {
+                if (error) {
+                    console.log(error);
+                } else {
+                    console.log('Email sent: ' + info.response);
+                }
+            });
+            //----------------------------------------------------
+        
         })
         .catch(err => {
             console.log(err);
