@@ -24,7 +24,7 @@ export class WelfareAdminComponent implements OnInit {
     this._studentwelfareview.getApplication(this.id)
       .subscribe(data => this.userModellist = data);
       //this.userModel=this.userModellist[0];
-      
+      this.getdata();
   }
   fileaddYes(){
     console.log("addfile");
@@ -38,9 +38,10 @@ export class WelfareAdminComponent implements OnInit {
     console.log(this.userModellist[0]);
      this.userModel=this.userModellist[0];
   }
-  onSubmit(){
-   
-        
-      
+  onSubmit(){    
+  }
+  //register
+  createAccount(){
+    this.router.navigate(['register']);
   }
 }
