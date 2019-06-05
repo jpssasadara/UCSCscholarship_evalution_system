@@ -21,9 +21,9 @@ import { ResultComponent } from './result/result.component';
 import { IfsApplicationComponent } from './ifs-application/ifs-application.component';
 
 
-import { ClistComponent } from './clist/clist.component';
+
 import { CitemsComponent } from './citems/citems.component';
-import { CtableComponent } from './ctable/ctable.component';
+
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { TestComponent } from './test/test.component';
 import { from } from 'rxjs';
@@ -44,6 +44,7 @@ export const routes: Routes = [
 }]},
 
 { path:'ifs/list/:_id',component:IfsApplicationComponent},
+
 
 
  { path: 'homepage' , component: HomepageComponent},
@@ -68,11 +69,11 @@ export const routes: Routes = [
  
  
 
- { path: 'admin/ifs/clist/list', component:ClistComponent},
+ 
 
  { path: 'admin/ifs/clist/list/:_id', component:CitemsComponent},
 
- { path: 'ifs/admin/ctable', component:CtableComponent},
+ 
 
  { path: 'test/test',component : TestComponent},
 

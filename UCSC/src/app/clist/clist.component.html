@@ -1,42 +1,80 @@
-<div class="home-block">
-
-    
-  
-  <div class="container justify-content-center ">
-    <div class="form-group">
-      <label for="formGroupExampleInput2">
-        <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>............................................ APPLICATION FOR IFS SCHOLARSHIPS ....................................</u></h4>
-      </label>
+<div class="panel-header panel-header-sm">
+</div>
+<div class="panel-header">
+    <div class="header text-center">
+        <h2 class="title">IFS Scholarship</h2>
+        <h2><p class="category">Application List</p></h2>
+       
     </div>
-
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+       
+        <div class="row" >
+          
+            <div class="col-md-12" *ngFor="let itm of arr; let i = index">
+                <div class="card  card-tasks">
+                  <div class="card-header ">
+                      <h5><button class="btn btn-round btn-lg btn-primary"><i class="now-ui-icons files_paper"></i></button> <span style='margin-right:1.25em; display:inline-block;'>&nbsp;</span>
+                    <label>Application No: &nbsp; {{i+1}}</label></h5>
+                    <h6 class="card-title">Registration No : &nbsp; <label>{{itm.registration}}</label></h6>
+                    <h6>Full Name  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp; <label>{{itm.fullName}}</label></h6>
+                    
+                  </div>
+                  <div class="card-body ">
+                    <div class="table-full-width">
+                      <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>
+                                  <div class="form-check">
+                                    <label class="form-check-label">
+                                      
+                                    </label>
+                                  </div>
+                                </td>
+                                <td class="text-left"><br/>Distance from home to university <br/> </td>
+                                
+                                <td class="td-actions text-right">
+                                  <br/> {{itm.distance}} km <br/>
+                                  <h5><label for=""></label></h5>
+                                </td>
+                              </tr>
+                          <tr>
+                            <td>
+                              <div class="form-check">
+                                <label class="form-check-label">
+                                  
+                                </label>
+                              </div>
+                            </td>
+                            <td class="text-left"><br/>Family income per year <br/> </td>
+                            <td class="td-actions text-right">
+                              <br/> Rs.{{itm.fannual*1 + itm.fproperty*1 + itm.fother*1 + itm.mproperty*1 + itm.mother*1}}.00
+                            </td>
+                          </tr>
+                          
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                  <div class="card-footer ">
+                    <hr>
+                    <div class="stats text-left">
+                      <i class="now-ui-icons loader_refresh spin"></i> Application ID : {{itm._id}}
+                    </div>
+                    <div class="stats text-right">
+                      <a href="admin/ifs/clist/list/{{itm._id}}" class="btn btn-round btn-primary">View</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        
+  </div>
+  </div>
+  </div>
   </div>
   
-  <div class="container">
-    
-      <div class="box" *ngFor="let itm of cnlist  | slice:1; ">
-          <div class="container">
-           
-                <div class="box-part text-center">
-      
-                  <i class="fa fa-behance fa-3x" aria-hidden="true"></i>
-      
-                  <div class="title">
-                    <h4><b>{{itm._id}}</b></h4>
-                  </div>
-                  <div>
-                    <h5>{{itm.fullName}}</h5>
-                  </div>
-                  <div class="text">
-                    <span><a href="admin/ifs/clist/list/{{itm._id}}">Application Form</a></span>
-                  </div>
-      
-                  
-      
-                </div>
-             
-          </div>
-        </div>
-      
-  </div>
-
-  </div>

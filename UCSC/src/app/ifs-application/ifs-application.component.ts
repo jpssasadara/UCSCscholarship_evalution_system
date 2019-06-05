@@ -17,7 +17,12 @@ export class IfsApplicationComponent implements OnInit {
   ids : string;
   arr : FormData;
   membs : fmember[];
-  constructor(private route: ActivatedRoute, private ifsService:IfsService,private tostr:ToastrService) { }
+  currentJustify = 'fill';
+  constructor(private route: ActivatedRoute, private ifsService:IfsService,private tostr:ToastrService,config: NgbTabsetConfig) {
+    
+  config.justify = 'fill';
+  config.type = 'pills';
+   }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {

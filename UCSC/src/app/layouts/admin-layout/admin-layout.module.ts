@@ -7,6 +7,9 @@ import { AdminLayoutRoutes } from './admin-layout.routing';
 import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { CrieteriaComponent } from '../../crieteria/crieteria.component';
 import { IfsAdminComponent } from '../../ifs-admin/ifs-admin.component';
+import { CtableComponent } from '../../ctable/ctable.component';
+import { CformComponent } from '../../cform/cform.component';
+import { EllistComponent } from '../../ellist/ellist.component';
 
 import { ChartsModule } from 'ng2-charts';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -17,7 +20,7 @@ import { ToastrModule } from 'ngx-toastr';
 
 
 import { NgxSmartModalModule } from 'ngx-smart-modal';
-
+import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { from } from 'rxjs';
 
 import {MatIconModule} from '@angular/material/icon';
@@ -27,6 +30,7 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule, MatInput } from '@angular/material';
 import { MatDialogModule,MatToolbarModule,MatGridListModule,MatButtonModule } from '@angular/material';
+import { ClistComponent } from 'src/app/clist/clist.component';
 
 
 
@@ -73,14 +77,20 @@ import { MatDialogModule,MatToolbarModule,MatGridListModule,MatButtonModule } fr
     ReactiveFormsModule,
     
 
-    NgbModule
+    NgbModule,
+    NgxQRCodeModule
   ],
   declarations: [
     DashboardComponent,
     CrieteriaComponent,
     IfsAdminComponent,
-
-  ]
+    ClistComponent,
+    CtableComponent,
+    CformComponent,
+    EllistComponent
+  ],
+  
+  entryComponents : [CformComponent]
 })
 
 export class AdminLayoutModule {}

@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import {NgbTabsetConfig} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule , routingComponents } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
@@ -35,9 +35,9 @@ import { NgxSmartModalModule } from 'ngx-smart-modal';
 
 
 
-import { ClistComponent } from './clist/clist.component';
+
 import { CitemsComponent } from './citems/citems.component';
-import { CtableComponent } from './ctable/ctable.component';
+
 import { from } from 'rxjs';
 
 import {MatIconModule} from '@angular/material/icon';
@@ -48,7 +48,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule, MatInput } from '@angular/material';
 import { MatDialogModule,MatToolbarModule,MatGridListModule,MatButtonModule } from '@angular/material';
 
-import { CformComponent } from './cform/cform.component';
+
 import { NavigationComponent } from './navigation/navigation.component';
 import { AdminStudentApplicationComponent } from './admin-student-application/admin-student-application.component';
 import { ApllicantDetailsComponent } from './apllicant-details/apllicant-details.component';
@@ -64,6 +64,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { TestComponent } from './test/test.component';
 
 import { ToastrService, ToastrModule } from 'ngx-toastr';
+import { NgxQRCodeModule } from 'ngx-qrcode2';
 
 @NgModule({
   declarations: [
@@ -87,13 +88,13 @@ import { ToastrService, ToastrModule } from 'ngx-toastr';
    
    
    
-    ClistComponent,
+    
    
     CitemsComponent,
 
-    CtableComponent,
+   
 
-    CformComponent,
+    
     NavigationComponent,
     AdminStudentApplicationComponent,
     ApllicantDetailsComponent,
@@ -101,7 +102,8 @@ import { ToastrService, ToastrModule } from 'ngx-toastr';
     PaymentApplicantDetailsComponent,
     NotificationComponent,
     AdminLayoutComponent,
-    TestComponent
+    TestComponent,
+   
 
   ],
   imports: [    
@@ -142,10 +144,12 @@ import { ToastrService, ToastrModule } from 'ngx-toastr';
     ReactiveFormsModule,
     ComponentsModule,
 
-    NgbModule
+    NgbModule,
+    NgxQRCodeModule,
+
   ],
   providers: [EnrollmentService,{provide:FormDataService,useClass: FormDataService}, WorkflowService,StudentWellfareService ],
   bootstrap: [AppComponent],
-  entryComponents : [CformComponent]
+  
 })
 export class AppModule { }

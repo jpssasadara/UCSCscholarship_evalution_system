@@ -1,3 +1,35 @@
+<div class="panel-header panel-header-sm">
+    <div class="container text-left">
+        <button class="btn btn-default btn-icon btn-round btn-lg" type="button">
+            <i class="now-ui-icons ui-2_favourite-28"></i>
+        </button>
+    </div>
+    </div>
+    <div class="main-content">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header text-left">
+               
+            </div>
+            <div class="card-body all-icons">
+              <div class="row">
+                
+    
+                  <div class="container justify-content-center ">
+                      <div class="form-group">
+                        <label for="formGroupExampleInput2">
+                          <h4>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>...........................
+                              MARK SHEET .....................</u></h4>
+                        </label>
+                      </div>
+      
+                    </div>
+    
+    
+  
+
 <div class="container">
   <form #arrForm="ngForm" class="arrForm" novalidate>
     <div class='row'>
@@ -13,8 +45,8 @@
           <div class='col-xs-12 col-sm-3'>
 
             <label class="control-label" for="fullName">Range</label> <br>
-            <p>{{range1}}</p>
-
+            <p>
+            <span class="badge badge-success">{{range1}}</span></p>
           </div>
 
           <div class='col-xs-12 col-sm-6'>
@@ -39,7 +71,9 @@
           <div class='col-xs-12 col-sm-3'>
 
             <label class="control-label" for="fullName">Range</label> <br>
-            <p>{{range2}}</p>
+            <p>
+                <span class="badge badge-warning">{{range2}}</span></p>
+    
 
           </div>
 
@@ -68,26 +102,47 @@
           </div>
         </div>
         <div class="row">
-          <table>
-            <tr>
-              <th>Name</th>
-              <th>Date of Birth/age</th>
-              <th>School/Institute</th>
-              <th>University Details</th>
-              <th>Scholarship <br>owner</th>
-              <th>Whether employed</th>
-
-            </tr>
+            <div class="card-header">
+                <h4 class="card-title"> Special reasons related to sibilings</h4>
+              </div>
+              <div class="card-body">
+                <div class="table">
+                  <table class="table">
+                    <thead class=" text-primary">
+                      <th>
+                        Name
+                      </th>
+                      <th>
+                          Date of Birth/age
+                      </th>
+                      <th>
+                          School or Institute
+                      </th>
+                      <th >
+                          University Details
+                      </th>
+                      <th>
+                          Scholarship owner
+                      </th>
+                      <th>
+                          Whether employed
+                      </th>
+                    </thead>
+                    <tbody>
+      
             <tr *ngFor="let i of sibil; index as j">
               <td>{{i.name}}</td>
               <td>{{i.dob}}</td>
               <td>{{i.school}}</td>
-              <td>`{{i.registration}} {{i.course}} {{i.year}}</td>
+              <td>`{{i.registration}} <br> {{i.course}} {{i.year}}</td>
               <td>{{i.scholar}}</td>
               <td>{{i.employed}}</td>
 
             </tr>
+            </tbody>
           </table>
+          </div>
+          </div>
         </div>
         <h4>Category 1</h4>
         <div class="row">
@@ -111,7 +166,7 @@
           <div class='col-xs-12 col-sm-2'>
             <div class="form-group">
               <label class="control-label" for="fullName">Points</label>
-              <p>{{cat1}}</p>
+             <p> <span class="badge badge-info">{{cat1}}</span></p>
 
             </div>
           </div>
@@ -145,7 +200,7 @@
           <div class='col-xs-12 col-sm-2'>
             <div class="form-group">
               <label class="control-label" for="fullName">Points</label>
-              <p>{{cat2}}</p>
+              <p> <span class="badge badge-info">{{cat2}}</span></p>
 
             </div>
           </div>
@@ -165,7 +220,7 @@
             </div>
           </div>
           <div class="col-xs-12 col-md-2"></div>
-          <div class='col-xs-12 col-sm-3'>
+          <div class='col-xs-12 col-sm-4'>
             <div class="form-group">
               <label class="control-label" for="fullName">Marks</label>
               <input class="form-control input-md" type="text" name="mark4" #mark4="ngModel" [(ngModel)]="mrk4" value="{{(crt.sibil2*1*sibilng.count2*1+crt.sibil1*1*sibilng.count1*1)}}">
@@ -174,17 +229,34 @@
           </div>
         </div>
         <div class="row">
-            <div class="form-group">
-                <label class="control-label" for="fullName">Final Marks</label>
+            <div class='col-xs-12 col-sm-6'>
+              <div class="form-group">
+                <label></label>
+                <p>Final Marks </p>
+              </div>
+            </div>
+            <div class="col-xs-12 col-md-2"></div>
+            <div class='col-xs-12 col-sm-4'>
+              <div class="form-group">
+                <label class="control-label" for="fullName">Marks</label>
                 <input class="form-control input-md" type="text" name="mark4" #mark4="ngModel" [(ngModel)]="mrk4" value="{{(crt.sibil2*1*sibilng.count2*1+crt.sibil1*1*sibilng.count1*1)+mrk1*1+mrk2*1+mrk3*1}}">
   
               </div>
-        </div>
+            </div>
+          </div>
+       
       </div>
 
     </div>
     <div class="form-group text-center">
-        <button class="btn btn-success btn-outline-rounded btn-info" (click)="submit()"> Submit <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></button>
+        <button class="btn btn-success btn-round btn-info" (click)="submit()"> Submit <span style="margin-left:10px;" class="glyphicon glyphicon-arrow-right"></span></button>
     </div>
   </form>
 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  

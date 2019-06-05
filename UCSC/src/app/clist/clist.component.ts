@@ -11,7 +11,7 @@ import { Crieteria } from '../shared/crieteria.model';
 export class ClistComponent implements OnInit {
 
   cndidte : FormData;
-  cnlist : FormData[];
+  arr : FormData[];
   alist : FormData[];
   j : number = 0;
   nObj : FormData;
@@ -70,16 +70,16 @@ export class ClistComponent implements OnInit {
     gpa : 0
 
   }
-  this.cnlist = [this.nObj];
+  this.arr = [this.nObj];
   this.ifsService.getForm().subscribe((res)=>{
     this.alist = res as FormData[];
    for (let i = 0; i < this.alist.length; i++) {
     if (this.alist[i].status) {
-      this.cnlist.push(this.alist[i]);
+      this.arr.push(this.alist[i]);
     }
      
    }
-   console.log(this.cnlist);
+   console.log(this.arr);
    
 });
   }

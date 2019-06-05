@@ -23,6 +23,7 @@ export class CtableComponent implements OnInit {
   appl : FormData;
   searchKey : string;
   listData : MatTableDataSource<any>;
+  isClicked : boolean[];
   displayedColumns : string[] = ['name','status','marks','actions'];
   @ViewChild(MatSort) sort:MatSort;
   @ViewChild(MatPaginator) paginator : MatPaginator;

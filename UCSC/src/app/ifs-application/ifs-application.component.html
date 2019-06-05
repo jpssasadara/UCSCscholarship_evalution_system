@@ -421,18 +421,27 @@
                           <ngb-tab>
                             <ng-template ngbTabTitle><span class="tab-title">3</span></ng-template>
                             <ng-template ngbTabContent>
-                              <div class="container">
-                                <table>
-                                  <tr>
-                                    <th>Name</th>
-                                    <th>Year</th>
-                                    <th>DOB</th>
-                                    <th>School</th>
-                                    <th>Course</th>
-                                    <th>Registration</th>
-                                    <th>Scholar</th>
-                                    <th>Employed</th>
-                                  </tr>
+                              <div class="card-body">
+                                <div class="table-responsive">
+                                  <table class="table">
+                                    <thead class=" text-primary">
+                                      <th>
+                                        Name
+                                      </th>
+                                      <th>
+                                        Year
+                                      </th>
+                                      <th>
+                                        DOB
+                                      </th>
+                                      <th>
+                                        Course
+                                      </th>
+                                      <th>Registration No:</th>
+                                      <th>Receipient of Scholarship</th>
+                                      <th>Employed/Not?</th>
+                                    </thead>
+                                    <tbody>
                                   <tr *ngFor="let mem of membs">
                                     <td>{{mem.name}}</td>
                                     <td>{{mem.year}}</td>
@@ -443,7 +452,9 @@
                                     <td>{{mem.Scholar}}</td>
                                     <td>{{mem.employed}}</td>
                                   </tr>
+                                  </tbody>
                                 </table>
+                              </div>
                               </div>
                             </ng-template>
                           </ngb-tab>

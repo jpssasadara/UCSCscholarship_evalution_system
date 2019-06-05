@@ -32,6 +32,7 @@ import {
 import {
   NgForm
 } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-citems',
   templateUrl: './citems.component.html',
@@ -60,7 +61,7 @@ export class CitemsComponent implements OnInit {
   sibilng: sibiling;
   fin1 : number = 0;
   fin2 : number = 0;
-  constructor(private route: ActivatedRoute, private ifsService: IfsService, private crtService: CrieteriaService, private marks: MarksService) {
+  constructor(private route: ActivatedRoute, private ifsService: IfsService, private crtService: CrieteriaService, private marks: MarksService, private toastr:ToastrService) {
 
   }
 
@@ -115,7 +116,7 @@ export class CitemsComponent implements OnInit {
             this.mrk1 = this.dists[i].marks;
             console.log(this.mrk1);
             console.log(this.dists[i].from + " " + this.candiate.distance);
-            this.range1 = this.dists[i].from + " " + this.dists[i].to;
+            this.range1 = "from "+this.dists[i].from + " to " + this.dists[i].to;
 
           }
         } else {
@@ -131,7 +132,7 @@ export class CitemsComponent implements OnInit {
         if (this.incm[i].from < this.total) {
           if (this.total < this.incm[i].to) {
             this.mrk2 = this.incm[i].marks;
-            this.range2 = this.incm[i].from + " " + this.incm[i].to;
+            this.range2 = this.incm[i].from + " to " + this.incm[i].to;
             console.log("Marks2 : " + this.mrk2);
           }
         }
@@ -209,6 +210,13 @@ export class CitemsComponent implements OnInit {
     this.marks.postForm(this.mForm).subscribe((res)=>{
       console.log("Final marks " + this.mForm.marks);
       console.log("Submitted successfully");
+      this.toastr.success('<span class="now-ui-icons ui-1_bell-53"></span> Marksheet created <b>successfully</b> - <br/> Sent for selection.', '', {
+        timeOut: 8000,
+        closeButton: true,
+        enableHtml: true,
+        toastClass: "alert alert-success alert-with-icon",
+        positionClass: 'toast-' + 'top' + '-' +  'right'
+      });
     })
   }
 }

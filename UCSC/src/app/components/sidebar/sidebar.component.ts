@@ -10,7 +10,9 @@ export const ROUTES: RouteInfo[] = [
     { path: '/admin/dashboard', title: 'Dashboard',  icon: 'design_app', class: '' },
     { path: '/admin/ifs/criteria', title:'Crieteria', icon: 'design_app', class:''},
     { path: '/admin/ifs/list', title:'Applicants',icon:'design_app',class:''},
-    
+    { path: '/admin/ifs/clist', title:'Verified List', icon:'design_app',class:''},
+    { path: '/admin/ifs/ctable', title:'Eligible Candidates', icon:'design_app',class:''},
+    { path: '/admin/ifs/slist', title:'Selected List', icon:'design_app', class:''},
 ];
 
 @Component({

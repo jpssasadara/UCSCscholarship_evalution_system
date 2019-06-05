@@ -1,0 +1,67 @@
+<div class="panel-header panel-header-sm">
+  </div>
+  <div class="panel-header">
+      <div class="header text-center">
+          <h2 class="title">IFS Scholarship</h2>
+          <h2><p class="category">Selected Candidate List</p></h2>
+         
+      </div>
+  </div>
+  <div class="main-content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+         
+          <div class="row" >
+
+              <div class="card-header">
+                  
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead class=" text-primary">
+                        <th>
+                          Name
+                        </th>
+                        <th>
+                          Registration
+                        </th>
+                        <th>
+                          marks
+                        </th>
+                        
+                        <th></th>
+                      </thead>
+                      <tbody>
+                      </tbody>
+                      <ngx-smart-modal #editModal1 identifier="editModal1">
+                          <div class="row">
+                                <h3>Smart Modal</h3>
+                              </div>
+                             <div class="container">
+                                <ngx-qrcode qrc-element-type="string" [qrc-value]="stmt"></ngx-qrcode>
+                             </div> 
+                          <button (click)="myModal1.close()">Close</button>
+                         
+                        </ngx-smart-modal>
+                        <tr *ngFor="let itm of fin | slice:1; let i = index;">
+                          <td>{{itm.name}}</td>
+                          <td>{{itm.registration}}</td>
+                          <td>{{itm.marks}}</td>
+                          
+                          <td class="text-right">
+                               <button (click)="ngxSmartModalService.getModal('editModal1').open(); passIndx(itm._id); " class="btn btn-primary btn-round">View</button>
+                          </td>
+                        </tr>
+                      </table>
+                      </div>
+                      </div>
+                      
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+          
