@@ -1,0 +1,973 @@
+<div class="home-block">
+
+  <form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+    {{userModel | json}}
+
+    <div class="container  ">
+      <div class="form-group col-md-12">
+        <label for="formGroupExampleInput2">
+          <h4><u>............................................ APPLICATION FOR SCHOLARSHIPS FROM STUDENT WELFARE AND
+              DISTRESS FUND ....................................</u></h4>
+        </label>
+      </div>
+
+    </div>
+    <!-- 1 st part-->
+    <div class="container well ">
+      <p>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample1"
+          aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-fullscreen"
+            aria-hidden="true"></span>
+        </button>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Section 1</span>
+      </p>
+      <div class="collapse" id="collapseExample1">
+        <div class="form-group col-md-7">
+          <label for="formGroupExampleInput">Course for which applicant has been selected: </label>
+          <select id="batch" class="form-control" name="batch" [(ngModel)]="userModel.batch">
+            <option selected>Batch Number</option>
+            <option>2013/2014</option>
+            <option>2014/2015</option>
+            <option>2015/2016</option>
+            <option>2016/2017</option>
+            <option>2017/2018</option>
+          </select>
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="formGroupExampleInput">Course for which applicant has been selected: </label>
+          <select id="degree" class="form-control" name="degree" [(ngModel)]="userModel.degree">
+            <option selected>Degree...</option>
+            <option>BSc(Hons)in Software Engineering</option>
+            <option>BSc(Hons)in Computer Science</option>
+            <option>BSc in Computer Science</option>
+            <option>BSc(Hons)in Information System</option>
+            <option>BSc in Information System</option>
+          </select>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="formGroupExampleInput2">Full Name: </label>
+          <input type="text" id="fullName" class="form-control" name="fullName" id="formGroupExampleInput2"
+            placeholder="Mr./Miss./Mrs./Rev" [(ngModel)]="userModel.fullName" required #fullName="ngModel" [class.is-invalid]="fullName.invalid && fullName.touched">
+            
+            <div *ngIf="fullName.errors && (fullName.invalid || fullName.touched)">
+                <small class="text-danger" *ngIf="fullName.errors.required">Full Name is required</small>
+                
+              </div>
+        </div>
+        <div class="form-group col-md-12">
+          <label for="formGroupExampleInput2">Permanent Address: </label>
+          <textarea class="form-control" id="address" name="address" rows="3"
+            [(ngModel)]="userModel.address" required #PermanentAddress="ngModel" [class.is-invalid]="PermanentAddress.invalid && PermanentAddress.touched"></textarea>
+
+            <div *ngIf="PermanentAddress.errors && (PermanentAddress.invalid || PermanentAddress.touched)">
+              <small class="text-danger" *ngIf="PermanentAddress.errors.required">Permanent Address is required</small>
+              
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="formGroupExampleInput2">Registration Number: </label>
+          <input type="text" class="form-control" name="regNumber" id="regNumber" placeholder="Registration Number"
+            [(ngModel)]="userModel.regNumber" required #regNumber="ngModel" [class.is-invalid]="regNumber.invalid && regNumber.touched">
+
+            <div *ngIf="regNumber.errors && (regNumber.invalid || regNumber.touched)">
+              <small class="text-danger" *ngIf="regNumber.errors.required">Registration Number is required</small>
+              
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="formGroupExampleInput2">Contact Numbers: </label>
+          <input type="text" class="form-control" name="contactNumber" id="contactNumber" placeholder="Contact Numbers"
+            [(ngModel)]="userModel.contactNumber" pattern="^\d{10}$" required #contactNumber="ngModel" [class.is-invalid]="contactNumber.invalid && contactNumber.touched">
+        
+            <div *ngIf="contactNumber.errors && (contactNumber.invalid || contactNumber.touched)">
+              <small class="text-danger" *ngIf="contactNumber.errors.required">Contact Number is required</small>
+              <small class="text-danger" *ngIf="contactNumber.errors.pattern">Contact Number is invalied</small>
+            </div>
+          </div>
+        <div class="form-group col-md-6">
+          <label for="formGroupExampleInput2"> Email Address: </label>
+          <input type="text" class="form-control" name="email" id="email" placeholder="Email Address"
+            [(ngModel)]="userModel.email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required #email="ngModel" [class.is-invalid]="email.invalid && email.touched">
+
+            <div *ngIf="email.errors && (email.invalid || email.touched)">
+              <small class="text-danger" *ngIf="email.errors.required">Email Address is required</small>
+              <small class="text-danger" *ngIf="email.errors.pattern">Contact Number is invalied</small>
+            </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="formGroupExampleInput2"> Division of the Gramaseva Niladhari: </label>
+          <input type="text" class="form-control" name="divisionGramasevaNiladhari" id="divisionGramasevaNiladhari"
+            placeholder="Division of the Gramaseva Niladhari:" [(ngModel)]="userModel.divisionGramasevaNiladhari" required #divisionGramasevaNiladhari="ngModel" [class.is-invalid]="divisionGramasevaNiladhari.invalid && divisionGramasevaNiladhari.touched">
+        
+            <div *ngIf="divisionGramasevaNiladhari.errors && (divisionGramasevaNiladhari.invalid || divisionGramasevaNiladhari.touched)">
+              <small class="text-danger" *ngIf="divisionGramasevaNiladhari.errors.required">Division of the Gramaseva Niladhari is required</small>
+              
+            </div>
+          </div>
+        <div class="form-group col-md-6">
+          <label for="formGroupExampleInput2"> Write down the distance (to the closest kilometer) from your
+            Permanent residence (i.e. your home) to the University of Colombo.
+            (1 mile = 1.6 k.m.)
+          </label>
+          <input type="text" class="form-control" name="distance" id="distance" placeholder="Ex-: 5km"
+            [(ngModel)]="userModel.distance" required #distance="ngModel" [class.is-invalid]="distance.invalid && distance.touched">
+
+            <div *ngIf="distance.errors && (distance.invalid || distance.touched)">
+              <small class="text-danger" *ngIf="distance.errors.required">Distance is required</small>
+              
+            </div>
+          </div>
+        <div class="form-group col-md-6">
+          <label for="formGroupExampleInput2"> District: </label>
+          <input type="text" class="form-control" name="district" id="district" placeholder="District"
+            [(ngModel)]="userModel.district" required #district="ngModel" [class.is-invalid]="district.invalid && district.touched">
+        
+            <div *ngIf="district.errors && (district.invalid || district.touched)">
+              <small class="text-danger" *ngIf="district.errors.required">District is required</small>
+              
+            </div>
+          </div>
+
+      </div>
+    </div>
+
+    <!-- 2 nd part -->
+    <div class="container well ">
+      <p>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample2"
+          aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-fullscreen"
+            aria-hidden="true"></span>
+        </button>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Section 2</span>
+      </p>
+      <div class="collapse" id="collapseExample2">
+        <div class="form-group col-md-12">
+          <label for="formGroupExampleInput2"><span class="glyphicon glyphicon-record" aria-hidden="true"></span>Reason
+            for applying for a Scholarship: </label>
+          <textarea class="form-control" name="ReasonForApplyingScholarship" id="ReasonForApplyingScholarship" rows="6"
+            [(ngModel)]="userModel.ReasonForApplyingScholarship" required #ReasonForApplyingScholarship="ngModel" [class.is-invalid]="ReasonForApplyingScholarship.invalid && ReasonForApplyingScholarship.touched"></textarea>
+       
+            <div *ngIf="ReasonForApplyingScholarship.errors && (ReasonForApplyingScholarship.invalid || ReasonForApplyingScholarship.touched)">
+              <small class="text-danger" *ngIf="ReasonForApplyingScholarship.errors.required">District is required</small>
+              
+            </div>
+          </div>
+      </div>
+    </div>
+    <!-- 3 rd part -->
+    <div class="container well ">
+      <p>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample3"
+          aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-fullscreen"
+            aria-hidden="true"></span>
+        </button>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Section 3</span>
+      </p>
+      <div class="collapse" id="collapseExample3">
+        <div class="form-group col-md-12">
+          <label for="formGroupExampleInput2"><span class="glyphicon glyphicon-record" aria-hidden="true"></span>If you
+            are now receiving a scholarship or any other funds from the
+            government or local
+            Government authorities or other institution or association, state the amount received and other details:
+          </label>
+          <textarea class="form-control" id="OtherScholarship" name="OtherScholarship" rows="6"
+            [(ngModel)]="userModel.OtherScholarship"></textarea>
+        </div>
+      </div>
+    </div>
+    <!--4 th part-->
+    <div class="container well ">
+      <p>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample4"
+          aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-fullscreen"
+            aria-hidden="true"></span>
+        </button>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Section 4</span>
+      </p>
+      <div class="collapse" id="collapseExample4">
+        <div class="form-group col-md-12">
+          <div class="row">
+            <div class="col-md-5">
+              <label for="formGroupExampleInput2"><span class="glyphicon glyphicon-record" aria-hidden="true"></span>Is
+                your family receiving “Samurdhi” allowance :
+              </label>
+            </div>
+            <div class="col-md-7">
+              <div class="form-check">
+                <input class="form-check-input custom-control-input" type="radio" name="Samurdhi" id="exampleRadios1"
+                  value="Yes" (click)=" fileaddYes()" [(ngModel)]="userModel.Samurdhi">
+                <label class="form-check-label" for="exampleRadios1">
+                  <i>Yes</i>
+                </label>
+
+              </div>
+              <div class="form-check">
+                <input class="form-check-input custom-control-input" type="radio" name="Samurdhi" id="exampleRadios2"
+                  value="No" (click)=" fileaddNo()" [(ngModel)]="userModel.Samurdhi">
+                <label class="form-check-label" for="exampleRadios2">
+                  <i>No</i>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="fileAddView">
+            <label class="bg-primary">Please attach certified copies of proof documents</label>
+            <input class="custom-file-input" type="file" name="fileToUpload" id="fileToUpload">
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!--5 th part-->
+    <div class="container well ">
+      <p>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
+          aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-fullscreen"
+            aria-hidden="true"></span>
+        </button>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Section 5</span>
+      </p>
+      <div class="collapse" id="collapseExample">
+        <div class="form-group col-md-12">
+          <label for="formGroupExampleInput2"><span class="glyphicon glyphicon-record" aria-hidden="true"></span>State
+            details of your brothers and sisters:</label>
+          <br>
+          (Please attach Letter of certification from Principal of the School or Registrar of the University /
+          Institute)
+          <br><br>
+          <!--st1-->
+          <div class="row">
+            <div class="col-md-3"><label>Name :</label></div>
+            <div class="col-md-1"><label>Age :</label></div>
+            <div class="col-md-2"><label>Civil Status :</label></div>
+            <div class="col-md-3"><label>School/ University/ Employment</label></div>
+            <div class="col-md-3"><label>Upload File</label></div>
+          </div>
+          <label> ( 1 )</label>
+          <div class="row">
+            <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Name"
+                name="namest1" [(ngModel)]="userModel.brother1Name"></div>
+
+            <div class="col-md-1">
+              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Age" name="brother1Age"
+                [(ngModel)]="userModel.brother1Age">
+            </div>
+            <div class="col-md-2">
+              <select id="inputState" class="form-control" name="brother1CivilStatus"
+                [(ngModel)]="userModel.brother1CivilStatus">
+                <option selected>Civil Status</option>
+                <option>Male</option>
+                <option>Female</option>
+              </select>
+            </div>
+            <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="School/ University/ Employment" name="brother1University"
+                [(ngModel)]="userModel.brother1University"></div>
+            <div class="col-md-3"><input class="custom-file-input" type="file" name="fileToUpload" id="fileToUpload">
+            </div>
+          </div>
+          <!--st2-->
+          <label> ( 2 )</label>
+          <div class="row">
+            <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Name"
+                name="namest2" [(ngModel)]="userModel.brother2Name"></div>
+
+            <div class="col-md-1">
+              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Age" name="brother2Age"
+                [(ngModel)]="userModel.brother2Age">
+            </div>
+            <div class="col-md-2">
+              <select id="inputState" class="form-control" name="brother2CivilStatus"
+                [(ngModel)]="userModel.brother2CivilStatus">
+                <option selected>Civil Status</option>
+                <option>Male</option>
+                <option>Female</option>
+              </select>
+            </div>
+            <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="School/ University/ Employment" name="brother2University"
+                [(ngModel)]="userModel.brother2University"></div>
+            <div class="col-md-3"><input class="custom-file-input" type="file" name="fileToUpload" id="fileToUpload">
+            </div>
+          </div>
+          <!--st3-->
+          <label>( 3 )</label>
+          <div class="row">
+            <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Name"
+                name="namest3" [(ngModel)]="userModel.brother3Name"></div>
+
+            <div class="col-md-1">
+              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Age" name="brother3Age"
+                [(ngModel)]="userModel.brother3Age">
+            </div>
+            <div class="col-md-2">
+              <select id="inputState" class="form-control" name="brother3CivilStatus"
+                [(ngModel)]="userModel.brother3CivilStatus">
+                <option selected>Civil Status</option>
+                <option>Male</option>
+                <option>Female</option>
+              </select>
+            </div>
+            <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="School/ University/ Employment" name="brother3University"
+                [(ngModel)]="userModel.brother3University"></div>
+            <div class="col-md-3"><input class="custom-file-input" type="file" name="fileToUpload" id="fileToUpload">
+            </div>
+          </div>
+          <!--st4-->
+          <label> ( 4 )</label>
+          <div class="row">
+            <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Name"
+                name="namest4" [(ngModel)]="userModel.brother4Name"></div>
+
+            <div class="col-md-1">
+              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Age" name="brother4Age"
+                [(ngModel)]="userModel.brother4Age">
+            </div>
+            <div class="col-md-2">
+              <select id="inputState" class="form-control" name="brother4CivilStatus"
+                [(ngModel)]="userModel.brother4CivilStatus">
+                <option selected>Civil Status</option>
+                <option>Male</option>
+                <option>Female</option>
+              </select>
+            </div>
+            <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="School/ University/ Employment" name="brother4University"
+                [(ngModel)]="userModel.brother4University"></div>
+            <div class="col-md-3"><input class="custom-file-input" type="file" name="fileToUpload" id="fileToUpload">
+            </div>
+          </div>
+          <!--st5-->
+          <label> ( 5 )</label>
+          <div class="row">
+            <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Name"
+                name="namest5" [(ngModel)]="userModel.brother5Name"></div>
+
+            <div class="col-md-1">
+              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Age" name="brother5Age"
+                [(ngModel)]="userModel.brother5Age">
+            </div>
+            <div class="col-md-2">
+              <select id="inputState" class="form-control" name="brother5CivilStatus"
+                [(ngModel)]="userModel.brother5CivilStatus">
+                <option selected>Civil Status</option>
+                <option>Male</option>
+                <option>Female</option>
+              </select>
+            </div>
+            <div class="col-md-3"><input type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="School/ University/ Employment" name="brother5University"
+                [(ngModel)]="userModel.brother5University"></div>
+            <div class="col-md-3"><input class="custom-file-input" type="file" name="fileToUpload" id="fileToUpload">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--6 th part-->
+    <div class="container well ">
+      <p>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample6"
+          aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-fullscreen"
+            aria-hidden="true"></span>
+        </button>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Section 6</span>
+      </p>
+      <div class="collapse" id="collapseExample6">
+        <div class="form-group col-md-12">
+          <label for="formGroupExampleInput2">Income derived from estates and cultivated land of your family:
+          </label><br>
+          <!--owner1-->
+          <label> ( 1 )
+            _________________________________________________________________________________________________</label>
+          <div class="row">
+            <div class="col-md-4">Name of Owner :<input type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="Name of Owner" name="Owner1Name" [(ngModel)]="userModel.Owner1Name"></div>
+            <div class="col-md-4">Relationship :<input type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="Relationship" name="Owner1Relationship" [(ngModel)]="userModel.Owner1Relationship"></div>
+            <div class="col-md-4">Location :<input type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="Location" name="Owner1Location" [(ngModel)]="userModel.Owner1Location"></div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-4">Nature of Cultivation :<input type="text" class="form-control"
+                id="formGroupExampleInput2" placeholder="Nature of Cultivation" name="Owner1Cultivation"
+                [(ngModel)]="userModel.Owner1Cultivation"></div>
+            <div class="col-md-4">Extent of Land Description of Property :<input type="text" class="form-control"
+                id="formGroupExampleInput2" placeholder="Extent of Land Description of Property" name="Owner1Extent"
+                [(ngModel)]="userModel.Owner1Extent"></div>
+            <div class="col-md-4">Annual Income Rs :<input type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="Annual Income Rs" name="Owner1Income" [(ngModel)]="userModel.Owner1Income"></div>
+
+          </div>
+
+          <!--owner2-->
+          <label> ( 2 )
+            _________________________________________________________________________________________________</label>
+          <div class="row">
+            <div class="col-md-4">Name of Owner :<input type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="Name of Owner" name="Owner2Name" [(ngModel)]="userModel.Owner2Name"></div>
+            <div class="col-md-4">Relationship :<input type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="Relationship" name="Owner2Relationship" [(ngModel)]="userModel.Owner2Relationship"></div>
+            <div class="col-md-4">Location :<input type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="Location" name="Owner2Location" [(ngModel)]="userModel.Owner2Location"></div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-4">Nature of Cultivation :<input type="text" class="form-control"
+                id="formGroupExampleInput2" placeholder="Nature of Cultivation" name="Owner2Cultivation"
+                [(ngModel)]="userModel.Owner2Cultivation"></div>
+            <div class="col-md-4">Extent of Land Description of Property :<input type="text" class="form-control"
+                id="formGroupExampleInput2" placeholder="Extent of Land Description of Property" name="Owner2Extent"
+                [(ngModel)]="userModel.Owner2Extent"></div>
+            <div class="col-md-4">Annual Income Rs :<input type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="Annual Income Rs" name="Owner2Income" [(ngModel)]="userModel.Owner2Income"></div>
+
+          </div>
+
+          <!--owner3-->
+          <label> ( 3 )
+            _________________________________________________________________________________________________</label>
+          <div class="row">
+            <div class="col-md-4">Name of Owner :<input type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="Name of Owner" name="Owner3Name" [(ngModel)]="userModel.Owner3Name"></div>
+            <div class="col-md-4">Relationship :<input type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="Relationship" name="Owner3Relationship" [(ngModel)]="userModel.Owner3Relationship"></div>
+            <div class="col-md-4">Location :<input type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="Location" name="Owner3Location" [(ngModel)]="userModel.Owner3Location"></div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-4">Nature of Cultivation :<input type="text" class="form-control"
+                id="formGroupExampleInput2" placeholder="Nature of Cultivation" name="Owner3Cultivation"
+                [(ngModel)]="userModel.Owner3Cultivation"></div>
+            <div class="col-md-4">Extent of Land Description of Property :<input type="text" class="form-control"
+                id="formGroupExampleInput2" placeholder="Extent of Land Description of Property" name="Owner3Extent"
+                [(ngModel)]="userModel.Owner3Extent"></div>
+            <div class="col-md-4">Annual Income Rs :<input type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="Annual Income Rs" name="Owner3Income" [(ngModel)]="userModel.Owner3Income"></div>
+
+          </div>
+
+          <!--owner4-->
+          <label> ( 4 )
+            _________________________________________________________________________________________________</label>
+          <div class="row">
+            <div class="col-md-4">Name of Owner :<input type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="Name of Owner" name="Owner4Name" [(ngModel)]="userModel.Owner4Name"></div>
+            <div class="col-md-4">Relationship :<input type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="Relationship" name="Owner4Relationship" [(ngModel)]="userModel.Owner4Relationship"></div>
+            <div class="col-md-4">Location :<input type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="Location" name="Owner4Location" [(ngModel)]="userModel.Owner4Location"></div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-4">Nature of Cultivation :<input type="text" class="form-control"
+                id="formGroupExampleInput2" placeholder="Nature of Cultivation" name="Owner4Cultivation"
+                [(ngModel)]="userModel.Owner4Cultivation"></div>
+            <div class="col-md-4">Extent of Land Description of Property :<input type="text" class="form-control"
+                id="formGroupExampleInput2" placeholder="Extent of Land Description of Property" name="Owner4Extent"
+                [(ngModel)]="userModel.Owner4Extent"></div>
+            <div class="col-md-4">Annual Income Rs :<input type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="Annual Income Rs" name="Owner4Income" [(ngModel)]="userModel.Owner4Income"></div>
+
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+    <!--7 th part-->
+    <div class="container well ">
+      <p>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample7"
+          aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-fullscreen"
+            aria-hidden="true"></span>
+        </button>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Section 7</span>
+      </p>
+      <div class="collapse" id="collapseExample7">
+        <div class="form-group col-md-12">
+          <label for="formGroupExampleInput2">Income derived from Houses of your family:
+          </label><br>
+          <!--owner1-->
+          <label> ( 1 )
+            _________________________________________________________________________________________________</label>
+          <div class="row">
+            <div class="col-md-3">Name of Owner :<input type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="Name of Owner" name="House1Owner" [(ngModel)]="userModel.House1Owner"></div>
+            <div class="col-md-3">Relationship :<input type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="Relationship" name="House1Relationship" [(ngModel)]="userModel.House1Relationship"></div>
+            <div class="col-md-3">Assessment No :<input type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="Assessment No" name="House1AssessmentNo" [(ngModel)]="userModel.House1AssessmentNo"></div>
+            <div class="col-md-3">Chief House Holder’s No :<input type="text" class="form-control"
+                id="formGroupExampleInput2" placeholder="Chief House Holder’s No" name="House1OwnerNo"
+                [(ngModel)]="userModel.House1OwnerNo"></div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-3">Address :<input type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="Address" name="House1Address" [(ngModel)]="userModel.House1Address"></div>
+            <div class="col-md-3">Annual Income :<input type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="Annual Income" name="House1AnualIncome" [(ngModel)]="userModel.House1AnualIncome"></div>
+            <div class="col-md-6">If rented/ leased names and addresses of tenants :<input type="text"
+                class="form-control" id="formGroupExampleInput2"
+                placeholder="If rented/ leased names and addresses of tenants" name="House1RentDetail"
+                [(ngModel)]="userModel.House1RentDetail"></div>
+
+          </div>
+
+          <!--owner2-->
+          <label> ( 2 )
+            _________________________________________________________________________________________________</label>
+          <div class="row">
+            <div class="col-md-3">Name of Owner :<input type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="Name of Owner" name="House2Owner" [(ngModel)]="userModel.House2Owner"></div>
+            <div class="col-md-3">Relationship :<input type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="Relationship" name="House2Relationship" [(ngModel)]="userModel.House2Relationship"></div>
+            <div class="col-md-3">Assessment No :<input type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="Assessment No" name="House2AssessmentNo" [(ngModel)]="userModel.House2AssessmentNo"></div>
+            <div class="col-md-3">Chief House Holder’s No :<input type="text" class="form-control"
+                id="formGroupExampleInput2" placeholder="Chief House Holder’s No" name="House2OwnerNo"
+                [(ngModel)]="userModel.House2OwnerNo"></div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-3">Address :<input type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="Address" name="House2Address" [(ngModel)]="userModel.House2Address"></div>
+            <div class="col-md-3">Annual Income :<input type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="Annual Income" name="House2AnualIncome" [(ngModel)]="userModel.House2AnualIncome"></div>
+            <div class="col-md-6">If rented/ leased names and addresses of tenants :<input type="text"
+                class="form-control" id="formGroupExampleInput2"
+                placeholder="If rented/ leased names and addresses of tenants" name="House2RentDetail"
+                [(ngModel)]="userModel.House2RentDetail"></div>
+
+          </div>
+
+
+          <!--owner3-->
+          <label> ( 3 )
+            _________________________________________________________________________________________________</label>
+          <div class="row">
+            <div class="col-md-3">Name of Owner :<input type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="Name of Owner" name="House3Owner" [(ngModel)]="userModel.House3Owner"></div>
+            <div class="col-md-3">Relationship :<input type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="Relationship" name="House3Relationship" [(ngModel)]="userModel.House3Relationship"></div>
+            <div class="col-md-3">Assessment No :<input type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="Assessment No" name="House3AssessmentNo" [(ngModel)]="userModel.House3AssessmentNo"></div>
+            <div class="col-md-3">Chief House Holder’s No :<input type="text" class="form-control"
+                id="formGroupExampleInput2" placeholder="Chief House Holder’s No" name="House3OwnerNo"
+                [(ngModel)]="userModel.House3OwnerNo"></div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-3">Address :<input type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="Address" name="House3Address" [(ngModel)]="userModel.House3Address"></div>
+            <div class="col-md-3">Annual Income :<input type="text" class="form-control" id="formGroupExampleInput2"
+                placeholder="Annual Income" name="House3AnualIncome" [(ngModel)]="userModel.House3AnualIncome"></div>
+            <div class="col-md-6">If rented/ leased names and addresses of tenants :<input type="text"
+                class="form-control" id="formGroupExampleInput2"
+                placeholder="If rented/ leased names and addresses of tenants" name="House3RentDetail"
+                [(ngModel)]="userModel.House3RentDetail"></div>
+
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+    <!-- 8 rd part -->
+    <div class="container well ">
+      <p>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample8"
+          aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-fullscreen"
+            aria-hidden="true"></span>
+        </button>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Section 8</span>
+      </p>
+      <div class="collapse" id="collapseExample8">
+        <div class="form-group col-md-12">
+          <label for="formGroupExampleInput2"><span class="glyphicon glyphicon-record" aria-hidden="true"></span>Fill in
+            this section only if you are employed:
+          </label>
+          <br>
+          <div class="form-group col-md-12">
+            <label>Name and address of Institution / Department where you are employed : </label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="WorkingPlace" [(ngModel)]="userModel.WorkingPlace"></textarea>
+          </div>
+          <div class="form-group col-md-6">
+            <label>Post : </label>
+            <input type="text" class="form-control" placeholder="Post" name="WorkingPost" [(ngModel)]="userModel.WorkingPost">
+          </div>
+          <div class="form-group col-md-6">
+            <label>Salary Scale : </label>
+            <input type="text" class="form-control" placeholder="Salary Scale" name="WorkingSalaryScale" [(ngModel)]="userModel.WorkingSalaryScale">
+          </div>
+          <div class="form-group col-md-6">
+            <label>Salary : </label>
+            <input type="text" class="form-control" placeholder="Salary" name="WorkingSalary" [(ngModel)]="userModel.WorkingSalary">
+          </div>
+          <div class="form-group col-md-6">
+            <label>Date of appointment : </label>
+            <input type="text" class="form-control" placeholder="Date of appointment" name="WorkingAppointment" [(ngModel)]="userModel.WorkingAppointment">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9 rd part -->
+    <div class="container well ">
+      <p>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample9"
+          aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-fullscreen"
+            aria-hidden="true"></span>
+        </button>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Section 9</span>
+      </p>
+      <div class="collapse" id="collapseExample9">
+        <div class="form-group col-md-12">
+          <label for="formGroupExampleInput2"><span class="glyphicon glyphicon-record" aria-hidden="true"></span>Fill in
+            this section only if you are married:
+          </label>
+          <br>
+
+          <div class="form-group col-md-6">
+            <label>Date of marriage (annex marriage certificate) : </label>
+            <input type="text" class="form-control" placeholder="Date of marriage" name="MarriageData" [(ngModel)]="userModel.MarriageData">
+          </div>
+          <div class="form-group col-md-6">
+            <label>Name of spouse : </label>
+            <input type="text" class="form-control" placeholder="Name of spouse" name="Spouse" [(ngModel)]="userModel.Spouse">
+          </div>
+          <div class="form-group col-md-6">
+            <label>If spouse is employed name of institution where she/he is employed : </label>
+            <input type="text" class="form-control" placeholder="institution" name="SpouseInstitution" [(ngModel)]="userModel.SpouseInstitution">
+          </div>
+          <div class="form-group col-md-6">
+            <label>Post held : </label>
+            <input type="text" class="form-control" placeholder="Post held" name="SpousePost" [(ngModel)]="userModel.SpousePost">
+          </div>
+          <div class="form-group col-md-6">
+            <label>Present salary: (state the monthly salary inclusive of all allowances) : </label>
+            <input type="text" class="form-control" placeholder="Present salary" name="PresentSalary" [(ngModel)]="userModel.PresentSalary">
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- 10 rd part -->
+    <div class="container well ">
+      <p>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample10"
+          aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-fullscreen"
+            aria-hidden="true"></span>
+        </button>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Section 10</span>
+      </p>
+      <div class="collapse" id="collapseExample10">
+        <div class="form-group col-md-12">
+          <label for="formGroupExampleInput2"><span class="glyphicon glyphicon-record" aria-hidden="true"></span>Whether
+            you are a Sri Lankan Citizen or not :
+          </label>
+          <br>
+          <div class="form-group col-md-6">
+            <input type="text" class="form-control" placeholder="Yes / No" name="SriLankanCitizen" [(ngModel)]="userModel.SriLankanCitizen">
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- 11 rd part -->
+    <div class="container well ">
+      <p>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample11"
+          aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-fullscreen"
+            aria-hidden="true"></span>
+        </button>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Section 11</span>
+      </p>
+      <div class="collapse" id="collapseExample11">
+        <div class="form-group col-md-12">
+          <label for="formGroupExampleInput2"><span class="glyphicon glyphicon-record" aria-hidden="true"></span>Details
+            of parents/Guardians: (Applicants presenting guardians should fill cage 12 in addition to this.)
+          </label>
+          <br>
+          <div class="col-md-12 well">
+            (a) Details of Father:
+          </div>
+          <br>
+          <div class="form-group col-md-8">
+            <label>Full Name : </label>
+            <input type="text" class="form-control" placeholder="Full Name" name="FatherName" [(ngModel)]="userModel.FatherName">
+          </div>
+          <div class="form-group col-md-12">
+            <div class="row">
+              <div class="col-md-5">
+                <label for="formGroupExampleInput2"> Whether living or deceased :
+                </label>
+              </div>
+              <div class="col-md-7">
+                <div class="form-check">
+                  <input class="form-check-input custom-control-input" type="radio" 
+                    id="exampleRadios1" value="Yes" (click)=" fileaddYes()" name="FatherLiving" [(ngModel)]="userModel.FatherLiving">
+                  <label class="form-check-label" for="exampleRadios1">
+                    <i>Yes</i>
+                  </label>
+
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input custom-control-input" type="radio" name="exampleRadios"
+                    id="exampleRadios2" value="No" (click)=" fileaddNo()" name="FatherLivingno" [(ngModel)]="userModel.FatherLiving">
+                  <label class="form-check-label" for="exampleRadios2">
+                    <i>No</i>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="fileAddView">
+              <label>living, Age </label> <br>
+              <div class="form-group col-md-3">
+                <input type="text" class="form-control" placeholder="Years" name="FatherYear" [(ngModel)]="userModel.FatherYear">
+              </div>
+              <div class="form-group col-md-3">
+                <input type="text" class="form-control" placeholder="Months" name="FatherMonth" [(ngModel)]="userModel.FatherMonth">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="formGroupExampleInput2"> Father’s Employment: </label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Father’s Employment" name="FatherEmployee" [(ngModel)]="userModel.FatherEmployee">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="formGroupExampleInput2"> Address of present / previous employment: </label>
+            <input type="text" class="form-control" id="formGroupExampleInput2"
+              placeholder="Address of present / previous employment" name="FatherEmployeeAddress" [(ngModel)]="userModel.FatherEmployeeAddress">
+          </div>
+          <div class="form-group col-md-8">
+            <label for="formGroupExampleInput2">State the full income derived from employment / Pension Rs: </label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="full income"
+            name="Pension" [(ngModel)]="userModel.FatherPension">
+            (Full annual income as at 31st December 2018, should be declared.)
+            (If employed, a letter stating the annual salary inclusive of all allowances certified by the Head of the
+            workplace, should be annexed. If retired, a letter stating the annual pension inclusive of all allowances,
+            or the full annual widows’ and orphans’ pension certified by Director of Pensions or the Government Agent
+            should be annexed)
+          </div>
+          <div class="form-group col-md-8">
+            <label for="formGroupExampleInput2"> Annual income derived from houses & properties: </label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Rs -:" name="FatherHousesProperties" [(ngModel)]="userModel.FatherHousesProperties">
+          </div>
+          <div class="form-group col-md-8">
+            <label for="formGroupExampleInput2"> Annual income derived from all other sources: </label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Rs -:" name="FatherOtherSources" [(ngModel)]="userModel.FatherOtherSources">
+          </div>
+          <div class="form-group col-md-8">
+            <label for="formGroupExampleInput2"> Father’s total annual income: </label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Rs -:" name="FatherAnualIncome" [(ngModel)]="userModel.FatherAnualIncome">
+          </div>
+
+          <br>
+          <div class="col-md-12 well">
+            (b) Details of Mother:
+          </div>
+
+          <br>
+          <div class="form-group col-md-8">
+            <label>Full Name : </label>
+            <input type="text" class="form-control" placeholder="Full Name" name="MotherName" [(ngModel)]="userModel.MotherName">
+          </div>
+          <div class="form-group col-md-12">
+            <div class="row">
+              <div class="col-md-5">
+                <label for="formGroupExampleInput2"> Whether living or deceased :
+                </label>
+              </div>
+              <div class="col-md-7">
+                <div class="form-check">
+                  <input class="form-check-input custom-control-input" type="radio" 
+                    id="exampleRadios1" value="Yes" (click)=" fileaddYes()" name="MotherLiving" [(ngModel)]="userModel.MotherLiving">
+                  <label class="form-check-label" for="exampleRadios1">
+                    <i>Yes</i>
+                  </label>
+
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input custom-control-input" type="radio" 
+                    id="exampleRadios2" value="No" (click)=" fileaddNo()" name="MotherLiving" [(ngModel)]="userModel.MotherLiving">
+                  <label class="form-check-label" for="exampleRadios2">
+                    <i>No</i>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="fileAddView">
+              <label>living, Age </label> <br>
+              <div class="form-group col-md-3">
+                <input type="text" class="form-control" placeholder="Years" name="MotherYear" [(ngModel)]="userModel.MotherYear">
+              </div>
+              <div class="form-group col-md-3">
+                <input type="text" class="form-control" placeholder="Months" name="MotherMonth" [(ngModel)]="userModel.MotherMonth">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="formGroupExampleInput2"> Mother’s Employment: </label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Father’s Employment" name="MotherEmployee" [(ngModel)]="userModel.MotherEmployee">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="formGroupExampleInput2"> Address of present / previous employment: </label>
+            <input type="text" class="form-control" id="formGroupExampleInput2"
+              placeholder="Address of present / previous employment" name="MotherEmployeeAddress" [(ngModel)]="userModel.MotherEmployeeAddress">
+          </div>
+          <div class="form-group col-md-8">
+            <label for="formGroupExampleInput2">State the full income derived from employment / Pension Rs: </label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="full income" name="MotherPension" [(ngModel)]="userModel.MotherPension">
+            (Full annual income as at 31st December 2018, should be declared.)
+            (If employed, a letter stating the annual salary inclusive of all allowances certified by the Head of the
+            workplace, should be annexed. If retired, a letter stating the annual pension inclusive of all allowances,
+            or the full annual widows’ and orphans’ pension certified by Director of Pensions or the Government Agent
+            should be annexed)
+          </div>
+          <div class="form-group col-md-8">
+            <label for="formGroupExampleInput2"> Annual income derived from houses & properties: </label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Rs -:" name="MotherHousesProperties" [(ngModel)]="userModel.MotherHousesProperties">
+          </div>
+          <div class="form-group col-md-8">
+            <label for="formGroupExampleInput2"> Annual income derived from all other sources: </label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Rs -:" name="MotherOtherSources" [(ngModel)]="userModel.MotherOtherSources">
+          </div>
+          <div class="form-group col-md-8">
+            <label for="formGroupExampleInput2"> Mothers’s total annual income: </label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Rs -:" name="MotherAnualIncome" [(ngModel)]="userModel.MotherAnualIncome">
+          </div>
+
+          <div class="col-md-12 well">
+            <div class="form-group col-md-8">
+              <label for="formGroupExampleInput2"><span class="glyphicon glyphicon-record" aria-hidden="true"></span>
+                Father’s and mother’s total annual income: </label>
+              (write total full annual income of father and mother in words)
+              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="in words" name="FatherMotherTotalIncome" [(ngModel)]="userModel.FatherMotherTotalIncome">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- 12 rd part -->
+    <div class="container well ">
+      <p>
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample12"
+          aria-expanded="false" aria-controls="collapseExample"><span class="glyphicon glyphicon-fullscreen"
+            aria-hidden="true"></span>
+        </button>
+        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Section 12</span>
+      </p>
+      <div class="collapse" id="collapseExample12">
+        <div class="form-group col-md-12">
+          <br>
+          <div class="col-md-12 well">
+            ( c ) Details of Guardian : <br>
+            ( This section should be filled by applicants who do not have parents or applicants who are not in the
+            charge of their parents or by other applicants who present guardians. )
+            <br>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="formGroupExampleInput2">Name of Guardian: </label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Name of Guardian" name="GuardianName" [(ngModel)]="userModel.GuardianName"> 
+          </div>
+          <div class="form-group col-md-6">
+            <label for="formGroupExampleInput2">Age: </label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Age" name="GuardianAge" [(ngModel)]="userModel.GuardianAge">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="formGroupExampleInput2"> Permanent address: </label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Permanent address" name="GuardianAddress" [(ngModel)]="userModel.GuardianAddress">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="formGroupExampleInput2">If employed, post held: </label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="If employed, post held" name="GuardianEmployedPost" [(ngModel)]="userModel.GuardianEmployedPost">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="formGroupExampleInput2">Annual salary: (annex details of salary.): </label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Rs -:" name="GuardianAnualSalary" [(ngModel)]="userModel.GuardianAnualSalary">
+          </div>
+          <div class="form-group col-md-8">
+            <label for="formGroupExampleInput2"> Annual income derived from houses & properties/ property of temple:
+            </label>
+            (A certificate issued by the Gramaseva Niladhari/Assistant Government Agent should be annexed in this
+            connection.)
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Rs -:" name="GuardianAnualIncome" [(ngModel)]="userModel.GuardianAnualIncome">
+          </div>
+
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-10 ">
+  
+        </div>
+        <div class="col-md-2 ">
+            <button [disabled]= "(fullName.errors && (fullName.invalid || fullName.touched)) ||
+            (district.errors && (district.invalid || district.touched)) ||
+            (distance.errors && (distance.invalid || distance.touched))||
+            (divisionGramasevaNiladhari.errors && (divisionGramasevaNiladhari.invalid || divisionGramasevaNiladhari.touched))||
+            (email.errors && (email.invalid || email.touched))||
+            (contactNumber.errors && (contactNumber.invalid || contactNumber.touched))||
+            (regNumber.errors && (regNumber.invalid || regNumber.touched))||
+            (PermanentAddress.errors && (PermanentAddress.invalid || PermanentAddress.touched)) || 
+            (ReasonForApplyingScholarship.errors && (ReasonForApplyingScholarship.invalid || ReasonForApplyingScholarship.touched))
+            " class="btn btn-primary" type="submit" >Edit</button>
+        </div>
+        
+      </div>
+  </form>
+    {{message}}
+    {{appdata}}
+  </div>
