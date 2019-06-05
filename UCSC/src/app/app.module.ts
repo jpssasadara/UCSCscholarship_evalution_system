@@ -19,6 +19,9 @@ import { WelfareEditComponent } from './welfare-edit/welfare-edit.component';
 import { CookieService } from 'ngx-cookie-service';
 import { RegisterStudentComponent } from './register-student/register-student.component';
 import { AdminRegStudentService } from './admin-reg-student.service';
+import { AdminDashComponent } from './admin-dash/admin-dash.component';
+import { StudentDashComponent } from './student-dash/student-dash.component';
+import { GetpasswordserviService } from './getpasswordservi.service';
 
 
 @NgModule({
@@ -34,7 +37,9 @@ import { AdminRegStudentService } from './admin-reg-student.service';
     WelfareAdminComponent,
     HtmltopdfComponent,
     WelfareEditComponent,
-    RegisterStudentComponent
+    RegisterStudentComponent,
+    AdminDashComponent,
+    StudentDashComponent
    
     
     
@@ -45,7 +50,7 @@ import { AdminRegStudentService } from './admin-reg-student.service';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [EnrollmentService,StudentWellfareService,CookieService,AdminRegStudentService],
+  providers: [EnrollmentService,StudentWellfareService,CookieService,AdminRegStudentService,GetpasswordserviService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

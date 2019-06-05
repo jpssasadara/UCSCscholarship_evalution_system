@@ -62,3 +62,29 @@ exports.create_registration = (req, res, next) => {
 
 }
 
+
+exports.get_password = (req, res, next) => {
+    const regNumber1 = req.body.regNumber;
+    registration.find({ regNumber: regNumber1 })
+        .exec()
+        .then(docs => {
+            console.log(docs);
+            const response = {
+                students: docs.map(doc => {
+                    return{
+                        pass:doc.password
+                    }  
+                    
+                })
+            }
+            res.status(200).json(response.students[0]);
+
+
+        })
+        .catch(err => {
+            res.status(500).json({
+                error: err
+            });
+        });
+}
+
